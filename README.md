@@ -169,3 +169,4 @@ function reverse(string) {
 ## Change Log
 ​
 Update as neccessary with any changes or directional adjustments made throughout the project week
+
