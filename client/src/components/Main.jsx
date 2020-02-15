@@ -5,13 +5,13 @@ import TripReview from './routes/TripReview'
 import Book from './routes/Book'
 import Flights from './routes/Flights'
 import Confirmation from './routes/Confirmation'
-import Route from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            
+
         }
     }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../../../public/css/App.css'
+import '../../css/App.css'
 
 const Nav = props => (
   <div className='nav'>
