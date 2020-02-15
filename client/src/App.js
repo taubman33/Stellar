@@ -1,11 +1,12 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import Main from './components/Main'
 
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="app">
+      <Main />
     </div>
   )
 }
