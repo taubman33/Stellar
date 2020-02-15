@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { withRouter } from 'react-router-dom'
+
 
 function App() {
   return (
@@ -10,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default withRouter(App)
