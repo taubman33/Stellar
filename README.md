@@ -3,6 +3,7 @@
 ​
 ## Project Description
 Stellar is a travel booking website specializing in eco-friendly travel arrangements.
+
 ​
 **Team Members**
 - Akila Saraty (UX Designer)
