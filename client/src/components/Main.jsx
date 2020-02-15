@@ -20,7 +20,7 @@ class Main extends React.Component {
         return (
             <div className="Main">
                 <Nav />
-                <Route exact path="/home">
+                <Route exact path="/">
                     <Home />
                 </Route>
                 <Route exact path="/flights">
