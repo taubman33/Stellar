@@ -12,7 +12,6 @@ module.exports = {
     {
       name: 'Johnny Johnson',
       hashed_password: 'password',
-  
       createdAt: new Date(),
       updatedAt: new Date()
     },
