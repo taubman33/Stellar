@@ -1,0 +1,58 @@
+:root {
+  --bg-color: #616161;
+  --bg-color-opaque: #35444FD0;
+  --button-selected: #194EB9;
+}
+
+.home {
+  background-image: url('../assets/secret-mexico-beach-clipped.png');
+  height: 890px;
+}
+
+.home-container {
+  background-color: var(--bg-color-opaque);
+  height: 660px;
+  width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+  display: grid;
+  grid-template-rows: repeat(1fr, 8);
+}
+
+.home-row {
+  grid-rows: 1 / 1;
+  display: flex;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.home-row-button {
+  width: 135px;
+  height: 96px;
+  background-color: var(--bg-color);
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin: 20px 5px 0 5px;
+}
+
+.home-row-button img {
+  position: relative;
+  top: 23px;
+}
+
+.home-row-button p {
+  position: relative;
+  top: 12px;
+}
+
+.home-row-button div img {
+  margin: 0 3px;
+}
+
+.home-selected {
+  background-color: var(--button-selected);
+}
