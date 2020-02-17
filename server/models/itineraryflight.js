@@ -5,7 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     flight_id: DataTypes.INTEGER
   }, {});
   ItineraryFlight.associate = function(models) {
-    // associations can be defined here
+    
+    Itinerary.hasMany(models.Flight, {
+      foreignKey: 'flightId'
+    });  
   };
   return ItineraryFlight;
 };

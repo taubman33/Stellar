@@ -12,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     eco: DataTypes.BOOLEAN
   }, {});
   Flights.associate = function(models) {
-    // associations can be defined here
+    Itinerary.hasMany(models.Flight, {
+      foreignKey: 'flightId'
+    });  
   };
   return Flights;
 };
+
+
