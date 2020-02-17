@@ -11,7 +11,7 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            
+
         }
     }
 
@@ -19,7 +19,7 @@ class Main extends React.Component {
     render() {
         return (
             <div className="Main">
-                {/* <Nav /> */}
+                <Nav />
                 <Route exact path="/">
                     <Home />
                 </Route>
