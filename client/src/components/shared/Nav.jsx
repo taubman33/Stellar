@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../../css/App.css'
+import '../../css/Nav.css'
 
 const Nav = props => (
   <div className='nav'>
-    <nav className='nav-user'>
-      <Link to='#' className='list-property'>List your property</Link>
-      <Link to='#' className='nav-link'>Account</Link>
-      <Link to='#' className='nav-link'>My lists</Link>
-    </nav>
-    <h1 className='big-logo'>Stellar</h1>
-    <Link to='#' className='join-rewards'>Join Rewards</Link>
+    <div className='nav-top'>
+      <div className='nav-top-left'>
+        <h1 className='big-logo'>STELLAR</h1>
+        <Link to='#' className='join-rewards nav-link'>Join Rewards</Link>
+      </div>
+      <nav className='nav-user'>
+        <Link to='#' className='list-property nav-link'>List your property</Link>
+        <Link to='#' className='nav-link'>Account</Link>
+        <Link to='#' className='nav-link'>My lists</Link>
+      </nav>
+    </div>
     <nav className='nav-main'>
       <Link to='#' className='nav-link'>Hotels</Link>
       <Link to='#' className='nav-link'>Flights</Link>
