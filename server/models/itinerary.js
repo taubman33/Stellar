@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     active: DataTypes.BOOLEAN
   }, {});
   Itinerary.associate = function(models) {
-    // associations can be defined here
-  };
+    Itinerary.hasMany(models.Flight, {
+      foreignKey: 'flightId'
+    });  };
   return Itinerary;
 };
