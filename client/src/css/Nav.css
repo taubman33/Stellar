@@ -25,6 +25,7 @@
 
 .nav-top-left {
   grid-columns: 1;
+  margin: 5px 0;
 }
 
 .nav-top-left * {
@@ -62,4 +63,14 @@
 .list-property {
   border: 1px solid var(--link-text-color);
   padding: 4px 6px;
+}
+
+.nav-main {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-main * {
+  margin: 0 30px;
 }
