@@ -57,3 +57,48 @@
 .home-selected {
   background-color: var(--button-selected);
 }
+
+.home-calendar-numpassengers {
+  grid-rows: 4;
+  display: flex;
+  margin-left: 10px;
+}
+
+.home-label-above {
+  display: inline;
+}
+
+.home-label-above p {
+  width: 60px;
+  margin: 0;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.home-label-above select {
+  width: 63px;
+  height: 50px;
+  font-size: 18px;
+  margin-right: 20px;
+  border-radius: 0px;
+}
+
+.home-label-above input {
+  width: 217px;
+  height: 46px;
+  max-height: 46px;
+  max-width: 287px;
+  padding-left: 70px;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  border: 1px solid gray;
+  margin-left: -30px;
+  margin-right: 20px;
+}
+
+.calendar-icon {
+  position: relative;
+  left: 30px;
+  top: 6px;
+}
