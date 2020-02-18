@@ -61,7 +61,7 @@
 .home-calendar-numpassengers {
   grid-rows: 5;
   display: flex;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .home-label-above {
@@ -112,13 +112,45 @@
   display: flex;
   flex-flow: row;
   color: white;
+  font-size: 14px;
 }
 
 .home-checkbox-row input {
-  margin-left: 10px;
+  margin-left: 15px;
   margin-right: 5px;
 }
 
 .home-checkbox-row p {
   margin-right: 20px;
+}
+
+.home-preferred-class {
+  grid-rows: 7;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  left: 10px;
+}
+
+.home-preferred-class select {
+  border: 2px solid gray;
+  padding: 5px;
+}
+
+.home-preferred-class p {
+  margin-bottom: 5px;
+}
+
+.home-submit {
+  display: block;
+  margin-left: 15px;
+  margin-top: 50px;
+  background-color: #F30053;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-family: 'Helvetica', sans-serif;
+  box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #d9294e;
+  padding: 10px 20px;
 }

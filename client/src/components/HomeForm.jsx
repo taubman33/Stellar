@@ -51,7 +51,7 @@ function HomeForm(props) {
               <Field type="checkbox" name="ecoFriendly" />
               <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)</p>
           </div>
-          <label>
+          <label className='home-preferred-class'>
             <p>Preferred Class</p>
             <Field as="select" name="preferredClass">
               <option value="First class">First class</option>
@@ -60,7 +60,7 @@ function HomeForm(props) {
               <option value="Premium economy">Premium economy</option>
             </Field>
           </label>
-          <button>Search</button>
+          <button type='submit' className='home-submit'>Search</button>
         </Form>
       </Formik>
     </div>
