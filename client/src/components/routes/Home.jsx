@@ -6,6 +6,7 @@ import HomeForm from '../HomeForm'
 
 
 function Home(props) {
+
   return (
     <div className="home">
       <div className='home-container'>
@@ -38,7 +39,7 @@ function Home(props) {
             <p>Activities</p>
           </Link>
         </div>
-        <HomeForm date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} />
+        <HomeForm  history={props.history} date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} />
       </div>
     </div>
   )

@@ -21,20 +21,44 @@ class Main extends React.Component {
             passengers: {
                 adults: 1,
                 children: 0
-            }
+            },
+            itinerary: {
+                numberOfAdults: null,
+                numberOfChildren: null,
+                departureDate: '',
+                returnDate: '',
+                directFlight: null,
+                ecoFriendly: null
+            },
+            redirect: false
         }
     }
 
+<<<<<<< HEAD
 
     handleHomeSubmit = values => {
         console.log(values)
+=======
+    handleHomeSubmit = (values, history) => {
+        this.setState({
+            itinerary: {
+                numberOfAdults: values.adults,
+                numberOfChildren: values.children,
+                departureDate: values.departureDate,
+                returnDate: values.returnDate,
+                directFlight: values.directFlights,
+                ecoFriendly: values.ecoFriendly
+            },
+            redirect: true
+        })
+        history.push('/flights')
+>>>>>>> integration
     }
 
     handleDateChange = event => {
-        console.log(event.target)
-        console.log(event.target.value)
         this.setState({
             date: {
+                ...this.state.date,
                 [event.target.name]: event.target.value
             }
         })
@@ -44,11 +68,10 @@ class Main extends React.Component {
         return (
             <div className="Main">
                 <Nav />
-                <Route exact path="/">
-                    <Home date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} />
-                </Route>
+                <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} /> } />
+
                 <Route exact path="/flights">
-                    <Flights />
+                    <Flights requestInfo={this.state} />
                 </Route>
                 <Route exact path="/trip-review">
                     <TripReview />
@@ -63,5 +86,6 @@ class Main extends React.Component {
         )
     }
 }
+
 
 export default Main
