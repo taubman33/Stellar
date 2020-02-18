@@ -6,9 +6,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ItineraryFlight.associate = function(models) {
     
-    Itinerary.hasMany(models.Flight, {
+    ItineraryFlight.hasMany(models.Flight, {
       foreignKey: 'flightId'
     });  
+    ItineraryFlight.hasMany(models.Itinerary, {
+      foreignKey: 'itineraeryId'
+    }); 
   };
   return ItineraryFlight;
 };
