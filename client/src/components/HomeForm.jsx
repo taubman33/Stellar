@@ -1,15 +1,28 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik'
-import DatePicker from 'react-date-picker'
 
 function HomeForm(props) {
   return (
     <div>
       <Formik
-        initialValues={{ adults: 1, children: 0, directFlights: false }}
-        onSubmit={props.handleHomeSubmit}
+        enableReinitialize
+        initialValues={{ adults: 1, children: 0, directFlights: false, departureDate: props.date.departure, returnDate: props.date.return}}
+        onSubmit={(vals) => {
+          props.handleHomeSubmit(vals, props.history)}}
       >
         <Form>
+          <label>
+            Flying from
+            <Field as="select" name="flyingFrom">
+              <option value="New York, NY">New York, NY (NYC - All Airports)</option>
+            </Field>
+          </label>
+          <label>
+            Flying to
+            <Field as="select" name="flyingTo">
+              <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
+            </Field>
+          </label>
           <label>
             Departing
            <input type="date" value={props.date.departure} onChange={props.handleDateChange} name="departure" />
@@ -58,7 +71,7 @@ function HomeForm(props) {
               <option value="Premium economy">Premium economy</option>
             </Field>
           </label>
-          <button>Search</button>
+          <button type="submit">Search</button>
         </Form>
       </Formik>
     </div>
