@@ -112,7 +112,7 @@ const updateItinerary = async (req, res) => {
 }
 
 //cancels a users itinerary
-const deleteItinerary = async (req, res) => {
+const cancelItinerary = async (req, res) => {
   try {
     const { id } = req.params
     const deleted = await Itinerary.destroy({
@@ -152,13 +152,13 @@ const getFlightById = async (req, res) => {
 module.exports = {
 getAllUsers,
 getUserById,
+createUser,
 getAllItineraries,
 getItineraryById,
-getAllFlights,
-getFlightById,
 createItinerary,
-createUser,
 updateItinerary,
-deleteItinerary
+cancelItinerary,
+getFlightById
+
 
 }

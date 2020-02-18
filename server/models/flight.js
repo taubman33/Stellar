@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Flights = sequelize.define('Flights', {
+  const Flight = sequelize.define('Flight', {
     airline: DataTypes.STRING,
     depart_airport: DataTypes.STRING,
     arrival_airport: DataTypes.STRING,
@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     rating: DataTypes.INTEGER,
     eco: DataTypes.BOOLEAN
   }, {});
-  Flights.associate = function(models) {
-    Itinerary.hasMany(models.Flight, {
+  Flight.associate = function(models) {
+   Flight.hasMany(models.ItineraryFlight, {
       foreignKey: 'flightId'
     });  
   };
-  return Flights;
+  return Flight;
 };
 
 

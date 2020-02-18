@@ -36,7 +36,7 @@ router.put('/users/:user_id/itineraries/:id', controllers.updateItinerary)
 
 
 //cancels a users itinerary
-router.destroy('/users/:user_id/itineraries/:id', controllers.cancelItinerary)
+router.delete('/users/:user_id/itineraries/:id', controllers.cancelItinerary)
 
 
 //shows info for flights in a single itinerary
@@ -44,7 +44,7 @@ router.get('/users/:user_id/itineraries/:id/flights', controllers.getFlightById)
 
 
 //shows info for hotel bookings in single itinerary -> PMVP
-router.get('/users/:user_id/itineraries/:id/hotels', controllers.getHotelById)
+// router.get('/users/:user_id/itineraries/:id/hotels', controllers.getHotelById)
 
 
 
