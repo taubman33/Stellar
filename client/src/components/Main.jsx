@@ -6,6 +6,7 @@ import Book from './routes/Book'
 import Flights from './routes/Flights'
 import Confirmation from './routes/Confirmation'
 import Loading from './Loading'
+import EcoPopup from './shared/EcoPopup'
 import { Route } from 'react-router-dom'
 
 class Main extends React.Component {
@@ -18,10 +19,6 @@ class Main extends React.Component {
 
 
     render() {
-        if (!this.state.flights) {
-          return <Loading />
-        } else {
-
         return (
             <div className="Main">
                 <Nav />
@@ -42,7 +39,6 @@ class Main extends React.Component {
                 </Route>
             </div>
         )
-      }
     }
 }
 
