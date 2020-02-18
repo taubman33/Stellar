@@ -46,7 +46,7 @@ const createUser = async (req, res) => {
 //get all itinieraries
 const getAllItineraries = async (req, res) => {
   try {
-    const itineraries = await Itinerary.findAll()
+    const itineraries = await Itinerary.findAll();
     return res.status(200).json({ itineraries })
   } catch (error) {
     return res.status(500).send(error.message)

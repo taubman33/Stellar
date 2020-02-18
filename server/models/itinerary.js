@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Itinerary.associate = function(models) {
     Itinerary.hasMany(models.Flight, {
-      foreignKey: 'flightId'
+      foreignKey: 'flightId',
+      onDelete: 'CASCADE'
     });  };
   return Itinerary;
 };

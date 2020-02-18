@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Flight.associate = function(models) {
    Flight.hasMany(models.ItineraryFlight, {
-      foreignKey: 'flightId'
+      foreignKey: 'flightId',
+      onDelete: 'CASCADE'
     });  
   };
   return Flight;

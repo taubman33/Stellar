@@ -1,4 +1,6 @@
 'use strict';
+const moment = require('moment');
+
 
 //airlines used - jetblue, delta, american, united
 ///airports used - JFK LGA SFO LAX ORD DFW
@@ -22,8 +24,8 @@ module.exports = {
       arrival_airport: 'SFO',
       price: 500.54,
       flight_number: "12345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
+      depart_time:  moment().format("YYYY-MM-DD"),
+      arrival_time:  moment().format("YYYY-MM-DD"),
       rating: 4,
       eco: false,
       createdAt: new Date(),
@@ -424,7 +426,7 @@ module.exports = {
       arrival_airport: 'ORD',
       price: 420.34,
       flight_number: "16645",
-      depart_time: new Date(),
+      depart_time: moment().format("YYYY-MM-DD"),
       arrival_time: new Date(),
       rating: 4,
       eco: true,
