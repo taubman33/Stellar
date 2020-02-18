@@ -106,3 +106,19 @@
 .font-bold {
   font-weight: bold;
 }
+
+.home-checkbox-row {
+  grid-rows: 6;
+  display: flex;
+  flex-flow: row;
+  color: white;
+}
+
+.home-checkbox-row input {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.home-checkbox-row p {
+  margin-right: 20px;
+}

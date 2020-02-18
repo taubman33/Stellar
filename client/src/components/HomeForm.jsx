@@ -7,7 +7,7 @@ function HomeForm(props) {
     <div className='home-form'>
       <Formik
         initialValues={{ adults: 1, children: 0, directFlights: false }}
-        onSubmit={props.handleHomeSubmit}
+        onSubmit={(values) => props.handleHomeSubmit(values, props.history)}
       >
         <Form>
           <div className='home-calendar-numpassengers'>
@@ -45,14 +45,12 @@ function HomeForm(props) {
               </Field>
             </label>
           </div>
-          <label>
-            <Field type="checkbox" name="directFlights" />
-            <p>Direct flights only</p>
-          </label>
-          <label>
-            <Field type="checkbox" name="ecoFriendly" />
-            <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)</p>
-          </label>
+          <div className='home-checkbox-row'>
+              <Field type="checkbox" name="directFlights" />
+              <p>Direct flights only</p>
+              <Field type="checkbox" name="ecoFriendly" />
+              <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)</p>
+          </div>
           <label>
             <p>Preferred Class</p>
             <Field as="select" name="preferredClass">

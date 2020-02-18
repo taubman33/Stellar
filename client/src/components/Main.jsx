@@ -34,11 +34,6 @@ class Main extends React.Component {
         }
     }
 
-<<<<<<< HEAD
-
-    handleHomeSubmit = values => {
-        console.log(values)
-=======
     handleHomeSubmit = (values, history) => {
         this.setState({
             itinerary: {
@@ -52,7 +47,6 @@ class Main extends React.Component {
             redirect: true
         })
         history.push('/flights')
->>>>>>> integration
     }
 
     handleDateChange = event => {
