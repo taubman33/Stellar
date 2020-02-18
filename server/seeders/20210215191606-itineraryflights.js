@@ -5,50 +5,50 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('ItineraryFlights', [
       {
-      itinerary_id: 1,
-      flight_id: 1,
+      itineraryId: 1,
+      flightId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      itinerary_id: 1,
-      flight_id: 2,
+      itineraryId: 1,
+      flightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      itinerary_id: 1,
-      flight_id: 2,
+      itineraryId: 1,
+      flightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      itinerary_id: 2,
-      flight_id: 1,
+      itineraryId: 2,
+      flightId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      itinerary_id: 2,
-      flight_id: 2,
+      itineraryId: 2,
+      flightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      itinerary_id: 3,
-      flight_id: 1,
+      itineraryId: 3,
+      flightId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      itinerary_id: 3,
-      flight_id: 2,
+      itineraryId: 3,
+      flightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      itinerary_id: 3,
-      flight_id: 3,
+      itineraryId: 3,
+      flightId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});

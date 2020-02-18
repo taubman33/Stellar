@@ -8,11 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
-        type: Sequelize.STRING
+      userId: {
+        type: Sequelize.INTEGER
       },
-      itinerary_id:{
-        type: Sequelize.STRING
+      flightId:{
+        type: Sequelize.INTEGER
+      },
+      itineraryFlightId:{
+        type: Sequelize.INTEGER
       },
       number_adults: {
         type: Sequelize.INTEGER

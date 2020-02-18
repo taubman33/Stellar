@@ -2,8 +2,9 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
+    
     return queryInterface.bulkInsert('Itineraries', [{
-      user_id: '1',
+      userId: 1,
       number_adults: 2,
       number_children: 0,
       active: true,
@@ -12,7 +13,7 @@ module.exports = {
     },
 
     {
-      user_id: '2',
+      userId: 2,
       number_adults: 1,
       number_children: 2,
       active: true,
@@ -21,7 +22,7 @@ module.exports = {
     },
 
     {
-      user_id: '3',
+      userId: 3,
       number_adults: 2,
       number_children: 2,
       active: true,
@@ -30,7 +31,7 @@ module.exports = {
     },
 
     {
-      user_id: '4',
+      userId: 4,
       number_adults: 4,
       number_children: 6,
       active: false,
@@ -39,7 +40,7 @@ module.exports = {
     },
 
     {
-      user_id: '5',
+      userId: 5,
       number_adults: 1,
       number_children: 0,
       active: false,

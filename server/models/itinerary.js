@@ -1,14 +1,24 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Itinerary = sequelize.define('Itinerary', {
-    user_id: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
     number_adults: DataTypes.INTEGER,
     number_children: DataTypes.INTEGER,
-    active: DataTypes.BOOLEAN
+    active: DataTypes.BOOLEAN,
+    itineraryFlightId:{
+      type: DataTypes.INTEGER,
+    references: {
+      model: 'ItineraryFlight',
+      key: 'id',
+      as: 'itineraryFlightId'
+    }}
   }, {});
   Itinerary.associate = function(models) {
-    Itinerary.hasMany(models.Flight, {
-      foreignKey: 'flightId',
+    Itinerary.belongsToMany(models.Flight, {
+      through: 'ItineraryFlight',
+      as: 'flights',
+      foreignKey: 'itineraryId',
+      otherKey: 'flightId',
       onDelete: 'CASCADE'
     });  };
   return Itinerary;

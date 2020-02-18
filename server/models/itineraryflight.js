@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const ItineraryFlight = sequelize.define('ItineraryFlight', {
-    itinerary_id: DataTypes.INTEGER,
-    flight_id: DataTypes.INTEGER
+    itineraryId: DataTypes.INTEGER,
+    flightId: DataTypes.INTEGER
   }, {});
   ItineraryFlight.associate = function(models) {
     
