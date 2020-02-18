@@ -2,6 +2,10 @@
 
 //airlines used - jetblue, delta, american, united
 ///airports used - JFK LGA SFO LAX ORD DFW
+//for our presentation, JFK will be our home base, as it has the most flights leaving from it. For our presentation we will be doing JFK - SFO
+//all other airports will have flights to JFK with green options, + to LGA if we want to use "New York" for the search insteak of just JFK
+//most airports have flightroutes to each other airport but not all are connected fully w green options yet.
+//not high priority for 5 minute presentaiton
 
 
 module.exports = {
@@ -10,7 +14,9 @@ module.exports = {
 
 
       //leaving JFK
-      {
+
+        //to SFO
+    {
       airline: 'Jetblue',
       depart_airport: 'JFK',
       arrival_airport: 'SFO',
@@ -19,11 +25,65 @@ module.exports = {
       depart_time: new Date(),
       arrival_time: new Date(),
       rating: 4,
+      eco: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, 
+    {
+      airline: 'American',
+      depart_airport: 'JFK',
+      arrival_airport: 'SFO',
+      price: 470.22,
+      flight_number: "66646",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 5,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'United',
+      depart_airport: 'JFK',
+      arrival_airport: 'SFO',
+      price: 511.59,
+      flight_number: "145",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'American',
+      depart_airport: 'JFK',
+      arrival_airport: 'SFO',
+      price: 479.44,
+      flight_number: "11246",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'Jetblue',
+      depart_airport: 'JFK',
+      arrival_airport: 'SFO',
+      price: 600.18,
+      flight_number: "13366",
+      depart_time:  new Date(),
+      arrival_time: new Date(),
+      rating: 5,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
     },
 
+
+       //to LAX
     {
       airline: 'Delta',
       depart_airport: 'JFK',
@@ -37,49 +97,19 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
     {
-      airline: 'Jetblue',
+      airline: 'American',
       depart_airport: 'JFK',
-      arrival_airport: 'ORD',
-      price: 320.34,
-      flight_number: "13345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 2,
-      eco: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-
-    {
-      airline: 'Delta',
-      depart_airport: 'JFK',
-      arrival_airport: 'DFW',
-      price: 350.34,
-      flight_number: "93345",
+      arrival_airport: 'LAX',
+      price: 270.48,
+      flight_number: "22345",
       depart_time: new Date(),
       arrival_time: new Date(),
       rating: 3,
-      eco: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-
-    {
-      airline: 'United',
-      depart_airport: 'JFK',
-      arrival_airport: 'DFW',
-      price: 500.34,
-      flight_number: "13345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 5,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
-      //green 10% off to LAX
     {
       airline: 'Jetblue',
       depart_airport: 'JFK',
@@ -94,21 +124,62 @@ module.exports = {
       updatedAt: new Date()
     },
 
+
+    //to ORD
     {
       airline: 'Jetblue',
       depart_airport: 'JFK',
-      arrival_airport: 'LAX',
-      price: 600.17,
+      arrival_airport: 'ORD',
+      price: 320.34,
       flight_number: "13345",
-      depart_time:  new Date(),
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 2,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'United',
+      depart_airport: 'JFK',
+      arrival_airport: 'ORD',
+      price: 290.38,
+      flight_number: "13345",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+  
+    //to DFW
+    {
+      airline: 'Delta',
+      depart_airport: 'JFK',
+      arrival_airport: 'DFW',
+      price: 350.34,
+      flight_number: "93345",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 3,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'United',
+      depart_airport: 'JFK',
+      arrival_airport: 'DFW',
+      price: 500.34,
+      flight_number: "13345",
+      depart_time: new Date(),
       arrival_time: new Date(),
       rating: 5,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
-       //green 10% off option - to DFW
     {
       airline: 'American',
       depart_airport: 'JFK',
@@ -122,7 +193,6 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
     {
       airline: 'American',
       depart_airport: 'JFK',
@@ -138,9 +208,39 @@ module.exports = {
     },
 
 
-
-
     //leaving LGA
+
+
+  //to SFO
+  {
+          airline: 'Delta',
+          depart_airport: 'LGA',
+          arrival_airport: 'SFO',
+          price: 422.34,
+          flight_number: "19345",
+          depart_time: new Date(),
+          arrival_time: new Date(),
+          rating: 5,
+          eco: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
+ },
+ {
+  airline: 'United',
+  depart_airport: 'LGA',
+  arrival_airport: 'SFO',
+  price: 430.34,
+  flight_number: "28348",
+  depart_time: new Date(),
+  arrival_time: new Date(),
+  rating: 5,
+  eco: false,
+  createdAt: new Date(),
+  updatedAt: new Date()
+ },
+
+
+    //to ORD
     {
           airline: 'American',
           depart_airport: 'LGA',
@@ -150,13 +250,25 @@ module.exports = {
           depart_time: new Date(),
           arrival_time: new Date(),
           rating: 3,
-          eco: false,
+          eco: true,
           createdAt: new Date(),
           updatedAt: new Date()
     },
-    
     {
-      airline: 'Delta',
+      airline: 'American',
+      depart_airport: 'LGA',
+      arrival_airport: 'ORD',
+      price: 530.33,
+      flight_number: "19444",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 5,
+      eco: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'United',
       depart_airport: 'LGA',
       arrival_airport: 'ORD',
       price: 520.34,
@@ -168,13 +280,12 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
     {
       airline: 'Delta',
       depart_airport: 'LGA',
       arrival_airport: 'ORD',
-      price: 520.34,
-      flight_number: "19345",
+      price: 510.54,
+      flight_number: "19388",
       depart_time: new Date(),
       arrival_time: new Date(),
       rating: 5,
@@ -182,51 +293,6 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
-    {
-      airline: 'Delta',
-      depart_airport: 'LGA',
-      arrival_airport: 'ORD',
-      price: 520.34,
-      flight_number: "19345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 5,
-      eco: false,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-
-    {
-      airline: 'Delta',
-      depart_airport: 'LGA',
-      arrival_airport: 'ORD',
-      price: 520.34,
-      flight_number: "19345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 5,
-      eco: false,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-
-    {
-      airline: 'Delta',
-      depart_airport: 'LGA',
-      arrival_airport: 'ORD',
-      price: 520.34,
-      flight_number: "19345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 5,
-      eco: false,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-
-        //green 10% off option
-
    {
           airline: 'Delta',
           depart_airport: 'LGA',
@@ -240,8 +306,6 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date()
    },
-
-
    {
           airline: 'United',
           depart_airport: 'LGA',
@@ -259,6 +323,62 @@ module.exports = {
 
 
     //leaving LAX
+                //to JFK
+   {
+                  airline: 'Delta',
+                  depart_airport: 'LAX',
+                  arrival_airport: 'JFK',
+                  price: 420.68,
+                  flight_number: "83345",
+                  depart_time: new Date(),
+                  arrival_time: new Date(),
+                  rating: 4,
+                  eco: true,
+                  createdAt: new Date(),
+                  updatedAt: new Date()
+   },
+   {
+                  airline: 'American',
+                  depart_airport: 'LAX',
+                  arrival_airport: 'JFK',
+                  price: 428.98,
+                  flight_number: "99945",
+                  depart_time: new Date(),
+                  arrival_time: new Date(),
+                  rating: 4,
+                  eco: false,
+                  createdAt: new Date(),
+                  updatedAt: new Date()
+   }, 
+   {
+                  airline: 'United',
+                  depart_airport: 'LAX',
+                  arrival_airport: 'JFK',
+                  price: 390.98,
+                  flight_number: "88895",
+                  depart_time: new Date(),
+                  arrival_time: new Date(),
+                  rating: 3,
+                  eco: true,
+                  createdAt: new Date(),
+                  updatedAt: new Date()
+   },
+                 //to LGA
+    {
+      airline: 'American',
+      depart_airport: 'LAX',
+      arrival_airport: 'LGA',
+      price: 328.88,
+      flight_number: "48445",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+
+            //to SFO
     {
       airline: 'United',
       depart_airport: 'LAX',
@@ -269,6 +389,72 @@ module.exports = {
       arrival_time: new Date(),
       rating: 3,
       eco: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'Delta',
+      depart_airport: 'LAX',
+      arrival_airport: 'SFO',
+      price: 130.38,
+      flight_number: "22447",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 5,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'United',
+      depart_airport: 'LAX',
+      arrival_airport: 'SFO',
+      price: 135.38,
+      flight_number: "22499",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'United',
+      depart_airport: 'LAX',
+      arrival_airport: 'ORD',
+      price: 420.34,
+      flight_number: "16645",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+              //to ORD
+    {
+      airline: 'Jetblue',
+      depart_airport: 'LAX',
+      arrival_airport: 'LGA',
+      price: 321.68,
+      flight_number: "23945",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'United',
+      depart_airport: 'LAX',
+      arrival_airport: 'ORD',
+      price: 445.37,
+      flight_number: "19945",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -287,50 +473,10 @@ module.exports = {
       updatedAt: new Date()
     },
 
-    {
-      airline: 'Delta',
-      depart_airport: 'LAX',
-      arrival_airport: 'DFW',
-      price: 420.68,
-      flight_number: "83345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 4,
-      eco: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-
-    {
-      airline: 'Jetblue',
-      depart_airport: 'LAX',
-      arrival_airport: 'LGA',
-      price: 321.68,
-      flight_number: "83945",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 4,
-      eco: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-
 
     //leaving SFO
-    {
-      airline: 'United',
-      depart_airport: 'SFO',
-      arrival_airport: 'ORD',
-      price: 350.34,
-      flight_number: "13345",
-      depart_time: new Date(),
-      arrival_time: new Date(),
-      rating: 4,
-      eco: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    
+                 //to JFK
+  
     {
       airline: 'United',
       depart_airport: 'SFO',
@@ -344,8 +490,6 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
-
     {
       airline: 'Jetblue',
       depart_airport: 'SFO',
@@ -354,18 +498,86 @@ module.exports = {
       flight_number: "44385",
       depart_time: new Date(),
       arrival_time: new Date(),
-      rating: 3,
+      rating: 4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
     {
       airline: 'American',
       depart_airport: 'SFO',
       arrival_airport: 'JFK',
       price: 532.92,
-      flight_number: "12385",
+      flight_number: "12300",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 2,
+      eco: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+
+                    //to LGA
+        {
+          airline: 'United',
+          depart_airport: 'SFO',
+          arrival_airport: 'LGA',
+          price: 530.94,
+          flight_number: "12385",
+          depart_time: new Date(),
+          arrival_time: new Date(),
+          rating: 3,
+          eco: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          airline: 'Jetblue',
+          depart_airport: 'SFO',
+          arrival_airport: 'LGA',
+          price: 630.24,
+          flight_number: "44365",
+          depart_time: new Date(),
+          arrival_time: new Date(),
+          rating: 4,
+          eco: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          airline: 'American',
+          depart_airport: 'SFO',
+          arrival_airport: 'LGA',
+          price: 532.92,
+          flight_number: "12300",
+          depart_time: new Date(),
+          arrival_time: new Date(),
+          rating: 2,
+          eco: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },      
+
+                //to ORD
+    {
+      airline: 'United',
+      depart_airport: 'SFO',
+      arrival_airport: 'ORD',
+      price: 350.34,
+      flight_number: "13345",
+      depart_time: new Date(),
+      arrival_time: new Date(),
+      rating: 4,
+      eco: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      airline: 'Delta',
+      depart_airport: 'SFO',
+      arrival_airport: 'ORD',
+      price: 320.24,
+      flight_number: "22345",
       depart_time: new Date(),
       arrival_time: new Date(),
       rating: 2,
@@ -374,7 +586,8 @@ module.exports = {
       updatedAt: new Date()
     },
   
-     //10% off option
+  
+               //to LAX 
     {
       airline: 'American',
       depart_airport: 'SFO',
@@ -402,12 +615,8 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
-
-   
-
-
-    //leaving DFW
+  
+              //leaving DFW
     {
       airline: 'Delta',
       depart_airport: 'DFW',
@@ -435,11 +644,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
-
-      //green options - to JFK
+     
     {
-      airline: 'American',
+      airline: 'Delta',
       depart_airport: 'DFW',
       arrival_airport: 'JFK',
       price: 320.34,
@@ -451,7 +658,6 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
    
     {
       airline: 'American',
@@ -494,10 +700,6 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-
-
-
-
 
 
   //leaving from ORD
@@ -586,7 +788,7 @@ module.exports = {
       updatedAt: new Date()
     },
   
-    //green options
+
     {
       airline: 'United',
       depart_airport: 'ORD',

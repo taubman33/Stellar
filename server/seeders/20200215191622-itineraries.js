@@ -33,7 +33,7 @@ module.exports = {
       user_id: '4',
       number_adults: 4,
       number_children: 6,
-      active: true,
+      active: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -42,7 +42,7 @@ module.exports = {
       user_id: '5',
       number_adults: 1,
       number_children: 0,
-      active: true,
+      active: false,
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
