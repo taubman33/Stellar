@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });  
     ItineraryFlight.hasMany(models.Itinerary, {
-      foreignKey: 'itineraeryId',
+      foreignKey: 'itineraryId',
       onDelete: 'CASCADE'
     }); 
   };

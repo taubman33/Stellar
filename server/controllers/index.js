@@ -54,17 +54,12 @@ const getItineraryById = async (req, res) => {
   try {
     const { id } = req.params;
     const itinerary = await Itinerary.findOne({
-      where: { id: id },
-      include: [
-        {
-          model: Itinerary
-        }
-      ]
+      where: { id: id }
     });
     if (user) {
       return res.status(200).json({ user });
     }
-    return res.status(404).send('User with the specified ID does not exists');
+    return res.status(404).send('User with the specified ID does not exist');
   } catch (error) {
     return res.status(500).send(error.message);
   }
