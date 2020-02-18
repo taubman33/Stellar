@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800i&display=swap');
+
+:root {
+  --logo-blue: #002740;
+}
+
+.loading {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 4fr;
+}
+
+.big-logo-loading {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 72px;
+  color: var(--logo-blue);
+  grid-area: 1 / 2 / 1 / 2;
+  margin: 60px auto 0 auto;
+}
+
+.loading-icon {
+  animation: spin 2.5s linear infinite;
+  grid-area: 2 / 2 / 2 / 2;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-lines {
+  grid-area: 3 / 2 / 3 / 2;
+  position: relative;
+  left: 80px;
+}
+
+.loading-text-line * {
+  display: inline;
+  vertical-align:-45%;
+  margin-right: 10px;
+}
+
+.loading-text-line {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 600;
+}

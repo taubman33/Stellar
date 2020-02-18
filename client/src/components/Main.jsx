@@ -5,6 +5,8 @@ import TripReview from './routes/TripReview'
 import Book from './routes/Book'
 import Flights from './routes/Flights'
 import Confirmation from './routes/Confirmation'
+import Loading from './Loading'
+import EcoPopup from './shared/EcoPopup'
 import { Route } from 'react-router-dom'
 import moment from 'moment'
 
