@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import HomeForm from '../HomeForm'
 
-function Home() {
+
+
+function Home(props) {
     return (
         <div className="home">
             <div className="home-row">
@@ -31,6 +34,7 @@ function Home() {
                     Activities
                 </Link>
             </div>
+            <HomeForm date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} />
         </div>
     )
 }
