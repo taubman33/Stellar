@@ -19,10 +19,6 @@ class Main extends React.Component {
 
 
     render() {
-        if (!this.state.flights) {
-          return <EcoPopup />
-        } else {
-
         return (
             <div className="Main">
                 <Nav />
@@ -43,7 +39,6 @@ class Main extends React.Component {
                 </Route>
             </div>
         )
-      }
     }
 }
 
