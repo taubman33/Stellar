@@ -51,7 +51,7 @@ function HomeForm(props) {
           </label>
           <label>
             <Field type="checkbox" name="ecoFriendly" />
-            <p>Eco-Friendly Option (Save $ by selecting this option)</p>
+            <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)</p>
           </label>
           <label>
             <p>Preferred Class</p>
