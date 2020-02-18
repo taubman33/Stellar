@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800i&display=swap');
+
+:root {
+  --nav-bg-color: #00253F;
+  --rewards-bg-color: #A30097;
+  --link-text-color: #00A2FF;
+}
+
+.nav {
+  background-color: var(--nav-bg-color);
+  height: 125px;
+  display: inline-block;
+  width: 100%;
+}
+
+.nav-link {
+  color: var(--link-text-color);
+  text-decoration: none;
+}
+
+.nav-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nav-top-left {
+  grid-columns: 1;
+  margin: 5px 0;
+}
+
+.nav-top-left * {
+  display: inline-block;
+}
+
+.big-logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 60px;
+  color: white;
+  margin: 0 0 0 60px;
+}
+
+.nav-link.join-rewards {
+  color: white;
+  margin: 0 0 0 50px;
+  padding: 6px;
+  background-color: var(--rewards-bg-color);
+  border-radius: 8px;
+  vertical-align: 90%;
+}
+
+.nav-user {
+  grid-columns: 2;
+  margin: 10px 60px auto auto;
+  font-size: 15px;
+}
+
+.nav-user * {
+  margin: 0 20px;
+}
+
+.list-property {
+  border: 1px solid var(--link-text-color);
+  padding: 4px 6px;
+}
+
+.nav-main {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-main * {
+  margin: 0 25px;
+}
