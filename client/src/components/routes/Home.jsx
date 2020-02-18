@@ -1,9 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+<<<<<<< HEAD
 import '../../css/Home.css'
+=======
+import HomeForm from '../HomeForm'
+>>>>>>> integration
 
 
-function Home() {
+
+function Home(props) {
     return (
         <div className="home">
             <div className='home-container'>
@@ -37,6 +42,7 @@ function Home() {
                     </Link>
                 </div>
             </div>
+            <HomeForm date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} />
         </div>
     )
 }

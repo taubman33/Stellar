@@ -1,0 +1,39 @@
+.eco-popup {
+  background-color: #FFFFFF88;
+}
+
+.eco-popup-box {
+  background-color: white;
+  height: 390px;
+  width: 390px;
+  margin: auto;
+  margin-top: 20%;
+  box-shadow: 0 10px 10px 0 gray;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.eco-close-button {
+  position: relative;
+  background-color: white;
+  border: 1px solid gray;
+  left: 325px;
+  top: 5px;
+  font-weight: bold;
+  width: 60px;
+}
+
+.eco-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.eco-content {
+  width: 300px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+ul.eco-content {
+  list-style-type: none;
+   margin-left: 0;
+}
