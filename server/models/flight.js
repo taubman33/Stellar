@@ -13,14 +13,15 @@ module.exports = (sequelize, DataTypes) => {
     
     itineraryFlightId:{
       type: DataTypes.INTEGER,
-    references: {
-      model: 'ItineraryFlight',
-      key: 'id',
-      as: 'itineraryFlightId'
-    }}
+    // references: {
+    //   model: 'ItineraryFlight',
+    //   key: 'id',
+    //   as: 'itineraryFlightId'
+    // }
+  }
   }, {});
   Flight.associate = function(models) {
-   Flight.belongsToOne(models.Itinerary, {
+   Flight.hasOne(models.User, {
     through: 'ItineraryFlight',  
     as: 'itineraries',
     foreignKey: 'flightId',

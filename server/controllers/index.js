@@ -1,4 +1,4 @@
-const { Flight, User, Itinerary, ItineraryFlight } = require('../models')
+const { Flight, User, Itinerary } = require('../models')
 
 //get all users
 const getAllUsers = async (req, res) => {
@@ -16,12 +16,6 @@ const getUserById = async (req, res) => {
       const { id } = req.params;
       const user = await User.findOne({
         where: { id: id },
-        // include: [
-        //   {
-        //     model: Itinerary
-
-        //   }
-        // ]
       });
       if (user) {
         return res.status(200).json({ user });
