@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     flight_number: DataTypes.STRING,
     depart_time: DataTypes.DATE,
     arrival_time: DataTypes.DATE,
-    rating: DataTypes.INTEGER,
+    rating: DataTypes.FLOAT,
     eco: DataTypes.BOOLEAN
 
 

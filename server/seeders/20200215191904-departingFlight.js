@@ -11,7 +11,6 @@ module.exports = {
 
 
       //leaving New York (JFK)
-
         //to San Francisco (SFO)
     {
       airline: 'Jetblue',
@@ -21,7 +20,7 @@ module.exports = {
       flight_number: "12345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.2,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -35,7 +34,7 @@ module.exports = {
       flight_number: "66646",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 9.3,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -48,7 +47,7 @@ module.exports = {
       flight_number: "14335",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.2,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -61,7 +60,7 @@ module.exports = {
       flight_number: "11246",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 6.9,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -74,7 +73,7 @@ module.exports = {
       flight_number: "13366",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 9.3,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -90,7 +89,7 @@ module.exports = {
       flight_number: "22345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 7.2,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -103,7 +102,7 @@ module.exports = {
       flight_number: "22345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 9.3,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -116,7 +115,7 @@ module.exports = {
       flight_number: "13345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 8.5,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -132,7 +131,7 @@ module.exports = {
       flight_number: "13345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 2,
+      rating: 7.2,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -145,7 +144,7 @@ module.exports = {
       flight_number: "13345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -160,7 +159,7 @@ module.exports = {
       flight_number: "93345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 7.9,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -173,7 +172,7 @@ module.exports = {
       flight_number: "13345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 8.3,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -186,20 +185,20 @@ module.exports = {
       flight_number: "83345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 2,
+      rating: 8.2,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airline: 'American',
+      airline: 'United',
       depart_airport: 'New York (JFK)',
       arrival_airport: 'Dallas (DFW)',
       price: 209.85,
-      flight_number: "83345",
+      flight_number: "83388",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 2,
+      rating: 9.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -216,7 +215,7 @@ module.exports = {
           flight_number: "19345",
           depart_time: new Date(moment()),
           arrival_time: new Date(moment().add(4, 'hours')),
-          rating: 5,
+          rating: 6.5,
           eco: false,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -229,7 +228,7 @@ module.exports = {
   flight_number: "28348",
   depart_time: new Date(moment()),
   arrival_time: new Date(moment().add(4, 'hours')),
-  rating: 5,
+  rating: 8.5,
   eco: false,
   createdAt: new Date(),
   updatedAt: new Date()
@@ -245,7 +244,7 @@ module.exports = {
           flight_number: "16345",
           depart_time: new Date(moment()),
           arrival_time: new Date(moment().add(4, 'hours')),
-          rating: 3,
+          rating: 8.3,
           eco: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -258,7 +257,7 @@ module.exports = {
       flight_number: "19444",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 7.5,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -271,7 +270,7 @@ module.exports = {
       flight_number: "19345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 8.5,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -284,7 +283,7 @@ module.exports = {
       flight_number: "19388",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 9.5,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -297,7 +296,7 @@ module.exports = {
           flight_number: "19345",
           depart_time: new Date(moment()),
           arrival_time: new Date(moment().add(4, 'hours')),
-          rating: 5,
+          rating: 7.5,
           eco: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -310,7 +309,7 @@ module.exports = {
           flight_number: "39335",
           depart_time: new Date(moment()),
           arrival_time: new Date(moment().add(4, 'hours')),
-          rating: 5,
+          rating: 9.5,
           eco: false,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -328,7 +327,7 @@ module.exports = {
                   flight_number: "83345",
                   depart_time: new Date(moment()),
                   arrival_time: new Date(moment().add(4, 'hours')),
-                  rating: 4,
+                  rating: 8.4,
                   eco: true,
                   createdAt: new Date(),
                   updatedAt: new Date()
@@ -341,7 +340,7 @@ module.exports = {
                   flight_number: "99946",
                   depart_time: new Date(moment()),
                   arrival_time: new Date(moment().add(4, 'hours')),
-                  rating: 4,
+                  rating: 7.4,
                   eco: false,
                   createdAt: new Date(),
                   updatedAt: new Date()
@@ -354,7 +353,7 @@ module.exports = {
                   flight_number: "88895",
                   depart_time: new Date(moment()),
                   arrival_time: new Date(moment().add(4, 'hours')),
-                  rating: 3,
+                  rating: 9.3,
                   eco: true,
                   createdAt: new Date(),
                   updatedAt: new Date()
@@ -368,7 +367,7 @@ module.exports = {
       flight_number: "48445",
       depart_time: new Date(moment()),
       arrival_time:  new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 6.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -381,7 +380,7 @@ module.exports = {
       flight_number: "37245",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -396,7 +395,7 @@ module.exports = {
       flight_number: "12445",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 7.3,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -409,7 +408,7 @@ module.exports = {
       flight_number: "22447",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 8.5,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -422,7 +421,7 @@ module.exports = {
       flight_number: "22499",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 9.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -435,7 +434,7 @@ module.exports = {
       flight_number: "16645",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -449,7 +448,7 @@ module.exports = {
       flight_number: "23945",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 9.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -462,7 +461,7 @@ module.exports = {
       flight_number: "19945",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 9.2,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -476,7 +475,7 @@ module.exports = {
       flight_number: "16645",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 9.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -494,7 +493,7 @@ module.exports = {
       flight_number: "12385",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 8.3,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -507,7 +506,7 @@ module.exports = {
       flight_number: "44385",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -520,7 +519,7 @@ module.exports = {
       flight_number: "12300",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 2,
+      rating: 9.2,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -535,7 +534,7 @@ module.exports = {
           flight_number: "12385",
           depart_time: new Date(moment()),
           arrival_time: new Date(moment().add(4, 'hours')),
-          rating: 3,
+          rating: 8.3,
           eco: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -548,7 +547,7 @@ module.exports = {
           flight_number: "44365",
           depart_time: new Date(moment()),
           arrival_time: new Date(moment().add(4, 'hours')),
-          rating: 4,
+          rating: 7.4,
           eco: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -561,7 +560,7 @@ module.exports = {
           flight_number: "12300",
           depart_time: new Date(moment()),
           arrival_time: new Date(moment().add(4, 'hours')),
-          rating: 2,
+          rating: 9.2,
           eco: false,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -576,7 +575,7 @@ module.exports = {
       flight_number: "13345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -589,7 +588,7 @@ module.exports = {
       flight_number: "22345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 2,
+      rating: 9.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -605,7 +604,7 @@ module.exports = {
       flight_number: "13245",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.7,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -618,7 +617,7 @@ module.exports = {
       flight_number: "44345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 2,
+      rating: 7.2,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -633,7 +632,7 @@ module.exports = {
       flight_number: "32395",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 6.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -647,7 +646,7 @@ module.exports = {
       flight_number: "55395",
      depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -663,7 +662,7 @@ module.exports = {
       flight_number: "23345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 5,
+      rating: 8.5,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -677,7 +676,7 @@ module.exports = {
       flight_number: "19345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 7.7,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -691,7 +690,7 @@ module.exports = {
       flight_number: "19345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -705,7 +704,7 @@ module.exports = {
       flight_number: "33345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.8,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -719,7 +718,7 @@ module.exports = {
       flight_number: "19333",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 7.6,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -733,7 +732,7 @@ module.exports = {
       flight_number: "22345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 7.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -750,7 +749,7 @@ module.exports = {
       flight_number: "13345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -764,7 +763,7 @@ module.exports = {
       flight_number: "72348",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 2,
+      rating: 9.2,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -778,7 +777,7 @@ module.exports = {
       flight_number: "55349",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 7.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -792,7 +791,7 @@ module.exports = {
       flight_number: "42345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.3,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -806,7 +805,7 @@ module.exports = {
       flight_number: "44345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 9.3,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -820,7 +819,7 @@ module.exports = {
       flight_number: "64345",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 8.3,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -835,7 +834,7 @@ module.exports = {
       flight_number: "74745",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 3,
+      rating: 7.3,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -849,7 +848,7 @@ module.exports = {
       flight_number: "14749",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 8.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -863,7 +862,7 @@ module.exports = {
       flight_number: "42749",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 7.7,
       eco: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -877,7 +876,7 @@ module.exports = {
       flight_number: "43349",
       depart_time: new Date(moment()),
       arrival_time: new Date(moment().add(4, 'hours')),
-      rating: 4,
+      rating: 9.4,
       eco: false,
       createdAt: new Date(),
       updatedAt: new Date()
