@@ -14,6 +14,18 @@ module.exports = {
       hashed_password: {
         type: Sequelize.STRING
       },
+      number_adults: {
+        type: Sequelize.INTEGER
+      },
+      number_children: {
+        type: Sequelize.INTEGER
+      },
+      departingFlightId: {
+        type: Sequelize.INTEGER
+      },
+      arrivingFlightId: { 
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

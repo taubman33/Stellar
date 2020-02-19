@@ -5,6 +5,10 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [{
       name: 'Charles Mingus',
       hashed_password: 'password',
+      number_adults: 2,
+      number_children: 2,
+      departingFlightId: 1,
+      arrivingFlightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -12,6 +16,10 @@ module.exports = {
     {
       name: 'Miles Davis',
       hashed_password: 'password',
+      number_adults: 2,
+      number_children: 3,
+      departingFlightId: 1,
+      arrivingFlightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -19,6 +27,10 @@ module.exports = {
     {
       name: 'John Coltrane',
       hashed_password: 'password',
+      number_adults: 2,
+      number_children: 4,
+      departingFlightId: 1,
+      arrivingFlightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -27,6 +39,10 @@ module.exports = {
     {
       name: 'Thelonious Monk',
       hashed_password: 'password',
+      number_adults: 1,
+      number_children: 1,
+      departingFlightId: 3,
+      arrivingFlightId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -35,6 +51,10 @@ module.exports = {
     {
       name: 'Paul Chambers',
       hashed_password: 'password',
+      number_adults: 2,
+      number_children: 3,
+      departingFlightId: 4,
+      arrivingFlightId: 1,
         createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -42,6 +62,12 @@ module.exports = {
     {
       name: 'Tommy Flannigan',
       hashed_password: 'password',
+      number_adults: 2,
+      number_children: 4,
+      departingFlightId: 2,
+      arrivingFlightId: 3,
+      departingFlightId: 1,
+      arrivingFlightId: 2,
         createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -49,21 +75,32 @@ module.exports = {
     {
       name: 'Wayne Shorter',
       hashed_password: 'password',
-        createdAt: new Date(),
+      number_adults: 2,
+      number_children: 1,
+      departingFlightId: 1,
+      arrivingFlightId: 2,
+      createdAt: new Date(),
       updatedAt: new Date()
     },
 
     {
       name: 'Wes Montgomery',
       hashed_password: 'password',
-        createdAt: new Date(),
+      number_adults: 2,
+      number_children: 1,
+      departingFlightId: 1,
+      arrivingFlightId: 2,
+      createdAt: new Date(),
       updatedAt: new Date()
     },
-
     {
       name: 'Sonny Rollins',
       hashed_password: 'password',
-        createdAt: new Date(),
+      number_adults: 2,
+      number_children: 3,
+      departingFlightId: 1,
+      arrivingFlightId: 2,
+      createdAt: new Date(),
       updatedAt: new Date()
     }], {});
   },

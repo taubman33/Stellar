@@ -12,7 +12,7 @@ const moment = require('moment');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Flights', [
+    return queryInterface.bulkInsert('DepartingFlights', [
 
 
       //leaving JFK
@@ -210,9 +210,7 @@ module.exports = {
       updatedAt: new Date()
     },
 
-
     //leaving LGA
-
 
   //to SFO
   {
@@ -893,6 +891,6 @@ module.exports = {
   ], {});
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Flights', null, {});
+    return queryInterface.bulkDelete('DepartingFlights', null, {});
   }
 };

@@ -18,29 +18,13 @@ router.get('/users/:id', controllers.getUserById)
 //create route to sign up a new user ->PMVP
 router.post('/users', controllers.createUser)
 
+//create route for all flights for users
 
-// //shows a users itineraries
-// router.get('users/:user_id/itineraries', controllers.getAllItineraries)
-
-
-// //shows users itineraries including flight and hotel info
-// router.get('/users/:user_id/itineraries/:id', controllers.getItineraryById)
+router.get('/users/:id/flights', controllers.getAllFlights)
 
 
-// //creates a new itinerary
-// router.post('/users/:user_id/itineraries', controllers.createItinerary)
-
-
-// //change user itinerary info
-// router.put('/users/:user_id/itineraries/:id', controllers.updateItinerary)
-
-
-// //cancels a users itinerary
-// router.delete('/users/:user_id/itineraries/:id', controllers.cancelItinerary)
-
-
-//shows info for flights in a single itinerary
-router.get('/users/:user_id/itineraries/:id/flights', controllers.getFlightById)
+// //shows info for flights in a single itinerary
+// router.get('/users/:user_id/itineraries/:id/flights', controllers.getFlightById)
 
 
 //shows info for hotel bookings in single itinerary -> PMVP
