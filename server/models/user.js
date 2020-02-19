@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     hashed_password: DataTypes.STRING
   }, {});
   User.associate = function(models) {
-    User.hasMany(models.Itinerary, {
+    User.hasOne(models.Itinerary, {
       foreignKey: 'userId',
       onDelete: 'CASCADE'
     });

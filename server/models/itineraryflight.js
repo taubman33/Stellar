@@ -6,11 +6,15 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ItineraryFlight.associate = function(models) {
     
+    ItineraryFlight.belongsToOne(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE'
+    });  
     ItineraryFlight.hasMany(models.Flight, {
       foreignKey: 'flightId',
       onDelete: 'CASCADE'
     });  
-    ItineraryFlight.hasMany(models.Itinerary, {
+    ItineraryFlight.hasOne(models.Itinerary, {
       foreignKey: 'itineraryId',
       onDelete: 'CASCADE'
     }); 

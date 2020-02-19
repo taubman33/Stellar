@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     }}
   }, {});
   Flight.associate = function(models) {
-   Flight.belongsToMany(models.Itinerary, {
+   Flight.belongsToOne(models.Itinerary, {
     through: 'ItineraryFlight',  
     as: 'itineraries',
     foreignKey: 'flightId',
