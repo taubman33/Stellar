@@ -26,7 +26,6 @@ const getUserById = async (req, res) => {
     }
   };
 
-
 //create user -> PMVP
 const createUser = async (req, res) => {
     try {
@@ -74,6 +73,40 @@ const deleteUser = async (req, res) => {
 };
 
 
+//get arriving flight by id
+const getArrivingFlightById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const arrivingFlight = await ArrivingFlight.findOne({
+      where: { id: id },
+    });
+    if (arrivingFlight) {
+      return res.status(200).json({ arrivingFlight });
+    }
+    return res.status(404).send('Flight with the specified ID does not exists');
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+
+//get departing flight by id
+const getDepartingFlightById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const departingFlight = await DepartingFlight.findOne({
+      where: { id: id },
+    });
+    if (departingFlight) {
+      return res.status(200).json({ departingFlight });
+    }
+    return res.status(404).send('User with the specified ID does not exists');
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+
 //get all Arriving flights
 const getAllArrivingFlights = async (req, res) => {
   try {
@@ -95,9 +128,6 @@ const getAllDepartingFlights = async (req, res) => {
   };
 
 
-
-
-
 module.exports = {
 getAllUsers,
 getUserById,
@@ -105,5 +135,8 @@ createUser,
 updateUser,
 deleteUser,
 getAllArrivingFlights,
-getAllDepartingFlights
+getAllDepartingFlights,
+getArrivingFlightById,
+getDepartingFlightById
+
 }

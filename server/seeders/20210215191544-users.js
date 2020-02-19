@@ -18,7 +18,7 @@ module.exports = {
       hashed_password: 'password',
       number_adults: 2,
       number_children: 3,
-      departingFlightId: 1,
+      departingFlightId: 2,
       arrivingFlightId: 35,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -29,7 +29,7 @@ module.exports = {
       hashed_password: 'password',
       number_adults: 2,
       number_children: 4,
-      departingFlightId: 1,
+      departingFlightId: 3,
       arrivingFlightId: 35,
       createdAt: new Date(),
       updatedAt: new Date()

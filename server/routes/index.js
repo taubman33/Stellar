@@ -24,11 +24,11 @@ router.delete('/users', controllers.updateUser)
 
 //create route for all flights for users
 
-router.get('/users/:id/arrivingflight', controllers.getAllArrivingFlights)
+router.get('/users/:id/arrivingflight', controllers.getArrivingFlightById)
 
 //create route for all flights for users
 
-router.get('/users/:id/departingflight', controllers.getAllDepartingFlights)
+router.get('/users/:id/departingflight', controllers.getDepartingFlightById)
 
 
 module.exports = router
