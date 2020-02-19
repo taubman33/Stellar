@@ -6,14 +6,36 @@
   --brownish-grey: #616161;
 }
 
-.choose-container {
+.flights {
+  font-family: 'Helvetica', sans-serif;
+  background-color: #E6E6E6;
+  border: solid 1px var(--medium-grey);
+}
 
+.choose-container {
+  display: flex;
+  margin: 35px 0 0 100px;
+  flex-basis: content;
+}
+
+.choose-container * {
+  margin-right: 10px;
+}
+
+.choose-container p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.flight-right-caret {
+  font-size: 22px;
+  margin-left: 10px;
 }
 
 .hotel-container {
   display: flex;
   flex-direction: row;
-  margin: 101px 207px 541px 109px;
+  margin: 20px 207px 541px 109px;
   width: 1124px;
   height: 196px;
   object-fit: contain;
@@ -43,7 +65,6 @@
 .city-of-stars-hotel {
   width: 153px;
   height: 19px;
-  font-family: HelveticaNeue;
   font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
@@ -64,7 +85,6 @@
 .flight-dates {
   width: 203px;
   height: 18px;
-  font-family: HelveticaNeue;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -82,7 +102,6 @@
 .starting-price {
   width: 111px;
   height: 18px;
-  font-family: HelveticaNeue;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -95,7 +114,6 @@
 .eco-package-savings {
   width: 179px;
   height: 18px;
-  font-family: HelveticaNeue;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -108,7 +126,6 @@
 .total-trip-price {
   width: 117px;
   height: 18px;
-  font-family: HelveticaNeue;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;

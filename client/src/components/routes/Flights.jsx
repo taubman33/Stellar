@@ -7,11 +7,11 @@ export default function Flights(props) {
     <div className="flights">
       <div className="choose-container">
         <img src={require('../../assets/checkbox.svg')} alt='checkbox-circle' className="checkbox-circle" />
-        <p>Choose your hotel</p>
+        <p>Choose your hotel<span className='flight-right-caret'> ></span></p>
         <img src={require('../../assets/checkbox.svg')} alt='checkbox-circle' className="checkbox-circle" />
-        <p>Choose your room</p>
+        <p>Choose your room<span className='flight-right-caret'> ></span></p>
         <img src={require('../../assets/airplane-circle.svg')} alt='airplane-circle' className="airplane-circle" />
-        <p>Choose your departure flight</p>
+        <p>Choose your departure flight<span className='flight-right-caret'> ></span></p>
         <img src={require('../../assets/airplane-circle.svg')} alt='airplane-circle' className="airplane-circle" />
         <p>Choose your return flight</p>
       </div>
@@ -77,4 +77,3 @@ export default function Flights(props) {
     </div>
   )
 }
-
