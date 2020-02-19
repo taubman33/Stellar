@@ -6,10 +6,24 @@ function HomeForm(props) {
   return (
     <div className='home-form'>
       <Formik
-        initialValues={{ adults: 1, children: 0, directFlights: false }}
-        onSubmit={(values) => props.handleHomeSubmit(values, props.history)}
+        enableReinitialize
+       initialValues={{ adults: 1, children: 0, directFlights: false, departureDate: props.date.departure, returnDate: props.date.return}}
+       onSubmit={(vals) => {
+         props.handleHomeSubmit(vals, props.history)}}
       >
         <Form>
+          <label>
+            Flying from
+            <Field as="select" name="flyingFrom">
+              <option value="New York, NY">New York, NY (NYC - All Airports)</option>
+            </Field>
+          </label>
+          <label>
+            Flying to
+            <Field as="select" name="flyingTo">
+              <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
+            </Field>
+          </label>
           <div className='home-calendar-numpassengers'>
             <label className='home-label-above' id='departure-date'>
               <p>Departing</p>
@@ -49,8 +63,9 @@ function HomeForm(props) {
               <Field type="checkbox" name="directFlights" />
               <p>Direct flights only</p>
               <Field type="checkbox" name="ecoFriendly" />
-              <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option) {<span className='center-image'><img alt='question-icon' src={require('../assets/question-circle.png')} /></span>
-              }</p>
+              <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)
+                <img alt='question-icon' src={require('../assets/question-circle.png')} className='home-question-icon'/>
+              </p>
           </div>
           <label className='home-preferred-class'>
             <p>Preferred Class</p>
