@@ -16,15 +16,28 @@ module.exports = {
       },
       number_adults: {
         type: Sequelize.INTEGER
+
       },
       number_children: {
         type: Sequelize.INTEGER
       },
       departingFlightId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'DepartingFlights',
+          key: 'id',
+          as: 'departingFlightId'
+        }
       },
       arrivingFlightId: { 
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'ArrivingFlights',
+          key: 'id',
+          as: 'arrivingFlightId'
+        }
       },
       createdAt: {
         allowNull: false,

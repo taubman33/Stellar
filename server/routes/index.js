@@ -20,7 +20,11 @@ router.post('/users', controllers.createUser)
 
 //create route for all flights for users
 
-router.get('/users/:id/flights', controllers.getAllFlights)
+router.get('/users/:id/arrivingflight', controllers.getAllArrivingFlights)
+
+//create route for all flights for users
+
+router.get('/users/:id/departingflight', controllers.getAllDepartingFlights)
 
 
 // //shows info for flights in a single itinerary

@@ -9,22 +9,13 @@ module.exports = (sequelize, DataTypes) => {
     depart_time: DataTypes.DATE,
     arrival_time: DataTypes.DATE,
     rating: DataTypes.INTEGER,
-    eco: DataTypes.BOOLEAN,
-    userId: {
-      type: DataTypes.INTEGER,
-       references: {
-        model: 'User',
-        key: 'id',
-        as: 'userId'
-
-      }
-    }
+    eco: DataTypes.BOOLEAN
 
 
   }, {});
   ArrivingFlight.associate = function(models) {
-   ArrivingFlight.belongsToMany(models.User, {
-    foreignKey: 'userId',
+   ArrivingFlight.hasMany(models.User, {
+      foreignKey: 'arrivingFlightId',
       onDelete: 'CASCADE'
     });  
   };

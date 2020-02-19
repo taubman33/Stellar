@@ -19,19 +19,20 @@ module.exports = (sequelize, DataTypes) => {
       references: {
       model: 'ArrivingFlight',
       key: 'id',
-      as: 'arrivingingFlightId'
+      as: 'arrivingFlightId'
 
     }
   },
 
   }, {});
+
   User.associate = function(models) {
-    User.hasOne(models.DepartingFlight, {
-      foreignKey: 'userId',
+    User.belongsTo(models.DepartingFlight, {
+      foreignKey: 'departingFlightId',
       onDelete: 'CASCADE'
     });
-    User.hasOne(models.ArrivingFlight, {
-      foreignKey: 'userId',
+    User.belongsTo(models.ArrivingFlight, {
+      foreignKey: 'arrivingFlightId',
       onDelete: 'CASCADE'
     });
   };

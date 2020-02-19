@@ -1,4 +1,4 @@
-const { User, Flight } = require('../models')
+const { User, ArrivingFlight, DepartingFlight } = require('../models')
 
 //get all users
 const getAllUsers = async (req, res) => {
@@ -39,15 +39,25 @@ const createUser = async (req, res) => {
   };
 
 
-  //get all flights
-const getAllFlights = async (req, res) => {
+  //get all Arriving flights
+const getAllArrivingFlights = async (req, res) => {
   try {
-    const flights = await Flight.findAll();
-    return res.status(200).json({ flights });
+    const arrivingFlight = await ArrivingFlight.findAll();
+    return res.status(200).json({ arrivingFlight });
   } catch (error) {
     return res.status(500).send(error.message);
   }
 };
+
+  //get all Departing flights
+  const getAllDepartingFlights = async (req, res) => {
+    try {
+      const departingFlight = await DepartingFlight.findAll();
+      return res.status(200).json({ departingFlight });
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
+  };
 
 
 
@@ -77,7 +87,8 @@ module.exports = {
 getAllUsers,
 getUserById,
 createUser,
-getAllFlights
+getAllArrivingFlights,
+getAllDepartingFlights
 // getFlightById
 
 
