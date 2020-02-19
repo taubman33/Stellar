@@ -6,12 +6,15 @@ export default function TripReview() {
     <div className='trip-review'>
       <div className='trip-review-header'>
         <p className='trip-review-header-title'>{`Your trip to ${'Los Angeles'}`}</p>
-        <p><img alt='green-check' src={require('../../assets/check.svg')} />Price Guarantee</p>
+        <p className='trip-review-header-guarantee'><img alt='green-check' src={require('../../assets/check.svg')} />Price Guarantee</p>
       </div>
       <main className='trip-review-main'>
         <div className='trip-review-main-top'>
-          <p><img alt='airplane-circle' src={require('../../assets/airplane-circle.svg')} />{`Fri, Mar 20 - Sun, Mar 22`}</p>
-          <p className='trip-review-top-details'>{`Roundtrip - 1 traveler`}</p>
+          <img alt='airplane-circle' src={require('../../assets/airplane-circle.svg')} className='trip-review-airplane-icon' />
+          <div className='trip-review-main-top-aside'>
+            <p className='trip-review-top-dates'>{`Fri, Mar 20 - Sun, Mar 22`}</p>
+            <p className='trip-review-top-details'>{`Roundtrip - 1 traveler`}</p>
+          </div>
         </div>
         <div className='trip-review-flights-container'>
           <div className='trip-review-flight-details'>

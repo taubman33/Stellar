@@ -21,6 +21,33 @@
   margin: 5px 0 0 0;
 }
 
+.trip-review-header-guarantee {
+  color: green;
+}
+
 .trip-review-header-title {
   font-size: 28px;
+}
+
+.trip-review-main {
+  margin-top: 80px;
+}
+
+.trip-review-main-top {
+  display: flex;
+}
+
+.trip-review-main-top-aside {
+  margin-left: 20px;
+}
+
+.trip-review-top-dates {
+  margin: 0;
+  font-size: 20px;
+}
+
+.trip-review-top-details {
+  margin: 0;
+  margin-top: 10px;
+  color: gray;
 }
