@@ -126,7 +126,7 @@ const getAllDepartingFlights = async (req, res) => {
 
 
 
-//delete all arriving flights
+//delete an arriving flight
 const deleteArrivingFlights = async (req, res) => {
   try {
       const { id } = req.params;
@@ -143,7 +143,7 @@ const deleteArrivingFlights = async (req, res) => {
 };
 
 
-//delete all departing flights
+//delete a departing flight
 const deleteDepartingFlights = async (req, res) => {
   try {
       const { id } = req.params;
