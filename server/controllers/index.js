@@ -83,7 +83,7 @@ const getArrivingFlightById = async (req, res) => {
     if (arrivingFlight) {
       return res.status(200).json({ arrivingFlight });
     }
-    return res.status(404).send('Flight with the specified ID does not exists');
+    return res.status(404).send('Flight with the specified ID does not exist');
   } catch (error) {
     return res.status(500).send(error.message);
   }
@@ -100,7 +100,7 @@ const getDepartingFlightById = async (req, res) => {
     if (departingFlight) {
       return res.status(200).json({ departingFlight });
     }
-    return res.status(404).send('User with the specified ID does not exists');
+    return res.status(404).send('Flight with the specified ID does not exist');
   } catch (error) {
     return res.status(500).send(error.message);
   }
