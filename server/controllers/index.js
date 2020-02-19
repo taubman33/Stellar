@@ -26,6 +26,7 @@ const getUserById = async (req, res) => {
     }
   };
 
+
 //create user -> PMVP
 const createUser = async (req, res) => {
     try {
@@ -38,8 +39,42 @@ const createUser = async (req, res) => {
     }
   };
 
+//update user
+const updateUser = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const { user } = req.body
+      const [updated] = await User.update(User, {
+          where: { id: id }
+      });
+      if (updated) {
+          const updatedUser = await User.findOne({ where: { id: id } });
+          return res.status(200).json({ user: updatedUser });
+      }
+      throw new Error('User not found, check the airport bar!');
+  } catch (error) {
+      return res.status(500).send(error.message);
+  }
+};
 
-  //get all Arriving flights
+//delete user
+const deleteUser = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const deleted = await User.destroy({
+          where: { id: id }
+      });
+      if (deleted) {
+          return res.status(200).send("User deleted");
+      }
+      throw new Error("User not found");
+  } catch (error) {
+      return res.status(500).send(error.message);
+  }
+};
+
+
+//get all Arriving flights
 const getAllArrivingFlights = async (req, res) => {
   try {
     const arrivingFlight = await ArrivingFlight.findAll();
@@ -49,8 +84,8 @@ const getAllArrivingFlights = async (req, res) => {
   }
 };
 
-  //get all Departing flights
-  const getAllDepartingFlights = async (req, res) => {
+//get all Departing flights
+const getAllDepartingFlights = async (req, res) => {
     try {
       const departingFlight = await DepartingFlight.findAll();
       return res.status(200).json({ departingFlight });
@@ -61,35 +96,14 @@ const getAllArrivingFlights = async (req, res) => {
 
 
 
-//get flight by id
-// const getFlightById = async (req, res) => {
-//     try {
-//       const { id } = req.params;
-//       const flight = await User.findOne({
-//         where: { id: id },
-//         include: [
-//           {
-//             model: Flight
-//           }
-//         ]
-//       });
-//       if (user) {
-//         return res.status(200).json({ user });
-//       }
-//       return res.status(404).send('User with the specified ID does not exists');
-//     } catch (error) {
-//       return res.status(500).send(error.message);
-//     }
-//   };
 
 
 module.exports = {
 getAllUsers,
 getUserById,
 createUser,
+updateUser,
+deleteUser,
 getAllArrivingFlights,
 getAllDepartingFlights
-// getFlightById
-
-
 }

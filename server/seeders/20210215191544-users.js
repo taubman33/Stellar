@@ -8,7 +8,7 @@ module.exports = {
       number_adults: 2,
       number_children: 2,
       departingFlightId: 1,
-      arrivingFlightId: 2,
+      arrivingFlightId: 35,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -19,7 +19,7 @@ module.exports = {
       number_adults: 2,
       number_children: 3,
       departingFlightId: 1,
-      arrivingFlightId: 2,
+      arrivingFlightId: 35,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -30,7 +30,7 @@ module.exports = {
       number_adults: 2,
       number_children: 4,
       departingFlightId: 1,
-      arrivingFlightId: 2,
+      arrivingFlightId: 35,
       createdAt: new Date(),
       updatedAt: new Date()
     },
