@@ -38,6 +38,7 @@ Stellar is a travel booking website specializing in eco-friendly travel arrangem
 - Hotel booking
 - Additional flight options (more baggage, etc.)
 - Many itineraries per user
+- Eco popup should not clear form
 ​
 ​
 ## ERD Diagram
@@ -157,8 +158,7 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 Disagreement over which features are important / implementable in a reasonable time.
 ​
 ## Issues and Resolutions
-One of our core features was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place. Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table.
-
+One of our core features was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place. Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table. To avoid having Many flights to Many users, made duplicate ArrivingFlights and DepartingFlights so that we have 2 one-to-one associations. Eco-friendly popup clears form, remainss unresolved.
 ​
 ## Code Snippet
 ​
