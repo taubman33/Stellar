@@ -14,6 +14,11 @@ const Nav = props => (
         <Link to='#' className='nav-link'>Account</Link>
         <Link to='#' className='nav-link'>My lists</Link>
       </nav>
+      <div className='hamburger-box'>
+        <p className='hamburger-rect'></p>
+        <p className='hamburger-rect'></p>
+        <p className='hamburger-rect'></p>
+      </div>
     </div>
     <nav className='nav-main'>
       <Link to='#' className='nav-link'>Hotels</Link>

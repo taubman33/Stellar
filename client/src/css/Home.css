@@ -154,3 +154,7 @@
   border: solid 1px #d9294e;
   padding: 10px 20px;
 }
+
+@media (max-width < 500) {
+
+}
