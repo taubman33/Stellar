@@ -143,7 +143,6 @@ const deleteArrivingFlights = async (req, res) => {
 };
 
 
-
 //delete all departing flights
 const deleteDepartingFlights = async (req, res) => {
   try {
