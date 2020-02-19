@@ -16,7 +16,7 @@ class Main extends React.Component {
         this.state = {
             date: {
                 departure: moment().format('YYYY-MM-DD'),
-                return: moment().format('YYYY-MM-DD')
+                return: moment().add(1, 'd').format('YYYY-MM-DD')
             },
             passengers: {
                 adults: 1,
@@ -34,6 +34,7 @@ class Main extends React.Component {
             showEcoPopup: false
         }
     }
+
 
     handleHomeSubmit = (values, history) => {
         this.setState({
@@ -66,11 +67,11 @@ class Main extends React.Component {
         })
     }
 
-    handleDeparting = (e) => {
+    handleDeparting = () => {
         this.setState({
             departing: !this.state.departing
         })
-        console.log('this is working')
+        console.log('handle departing working')
     }
 
     render() {
