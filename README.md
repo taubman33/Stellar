@@ -129,8 +129,8 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 | Setting up back end data | H | 7hrs| 7hrs |
 | CRUD back end functionality | H | 10hrs | 10hrs | 
 | Setting up React components | H | 12hrs | 3hrs |
-| React Functionality (Links) | H | 10-12hrs | | 
-| Adding all button functionality | H | 10-12hrs | |
+| React Functionality (Links/Forms) | H | 10-12hrs | 10hrs | 
+| Adding all button functionality | H | 10-12hrs |  |
 | ‘Green / Eco ’ Button functions | H | 5hrs| 2hrs |
 | Math functions | H | 5-7hrs | |
 | Meeting with UX to discuss progress/problems | H | 40m/day | 20m |
