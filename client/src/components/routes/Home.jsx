@@ -50,7 +50,8 @@ function Home(props) {
             <p>Multi-city</p>
           </Link>
         </div>
-        <HomeForm  history={props.history} date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} />
+        <HomeForm  history={props.history} date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange}
+        handleEcoClick={props.handleEcoClick} />
       </div>
     </div>
   )

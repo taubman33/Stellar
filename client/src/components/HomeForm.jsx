@@ -66,7 +66,11 @@ function HomeForm(props) {
               <p>Direct flights only</p>
               <Field type="checkbox" name="ecoFriendly" />
               <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)
-                <img alt='question-icon' src={require('../assets/question-circle.png')} className='home-question-icon'/>
+                <img alt='question-icon'
+                  src={require('../assets/question-circle.png')}
+                  className='home-question-icon'
+                  onClick={props.handleEcoClick}
+                />
               </p>
           </div>
           <label className='home-preferred-class'>
