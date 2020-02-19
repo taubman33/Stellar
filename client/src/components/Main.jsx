@@ -30,6 +30,7 @@ class Main extends React.Component {
                 directFlight: null,
                 ecoFriendly: null
             },
+            departing: false,
             showEcoPopup: false
         }
     }
@@ -65,6 +66,13 @@ class Main extends React.Component {
         })
     }
 
+    handleDeparting = (e) => {
+        this.setState({
+            departing: !this.state.departing
+        })
+        console.log('this is working')
+    }
+
     render() {
       console.log('rendering main')
         return (
@@ -72,7 +80,7 @@ class Main extends React.Component {
                 <Nav />
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleEcoClick={this.handleEcoClick} />} />
                 <Route exact path="/flights">
-                    <Flights requestInfo={this.state} />
+                    <Flights requestInfo={this.state} handleDeparting={this.handleDeparting} departing={this.state.departing}/>
                 </Route>
                 <Route exact path="/trip-review">
                     <TripReview />
