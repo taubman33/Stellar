@@ -19,24 +19,24 @@ router.get('/users/:id', controllers.getUserById)
 router.post('/users', controllers.createUser)
 
 
-//shows a users itineraries
-router.get('users/:user_id/itineraries', controllers.getAllItineraries)
+// //shows a users itineraries
+// router.get('users/:user_id/itineraries', controllers.getAllItineraries)
 
 
-//shows users itineraries including flight and hotel info
-router.get('/users/:user_id/itineraries/:id', controllers.getItineraryById)
+// //shows users itineraries including flight and hotel info
+// router.get('/users/:user_id/itineraries/:id', controllers.getItineraryById)
 
 
-//creates a new itinerary
-router.post('/users/:user_id/itineraries', controllers.createItinerary)
+// //creates a new itinerary
+// router.post('/users/:user_id/itineraries', controllers.createItinerary)
 
 
-//change user itinerary info
-router.put('/users/:user_id/itineraries/:id', controllers.updateItinerary)
+// //change user itinerary info
+// router.put('/users/:user_id/itineraries/:id', controllers.updateItinerary)
 
 
-//cancels a users itinerary
-router.delete('/users/:user_id/itineraries/:id', controllers.cancelItinerary)
+// //cancels a users itinerary
+// router.delete('/users/:user_id/itineraries/:id', controllers.cancelItinerary)
 
 
 //shows info for flights in a single itinerary
