@@ -12,18 +12,20 @@ function HomeForm(props) {
          props.handleHomeSubmit(vals, props.history)}}
       >
         <Form>
-          <label>
-            Flying from
-            <Field as="select" name="flyingFrom">
-              <option value="New York, NY">New York, NY (NYC - All Airports)</option>
-            </Field>
-          </label>
-          <label>
-            Flying to
-            <Field as="select" name="flyingTo">
-              <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
-            </Field>
-          </label>
+          <div className='home-flying'>
+            <label className='home-label-above'>
+              <p>Flying from</p>
+              <Field as="select" name="flyingFrom">
+                <option value="New York, NY">New York, NY (NYC - All Airports)</option>
+              </Field>
+            </label>
+            <label className='home-label-above'>
+              <p>Flying to</p>
+              <Field as="select" name="flyingTo">
+                <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
+              </Field>
+            </label>
+          </div>
           <div className='home-calendar-numpassengers'>
             <label className='home-label-above' id='departure-date'>
               <p>Departing</p>
@@ -64,7 +66,11 @@ function HomeForm(props) {
               <p>Direct flights only</p>
               <Field type="checkbox" name="ecoFriendly" />
               <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)
-                <img alt='question-icon' src={require('../assets/question-circle.png')} className='home-question-icon'/>
+                <img alt='question-icon'
+                  src={require('../assets/question-circle.png')}
+                  className='home-question-icon'
+                  onClick={props.handleEcoClick}
+                />
               </p>
           </div>
           <label className='home-preferred-class'>

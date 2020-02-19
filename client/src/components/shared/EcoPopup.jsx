@@ -1,10 +1,11 @@
 import React from 'react'
 import '../../css/EcoPopup.css'
 
+
 const EcoPopup = props => (
   <div className='eco-popup'>
     <div className='eco-popup-box'>
-      <button className='eco-close-button' onClick={props.handlePopupClose}>Close</button>
+      <button className='eco-close-button' onClick={props.handleEcoClick}>Close</button>
       <div className='eco-texts'>
         <br />
         <p className='eco-title'>Eco-Friendly:</p>

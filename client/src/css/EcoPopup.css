@@ -1,5 +1,10 @@
 .eco-popup {
   background-color: #FFFFFF88;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .eco-popup-box {

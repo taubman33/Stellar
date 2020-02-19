@@ -30,7 +30,7 @@ class Main extends React.Component {
                 directFlight: null,
                 ecoFriendly: null
             },
-            isHovering: false
+            showEcoPopup: false
         }
     }
 
@@ -48,18 +48,12 @@ class Main extends React.Component {
         history.push('/flights')
     }
 
-    handleHovering = () => {
-        this.setState({
-            ...this.state,
-            isHovering: !this.state.isHovering
-        })
-        console.log('handling your hover')
-    }
-
-    handlePopupClose = () => {
-        this.setState({
-            isHovering: false
-        })
+    handleEcoClick = event => {
+      event.preventDefault()
+      console.log('ecoClick', !this.state.showEcoPopup)
+      this.setState({
+        showEcoPopup: this.state.showEcoPopup ? false : true
+      })
     }
 
     handleDateChange = event => {
@@ -72,11 +66,11 @@ class Main extends React.Component {
     }
 
     render() {
+      console.log('rendering main')
         return (
             <div className="main">
                 <Nav />
-                <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleHovering={this.handleHovering} />} />
-
+                <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleEcoClick={this.handleEcoClick} />} />
                 <Route exact path="/flights">
                     <Flights requestInfo={this.state} />
                 </Route>
@@ -89,6 +83,7 @@ class Main extends React.Component {
                 <Route exact path="/confirmation">
                     <Confirmation />
                 </Route>
+                {this.state.showEcoPopup ? <EcoPopup handleEcoClick={this.handleEcoClick}/> : <></>}
             </div>
         )
     }
