@@ -37,6 +37,7 @@ Stellar is a travel booking website specializing in eco-friendly travel arrangem
 - Input Validation
 - Hotel booking
 - Additional flight options (more baggage, etc.)
+- Many itineraries per user
 ​
 ​
 ## ERD Diagram
@@ -124,17 +125,17 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 ## Timeframes
 | Component | Priority | Estimated Time | Time Invested | 
 | --- | :---: | :---: | :---: |
-| Prep work - wireframes/ERD/comp hierarchy | H | 9hrs| 9hrs |
-| Setting up back end data | H | 7hrs| |
-| CRUD back end functionality | H | 10hrs| | 
-| Setting up React components | H | 12hrs| |
-| React Functionality (Links) | H | 10-12hrs| | 
-| Adding all button functionality | H | 10-12hrs| |
-| ‘Green / Eco ’ Button functions | H | 5hrs| |
-| Math functions | H | 5-7hrs| |
-| Meeting with UX to discuss progress/problems | H | 40m/day| |
+| Prep work - wireframes/ERD/comp hierarchy | H | 9hrs | 9hrs |
+| Setting up back end data | H | 7hrs| 7hrs |
+| CRUD back end functionality | H | 10hrs | 10hrs | 
+| Setting up React components | H | 12hrs | 3hrs |
+| React Functionality (Links) | H | 10-12hrs | | 
+| Adding all button functionality | H | 10-12hrs | |
+| ‘Green / Eco ’ Button functions | H | 5hrs| 2hrs |
+| Math functions | H | 5-7hrs | |
+| Meeting with UX to discuss progress/problems | H | 40m/day | 20m |
 | Post MVP functions (Hotels, Cars, Activities) | L | 10hrs | |
-| Style - Matching UX design | H | 18hrs| |
+| Style - Matching UX design | H | 18hrs | 9hrs |
 | Total | H | 100 hrs| |
 ​
 ​
@@ -148,13 +149,16 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 - pg - JS interface with postgreSQL
 - faker - Generate example data
 - formik - Less verbose React forms
+- jest - Testing framework
+- supertest - Testing framework
 ​
 ​
 ## Expected Issues
 Disagreement over which features are important / implementable in a reasonable time.
 ​
 ## Issues and Resolutions
-One of our core features was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place.
+One of our core features was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place. Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table.
+
 ​
 ## Code Snippet
 ​
@@ -168,5 +172,5 @@ function reverse(string) {
 ​
 ## Change Log
 ​
-Update as neccessary with any changes or directional adjustments made throughout the project week
+Moved itinerary information to the User table, and eliminated the Itinerary and ItineraryFlight tables.
 
