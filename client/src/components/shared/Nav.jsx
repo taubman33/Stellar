@@ -6,7 +6,7 @@ const Nav = props => (
   <div className='nav'>
     <div className='nav-top'>
       <div className='nav-top-left'>
-        <h1 className='big-logo'>STELLAR</h1>
+        <img className='nav-logo' alt='logo-white' src={require('../../assets/logo-orbitz-white.png')}/>
         <Link to='#' className='join-rewards nav-link'>Join Rewards</Link>
       </div>
       <nav className='nav-user'>
