@@ -81,6 +81,7 @@
   display: none;
 }
 
+/* written for 410 X 900 screen */
 @media (max-width: 500px) {
   .join-rewards.nav-link {
     display: none;

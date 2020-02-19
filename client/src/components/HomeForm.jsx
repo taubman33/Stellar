@@ -21,7 +21,7 @@ function HomeForm(props) {
               <img src={require('../assets/calendar.svg')} alt='calendar-icon' className='calendar-icon' />
               <input type="date" value={props.date.return} onChange={props.handleDateChange} name="return" />
             </label>
-            <label className='home-label-above'>
+            <label className='home-label-above home-dropdowns'>
               <p>Adults</p>
               <Field as="select" name="adults">
                 <option value="1">1</option>
@@ -32,7 +32,7 @@ function HomeForm(props) {
                 <option value="6">6</option>
               </Field>
             </label>
-            <label className='home-label-above'>
+            <label className='home-label-above home-dropdowns'>
               <p>Kids</p>
               <Field as="select" name="children">
                 <option value="0">0</option>
@@ -49,7 +49,8 @@ function HomeForm(props) {
               <Field type="checkbox" name="directFlights" />
               <p>Direct flights only</p>
               <Field type="checkbox" name="ecoFriendly" />
-              <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)</p>
+              <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option) {<span className='center-image'><img alt='question-icon' src={require('../assets/question-circle.png')} /></span>
+              }</p>
           </div>
           <label className='home-preferred-class'>
             <p>Preferred Class</p>
