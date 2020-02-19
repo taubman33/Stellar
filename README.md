@@ -97,6 +97,7 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 
 
   ```
+  ```
      {
     "departingFlight": {
         "id": 2,
@@ -111,8 +112,7 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
         "eco": true,
         "createdAt": "2020-02-19T18:41:28.515Z",
         "updatedAt": "2020-02-19T18:41:28.515Z"
-    }
-   }
+    } }
   
    ```
 ​
