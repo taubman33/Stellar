@@ -69,7 +69,7 @@ export default function Flights(props) {
         <p>Free cancel within 24 hrs</p>
         <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />
         <p>Eco Flight</p>
-        <button onSubmit={props.handleDeparting}>Select</button>
+        <button type="submit">Select</button>
         <p>Details & baggage fees</p>
         <p>Rules and restrictions apply</p>
 
