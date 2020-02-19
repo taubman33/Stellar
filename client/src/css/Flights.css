@@ -1,0 +1,127 @@
+:root {
+  --medium-grey: #979797;
+  --white: #ffffff;
+  --tree-green: #407a14;
+  --black-2: #181818;
+  --brownish-grey: #616161;
+}
+
+.choose-container {
+
+}
+
+.hotel-container {
+  display: flex;
+  flex-direction: row;
+  margin: 101px 207px 541px 109px;
+  width: 1124px;
+  height: 196px;
+  object-fit: contain;
+  border: solid 1px var(--medium-grey);
+  background-color: var(--white);
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.leaf-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.hotel-icon {
+  width: 92px;
+  height: 92px;
+}
+
+.city-of-stars-hotel-container {
+  align-self: center;
+}
+
+.city-of-stars-hotel {
+  width: 153px;
+  height: 19px;
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.94px;
+  text-align: center;
+  color: var(--black-2);
+}
+
+.star-icon {
+  width: 26.8px;
+  height: 25.6px;
+  opacity: 0.60;
+  background-color: var(--black-two);
+}
+
+.flight-dates {
+  width: 203px;
+  height: 18px;
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.94px;
+  color: var(--brownish-grey);
+}
+
+.price-container {
+  align-self: center;
+
+}
+
+.starting-price {
+  width: 111px;
+  height: 18px;
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.94px;
+  color: var(--black-2);
+}
+
+.eco-package-savings {
+  width: 179px;
+  height: 18px;
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.94px;
+  color: var(--tree-green);
+}
+
+.total-trip-price {
+  width: 117px;
+  height: 18px;
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.94px;
+  color: var(--black-2);
+}
+
+.individual-flight {
+  width: 848px;
+  height: 208px;
+  object-fit: contain;
+  border: solid 1px var(--medium-grey);
+  background-color: var(--white);
+}

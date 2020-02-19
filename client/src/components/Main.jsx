@@ -30,7 +30,7 @@ class Main extends React.Component {
                 directFlight: null,
                 ecoFriendly: null
             },
-            isHovering: false
+            departing: false
         }
     }
 
@@ -48,20 +48,6 @@ class Main extends React.Component {
         history.push('/flights')
     }
 
-    handleHovering = () => {
-        this.setState({
-            ...this.state,
-            isHovering: !this.state.isHovering
-        })
-        console.log('handling your hover')
-    }
-
-    handlePopupClose = () => {
-        this.setState({
-            isHovering: false
-        })
-    }
-
     handleDateChange = event => {
         this.setState({
             date: {
@@ -71,6 +57,13 @@ class Main extends React.Component {
         })
     }
 
+    handleDeparting = (e) => {
+        this.setState({
+            departing: !this.state.departing
+        })
+        console.log('this is working')
+    }
+
     render() {
         return (
             <div className="main">
@@ -78,7 +71,7 @@ class Main extends React.Component {
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleHovering={this.handleHovering} />} />
 
                 <Route exact path="/flights">
-                    <Flights requestInfo={this.state} />
+                    <Flights requestInfo={this.state} handleDeparting={this.handleDeparting} departing={this.state.departing}/>
                 </Route>
                 <Route exact path="/trip-review">
                     <TripReview />
