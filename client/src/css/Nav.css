@@ -11,6 +11,8 @@
   height: 125px;
   display: inline-block;
   width: 100%;
+  border: 2px solid gray;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .nav-link {
@@ -73,4 +75,45 @@
 
 .nav-main * {
   margin: 0 25px;
+}
+
+.hamburger-box {
+  display: none;
+}
+
+/* written for 410 X 900 screen */
+@media (max-width: 500px) {
+  .join-rewards.nav-link {
+    display: none;
+  }
+  .nav-main, .nav-user {
+    display: none;
+  }
+
+  .big-logo {
+    font-size: 48px;
+    margin-top: -10px;
+    margin-left: 20px;
+  }
+
+  .nav {
+    height: 60px;
+    border: none;
+    border-bottom: 2px solid #419BF9;
+  }
+
+  .hamburger-box {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    margin-top: 14px;
+    margin-right: 15px;
+  }
+
+  .hamburger-rect {
+    background-color: #1950BD;
+    padding: 2.5px;
+    width: 27px;
+    margin: 3px 0;
+  }
 }

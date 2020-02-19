@@ -73,7 +73,7 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div className="Main">
+            <div className="main">
                 <Nav />
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleHovering={this.handleHovering} />} />
 

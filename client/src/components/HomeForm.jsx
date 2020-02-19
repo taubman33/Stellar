@@ -1,14 +1,15 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik'
+import '../css/Home.css'
 
 function HomeForm(props) {
   return (
-    <div>
+    <div className='home-form'>
       <Formik
         enableReinitialize
-        initialValues={{ adults: 1, children: 0, directFlights: false, departureDate: props.date.departure, returnDate: props.date.return}}
-        onSubmit={(vals) => {
-          props.handleHomeSubmit(vals, props.history)}}
+       initialValues={{ adults: 1, children: 0, directFlights: false, departureDate: props.date.departure, returnDate: props.date.return}}
+       onSubmit={(vals) => {
+         props.handleHomeSubmit(vals, props.history)}}
       >
         <Form>
           <label>
@@ -23,51 +24,51 @@ function HomeForm(props) {
               <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
             </Field>
           </label>
-          <label>
-            Departing
-           <input type="date" value={props.date.departure} onChange={props.handleDateChange} name="departure" />
-          </label>
-          <label>
-            Arrival
-            <input type="date" value={props.date.return} onChange={props.handleDateChange} name="return" />
-          </label>
-          <label>
-            <Field as="select" name="adults">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </Field>
-            Adults (18+)
-          </label>
-          <label>
-            <Field as="select" name="children">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </Field>
-            Children (0-17)
-          </label>
-          <label>
-            <Field type="checkbox" name="directFlights" />
-            Direct flights only
-          </label>
-          <div 
-          onMouseEnter={props.handleHovering}
-          >
-          <label>
-            <Field type="checkbox" name="ecoFriendly" />
-            Eco-Friendly Option (Save $ by selecting this option)
-          </label>
+          <div className='home-calendar-numpassengers'>
+            <label className='home-label-above' id='departure-date'>
+              <p>Departing</p>
+              <img src={require('../assets/calendar.svg')} alt='calendar-icon' className='calendar-icon' />
+              <input type="date" value={props.date.departure} onChange={props.handleDateChange} name="departure" />
+            </label>
+            <label className='home-label-above' id='arrival-date'>
+              <p>Returning</p>
+              <img src={require('../assets/calendar.svg')} alt='calendar-icon' className='calendar-icon' />
+              <input type="date" value={props.date.return} onChange={props.handleDateChange} name="return" />
+            </label>
+            <label className='home-label-above home-dropdowns'>
+              <p>Adults</p>
+              <Field as="select" name="adults">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </Field>
+            </label>
+            <label className='home-label-above home-dropdowns'>
+              <p>Kids</p>
+              <Field as="select" name="children">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </Field>
+            </label>
           </div>
-          <label>
-          Preferred Class
+          <div className='home-checkbox-row'>
+              <Field type="checkbox" name="directFlights" />
+              <p>Direct flights only</p>
+              <Field type="checkbox" name="ecoFriendly" />
+              <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)
+                <img alt='question-icon' src={require('../assets/question-circle.png')} className='home-question-icon'/>
+              </p>
+          </div>
+          <label className='home-preferred-class'>
+            <p>Preferred Class</p>
             <Field as="select" name="preferredClass">
               <option value="First class">First class</option>
               <option value="Business">Business</option>
@@ -75,7 +76,7 @@ function HomeForm(props) {
               <option value="Premium economy">Premium economy</option>
             </Field>
           </label>
-          <button type="submit">Search</button>
+          <button type='submit' className='home-submit'>Search</button>
         </Form>
       </Formik>
     </div>
