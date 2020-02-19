@@ -4,7 +4,7 @@ import '../css/Loading.css'
 const Loading = props => {
   return (
     <div className='loading'>
-      <h1 className='big-logo-loading'>STELLAR</h1>
+      <img className='big-logo-loading' alt='logo-blue' src={require('../assets/logo-orbitz-blue.png')} />
       <img alt='loading icon' src={require('../assets/loading-circle.svg')} className='loading-icon'/>
       <div className='loading-lines'>
         <p className='loading-text-line'>

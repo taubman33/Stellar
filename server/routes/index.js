@@ -10,42 +10,25 @@ router.get('/', (req, res) => res.send('This is root!'))
 //array of all Users
 router.get('/users', controllers.getAllUsers)
 
-
 //show route for user and active itineraries searched by ID
 router.get('/users/:id', controllers.getUserById)
-
 
 //create route to sign up a new user ->PMVP
 router.post('/users', controllers.createUser)
 
+//route for update user
+router.put('/users', controllers.updateUser)
 
-//shows a users itineraries
-router.get('users/:user_id/itineraries', controllers.getAllItineraries)
+//route for delete user
+router.delete('/users', controllers.updateUser)
 
+//create route for all flights for users
 
-//shows users itineraries including flight and hotel info
-router.get('/users/:user_id/itineraries/:id', controllers.getItineraryById)
+router.get('/users/:id/arrivingflight', controllers.getArrivingFlightById)
 
+//create route for all flights for users
 
-//creates a new itinerary
-router.post('/users/:user_id/itineraries', controllers.createItinerary)
-
-
-//change user itinerary info
-router.put('/users/:user_id/itineraries/:id', controllers.updateItinerary)
-
-
-//cancels a users itinerary
-router.destroy('/users/:user_id/itineraries/:id', controllers.cancelItinerary)
-
-
-//shows info for flights in a single itinerary
-router.get('/users/:user_id/itineraries/:id/flights', controllers.getFlightById)
-
-
-//shows info for hotel bookings in single itinerary -> PMVP
-router.get('/users/:user_id/itineraries/:id/hotels', controllers.getHotelById)
-
+router.get('/users/:id/departingflight', controllers.getDepartingFlightById)
 
 
 module.exports = router
