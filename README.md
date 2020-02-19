@@ -122,11 +122,15 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 ​
 ## Components
 ​
+
 | Component | Description | 
 | --- | :--- |
 | App | This component will render the Main and Loading component. |
+
 | Main | This will be a class component that will track state for departure/destination location, to/from date, adults/kids user is booking a flight(s) for, selected flight. |
+
 | Home | This component will render a form and eco friendly popup that will give the user information on what it means to be ecofriendly.  | 
+
 | Loading | This functional component will render a loading icon after a user clicks search from the homepage. |
 | Flights | This functional component will render the flight filter and flight card component. |
 | Hotels | This functional component will render the hotel filter and hotel card component. |
