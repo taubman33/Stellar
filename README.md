@@ -59,48 +59,62 @@ PMVP Items in parentheses
 	- Create route to signup a new user
   
   
-- GET `/api/users/:user_id/itineraries`
-  - Show a user's itineraries
-- GET `/api/users/:user_id/itineraries/:id`
-  - Show a single itinerary, including flight (and hotel) info
-- POST `/api/users/:user_id/itineraries`
-  - Create a new itinerary
-- PUT `/api/users/:user_id/itineraries/:id`
-  - Change user itinerary info
-- DELETE `/api/users/:user_id/itineraries/:id`
-  - Cancel user itinerary
+- GET `/api/users/:user_id/arrivingflight`
+  - Show a user's arriving flight
+  
+- GET `/api/users/:user_id/departingflight`
+
+  - Show a user's departing flight
+  
+- POST `/api/users`
+  - Create a new user
+  
+- PUT `/api/users/:user_id`
+  - Change user info
+  
+- DELETE `/api/users/:user_id`
+  - Delete user
 ​
   
-- GET `/api/users/:user_id/itineraries/:id/flights`
-  - Shows info for flights in a single itinerary
-- (GET `/api/users/:user_id/itineraries/:id/hotels`)
-  - (Shows info for hotel bookings in a single itinerary)
 ​
 ​
 Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 ​
   ```
-    {
-      "name": "Erinn",
-      "id": "3",
-      itineraries: [
-        {id: 45,
-         leaveDate: '2020-02-22',
-         returnDate: '2020-02-25',
-         totalCost: 332.25,
-         flights: [
-          {id: 322,
-           flightNumber: 26DC43,
-           leaveTime: '2020-02-22 12:22:30',
-           ...
-          }
-          ...
-         ]
-        }
-        ...
-      ]
+  {
+    "user": {
+        "id": 4,
+        "name": "Thelonious Monk",
+        "hashed_password": "password",
+        "number_adults": 1,
+        "number_children": 1,
+        "departingFlightId": 3,
+        "arrivingFlightId": 2,
+        "createdAt": "2020-02-19T18:41:28.563Z",
+        "updatedAt": "2020-02-19T18:41:28.563Z"
     }
+   }
+
+
   ```
+     {
+    "departingFlight": {
+        "id": 2,
+        "airline": "American",
+        "depart_airport": "JFK",
+        "arrival_airport": "SFO",
+        "price": 470.22,
+        "flight_number": "66646",
+        "depart_time": "2020-02-19T18:41:28.515Z",
+        "arrival_time": "2020-02-19T22:41:28.515Z",
+        "rating": 5,
+        "eco": true,
+        "createdAt": "2020-02-19T18:41:28.515Z",
+        "updatedAt": "2020-02-19T18:41:28.515Z"
+    }
+   }
+  
+   ```
 ​
 ​
 ## React Component Hierarchy
@@ -159,16 +173,27 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 Disagreement over which features are important / implementable in a reasonable time.
 ​
 ## Issues and Resolutions
-One of our core features was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place. Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table. To avoid having Many flights to Many users, made duplicate ArrivingFlights and DepartingFlights so that we have 2 many-to-one associations. Eco-friendly popup clears form, remains unresolved.
+One of our core features (the "Green Option" button) was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place. Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table. To avoid having Many flights to Many users, made duplicate ArrivingFlights and DepartingFlights so that we have 2 many-to-one associations. Eco-friendly popup clears form, remains unresolved.
 ​
 ## Code Snippet
 ​
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 ​
+Backend -> The User associations is not particularly impressive, but we got it to work rather than using a number of Join tables and Many-Many relations
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+  User.associate = function(models) {
+    User.belongsTo(models.DepartingFlight, {
+      foreignKey: 'departingFlightId',
+      onDelete: 'CASCADE'
+    });
+    User.belongsTo(models.ArrivingFlight, {
+      foreignKey: 'arrivingFlightId',
+      onDelete: 'CASCADE'
+    });
+  };
+  return User;
+};
+
 ```
 ​
 ## Change Log
