@@ -34,7 +34,7 @@ function Home(props) {
                     Activities
                 </Link>
             </div>
-            <HomeForm  history={props.history} date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} />
+            <HomeForm  history={props.history} date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} handleHovering={props.handleHovering} />
         </div>
     )
 }

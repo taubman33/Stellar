@@ -58,10 +58,14 @@ function HomeForm(props) {
             <Field type="checkbox" name="directFlights" />
             Direct flights only
           </label>
+          <div 
+          onMouseEnter={props.handleHovering}
+          >
           <label>
             <Field type="checkbox" name="ecoFriendly" />
             Eco-Friendly Option (Save $ by selecting this option)
           </label>
+          </div>
           <label>
           Preferred Class
             <Field as="select" name="preferredClass">
