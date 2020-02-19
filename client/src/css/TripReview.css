@@ -1,0 +1,26 @@
+:root {
+  --trip-review-bg: #E3E3E3;
+}
+
+.trip-review {
+  font-family: 'Helvetica', sans-serif;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--trip-review-bg);
+}
+
+.trip-review-header, .trip-review-main {
+  margin-left: 60px;
+}
+
+.trip-review-header {
+  margin-top: 25px;
+}
+
+.trip-review-header p {
+  margin: 5px 0 0 0;
+}
+
+.trip-review-header-title {
+  font-size: 28px;
+}
