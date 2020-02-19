@@ -39,6 +39,17 @@ function Home(props) {
             <p>Activities</p>
           </Link>
         </div>
+        <div className='home-package-type-sensitive'>
+          <Link to='#' className='home-package-select home-selected'>
+            <p>Roundtrip</p>
+          </Link>
+          <Link to='#' className='home-package-select'>
+            <p>One way</p>
+          </Link>
+          <Link to='#' className='home-package-select'>
+            <p>Multi-city</p>
+          </Link>
+        </div>
         <HomeForm  history={props.history} date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange} />
       </div>
     </div>

@@ -12,18 +12,20 @@ function HomeForm(props) {
          props.handleHomeSubmit(vals, props.history)}}
       >
         <Form>
-          <label>
-            Flying from
-            <Field as="select" name="flyingFrom">
-              <option value="New York, NY">New York, NY (NYC - All Airports)</option>
-            </Field>
-          </label>
-          <label>
-            Flying to
-            <Field as="select" name="flyingTo">
-              <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
-            </Field>
-          </label>
+          <div className='home-flying'>
+            <label className='home-label-above'>
+              <p>Flying from</p>
+              <Field as="select" name="flyingFrom">
+                <option value="New York, NY">New York, NY (NYC - All Airports)</option>
+              </Field>
+            </label>
+            <label className='home-label-above'>
+              <p>Flying to</p>
+              <Field as="select" name="flyingTo">
+                <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
+              </Field>
+            </label>
+          </div>
           <div className='home-calendar-numpassengers'>
             <label className='home-label-above' id='departure-date'>
               <p>Departing</p>
