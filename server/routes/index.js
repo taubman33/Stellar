@@ -22,13 +22,18 @@ router.put('/users', controllers.updateUser)
 //route for delete user
 router.delete('/users', controllers.updateUser)
 
-//create route for all flights for users
-
+//create route for arrival flights for users
 router.get('/users/:id/arrivingflight', controllers.getArrivingFlightById)
 
-//create route for all flights for users
-
+//create route for departing flights for users
 router.get('/users/:id/departingflight', controllers.getDepartingFlightById)
+
+//route for getting all arriving flights
+router.get('/arrivingFlights/', controllers.getAllArrivingFlights)
+
+//route for getting all departing flight
+router.get('/departingFlights/', controllers.getAllDepartingFlights)
+
 
 
 module.exports = router
