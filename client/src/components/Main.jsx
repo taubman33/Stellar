@@ -84,6 +84,9 @@ class Main extends React.Component {
         this.setState(
             {bookedFlights: {...this.state.bookedFlights, [flightDirection]: flightDetails}}
         )
+        if(flightDirection === 'arriving') {
+            history.push('/trip-review')
+        }
     }
 
     async componentDidMount() {
@@ -104,9 +107,7 @@ class Main extends React.Component {
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleEcoClick={this.handleEcoClick} />} />
                 <Route exact path="/flights" component={(navProps) => <Flights {...navProps} requestInfo={this.state} setFlightDetails={this.setFlightDetails}/>} />
                 
-                <Route exact path="/trip-review">
-                    <TripReview />
-                </Route>
+                <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} requestInfo={this.state}/>} />
                 <Route exact path="/booking">
                     <Book />
                 </Route>
