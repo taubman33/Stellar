@@ -4,33 +4,50 @@ import { Formik, Form, Field } from 'formik'
 import moment from 'moment'
 
 export default function Flights(props) {
-  console.log(props.requestInfo.itinerary)
+  const [, forceUpdate] = React.useReducer(x => x + 1, 0)
 
-  const flights = props.flights.arriving.arrivingFlight
-  const flightList = flights.filter(flight =>
-    flight.depart_airport === props.requestInfo.itinerary.flyingFrom 
-    && flight.arrival_airport === props.requestInfo.itinerary.flyingTo 
-    && ((props.requestInfo.itinerary.ecoFriendly) ? (props.requestInfo.itinerary.ecoFriendly === flight.eco) : true)).map(flight => (
-      <div>        
-        <p>{`${moment(flight.depart_time).format('h:mm a')} - ${moment(flight.arrival_time).format('h:mm a')}`}</p>
-        <p>{flight.airline}</p>
-        <p>Excellent Flight (8.7/10)</p>
-        <p>{moment(flight.arrival_time).diff(flight.depart_time,'hours')}h (Nonstop) </p>
-        <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>        
-        <p>{`+ $${flight.price}`}</p>
-        <p>Roundtrip</p>
-        <p>Free cancel within 24 hrs</p>
-        {flight.eco && <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />}
-        <p>Eco Flight</p>
-        <Formik onSubmit={props.handleDeparting}>
-          <Form>
-            <button type="submit">Select</button>
-          </Form>
-        </Formik>
-        <p>Details & baggage fees</p>
-        <p>Rules and restrictions apply</p>
-      </div>)
-    )
+  const makeFlightCards = (flights, flightDirection) => {
+    console.log(flightDirection)
+    const flightList = flights[`${flightDirection}Flight`].filter(flight =>
+      flight[`${(flightDirection === 'departing') ? 'depart' : 'arrival'}_airport`] === props.requestInfo.itinerary.flyingFrom 
+      && flight[`${(flightDirection === 'departing') ? 'arrival' : 'depart'}_airport`] === props.requestInfo.itinerary.flyingTo 
+      && ((props.requestInfo.itinerary.ecoFriendly) ? (props.requestInfo.itinerary.ecoFriendly === flight.eco) : true)).map((flight, key) => {
+        const flightDetails = {
+        departingTime: moment(flight.depart_time).format('h:mm a'),
+        arrivingTime: moment(flight.arrival_time).format('h:mm a')
+      }
+      console.log(flight)
+        return (
+        <div key={key}>        
+          <p name="time">{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
+          <p>{flight.airline}</p>
+          <p>Excellent Flight (8.7/10)</p>
+          <p>{moment(flight.arrival_time).diff(flight.depart_time,'hours')}h (Nonstop) </p>
+          <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>        
+          <p>{`+ $${flight.price}`}</p>
+          <p>Roundtrip</p>
+          <p>Free cancel within 24 hrs</p>
+          {flight.eco && <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />}
+          {flight.eco && <p>Eco Flight</p>}
+          <button onClick={() => {
+            props.setFlightDetails(flightDetails, flightDirection, props.history)
+            if (flightDirection === 'departing') {
+              flightDirection = 'arriving'
+              forceUpdate()
+            }
+            }}>Select</button>
+          <p>Details & baggage fees</p>
+          <p>Rules and restrictions apply</p>
+        </div>)
+        }
+      )
+      return flightList
+  }
+
+  const flights = (props.requestInfo.bookedFlights.departing.departingTime ?
+    props.requestInfo.flights.arriving : props.requestInfo.flights.departing)
+  const flightDirection = (props.requestInfo.bookedFlights.departing.departingTime ?
+    'arriving' : 'departing')
 
   return (
     <div className="flights">
@@ -92,7 +109,7 @@ export default function Flights(props) {
       <div className="sort-filter-container">
         <div className='sort-filter-toprow'>
           <p className='sort-filter-biglabel'>Sort & Filter</p>
-          <p class='clear-filter'>Clear</p>
+          <p className='clear-filter'>Clear</p>
         </div>
         <p className='sort-filter-checkbox'>Sort By</p>
         <Formik>
@@ -120,7 +137,7 @@ export default function Flights(props) {
             </div>
           </Form>
         </Formik>
-        {flightList}
+        {makeFlightCards(flights, flightDirection)}
       </div>
     </div>
   )

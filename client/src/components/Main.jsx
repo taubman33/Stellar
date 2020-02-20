@@ -79,9 +79,11 @@ class Main extends React.Component {
         })
     }
 
-    handleDeparting = (e) => {
-
-        console.log('handle departing')
+    setFlightDetails = (flightDetails, flightDirection, history) => {
+        console.log(flightDetails)
+        this.setState(
+            {bookedFlights: {...this.state.bookedFlights, [flightDirection]: flightDetails}}
+        )
     }
 
     async componentDidMount() {
@@ -100,9 +102,8 @@ class Main extends React.Component {
             <div className="main">
                 <Nav />
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleEcoClick={this.handleEcoClick} />} />
-                <Route exact path="/flights">
-                    <Flights requestInfo={this.state} handleDeparting={this.handleDeparting} departing={this.state.departing} flights={this.state.flights}/>
-                </Route>
+                <Route exact path="/flights" component={(navProps) => <Flights {...navProps} requestInfo={this.state} setFlightDetails={this.setFlightDetails}/>} />
+                
                 <Route exact path="/trip-review">
                     <TripReview />
                 </Route>
