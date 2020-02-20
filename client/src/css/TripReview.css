@@ -1,0 +1,121 @@
+:root {
+  --trip-review-bg: #E3E3E3;
+  --trip-review-blue: #194EB9;
+}
+
+.trip-review {
+  font-family: 'Helvetica', sans-serif;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--trip-review-bg);
+}
+
+.trip-review-header, .trip-review-main {
+  margin-left: 60px;
+}
+
+.trip-review-header {
+  margin-top: 25px;
+}
+
+.trip-review-header p {
+  margin: 5px 0 0 0;
+}
+
+.trip-review-header-guarantee {
+  color: green;
+}
+
+.trip-review-header-title {
+  font-size: 28px;
+}
+
+.trip-review-main {
+  margin-top: 80px;
+}
+
+.trip-review-main-top {
+  display: flex;
+}
+
+.trip-review-main-top-aside {
+  margin-left: 20px;
+}
+
+.trip-review-top-dates {
+  margin: 0;
+  font-size: 20px;
+}
+
+.trip-review-top-details {
+  margin: 0;
+  margin-top: 10px;
+  color: gray;
+}
+
+.trip-review-flights-container {
+  background-color: white;
+  width: 850px;
+  height: 400px;
+}
+
+.trip-review-flight-details {
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.trip-review-flight-details {
+  display: flex;
+  flex-flow: row;
+}
+
+.trip-review-flight-details-right, .trip-review-flight-details-left {
+  display: flex;
+  flex-flow: column;
+  margin: 10px 50px 0 0;
+}
+
+.trip-review-flight-details-right *, .trip-review-flight-details-left * {
+  margin: 10px 0;
+}
+
+p.trip-review-flight-details {
+  margin-top: 40px;
+  color: var(--trip-review-blue);
+  font-size: 14px;
+}
+
+.trip-review-change-flights {
+  background-color: #EEE;
+  height: 50px;
+  width: 850px;
+  margin-top: 0;
+}
+
+.trip-review-change-flights p {
+  color: var(--trip-review-blue);
+  margin: 0 0 0 50px;
+  padding-top: 12px;
+  font-size: 20px;
+}
+
+.trip-review-upgrade-container {
+  display: flex;
+  flex-flow: column;
+  margin-left: 50px;
+}
+
+.trip-review-upgrade-title {
+  margin: 20px 0 0 20px;
+  font-size: 20px;
+}
+
+.trip-review-upgrade-row {
+  display: flex;
+  flex-flow: row;
+}
+
+.upgrade-ad {
+  margin-left: 20px;
+  margin-top: 20px;
+}

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:800i&display=swap');
-
 :root {
   --nav-bg-color: #00253F;
   --rewards-bg-color: #A30097;
@@ -11,6 +9,8 @@
   height: 125px;
   display: inline-block;
   width: 100%;
+  border: 2px solid gray;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .nav-link {
@@ -25,19 +25,14 @@
 
 .nav-top-left {
   grid-columns: 1;
-  margin: 5px 0;
+  margin: 33px 5px 17px 100px;
 }
 
 .nav-top-left * {
   display: inline-block;
 }
 
-.big-logo {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-style: italic;
-  font-size: 60px;
-  color: white;
+.nav-logo {
   margin: 0 0 0 60px;
 }
 
@@ -66,11 +61,52 @@
 }
 
 .nav-main {
-  margin: 0 auto;
+  margin: 0 100px 0 50px;
   width: 100%;
   text-align: center;
 }
 
 .nav-main * {
-  margin: 0 25px;
+  margin: 0 20px;
+}
+
+.hamburger-box {
+  display: none;
+}
+
+/* written for 410 X 900 screen */
+@media (max-width: 500px) {
+  .join-rewards.nav-link {
+    display: none;
+  }
+  .nav-main, .nav-user {
+    display: none;
+  }
+
+  .big-logo {
+    font-size: 48px;
+    margin-top: -10px;
+    margin-left: 20px;
+  }
+
+  .nav {
+    height: 60px;
+    border: none;
+    border-bottom: 2px solid #419BF9;
+  }
+
+  .hamburger-box {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    margin-top: 14px;
+    margin-right: 15px;
+  }
+
+  .hamburger-rect {
+    background-color: #1950BD;
+    padding: 2.5px;
+    width: 27px;
+    margin: 3px 0;
+  }
 }
