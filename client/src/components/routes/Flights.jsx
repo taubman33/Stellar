@@ -13,20 +13,26 @@ export default function Flights(props) {
       && ((props.requestInfo.itinerary.ecoFriendly) ? (props.requestInfo.itinerary.ecoFriendly === flight.eco) : true)).map((flight, key) => {
         const flightDetails = {
         departingTime: moment(flight.depart_time).format('h:mm a'),
-        arrivingTime: moment(flight.arrival_time).format('h:mm a')
+        arrivingTime: moment(flight.arrival_time).format('h:mm a'),
+        airline: flight.airline,
+        flightDuration: moment(flight.arrival_time).diff(flight.depart_time,'hours'),
+        departAirport: flight.depart_airport,
+        arrivalAiport: flight.arrival_airport,
+        flightPrice: flight.price,
+        ecoFriendly: flight.eco 
       }
         return (
-        <div key={key}>
-          <p name="time">{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
-          <p>{flight.airline}</p>
+        <div key={key}>        
+          <p>{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
+          <p>{flightDetails.airline}</p>
           <p>Excellent Flight (8.7/10)</p>
-          <p>{moment(flight.arrival_time).diff(flight.depart_time,'hours')}h (Nonstop) </p>
-          <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>
-          <p>{`+ $${flight.price}`}</p>
+          <p>{flightDetails.flightDuration}h (Nonstop) </p>
+          <p>{`${flightDetails.departAirport} - ${flightDetails.arrivalAiport}`}</p>        
+          <p>{`+ $${flightDetails.flightPrice}`}</p>
           <p>Roundtrip</p>
           <p>Free cancel within 24 hrs</p>
-          {flight.eco && <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />}
-          {flight.eco && <p>Eco Flight</p>}
+          {flightDetails.ecoFriendly && <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />}
+          {flightDetails.ecoFriendly && <p>Eco Flight</p>}
           <button onClick={() => {
             props.setFlightDetails(flightDetails, flightDirection, props.history)
             if (flightDirection === 'departing') {
