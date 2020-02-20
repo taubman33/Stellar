@@ -7,7 +7,7 @@ export default function Flights(props) {
   const [, forceUpdate] = React.useReducer(x => x + 1, 0)
 
   const makeFlightCards = (flights, flightDirection) => {
-    console.log(flightDirection)
+    // console.log(flightDirection)
     const flightList = flights[`${flightDirection}Flight`].filter(flight =>
       flight[`${(flightDirection === 'departing') ? 'depart' : 'arrival'}_airport`] === props.requestInfo.itinerary.flyingFrom 
       && flight[`${(flightDirection === 'departing') ? 'arrival' : 'depart'}_airport`] === props.requestInfo.itinerary.flyingTo 
@@ -22,7 +22,7 @@ export default function Flights(props) {
         flightPrice: flight.price,
         ecoFriendly: flight.eco 
       }
-      console.log(flight)
+      // console.log(flight)
         return (
         <div key={key}>        
           <p>{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
