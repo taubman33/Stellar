@@ -22,23 +22,29 @@ export default function Flights(props) {
         flightPrice: flight.price,
         ecoFriendly: flight.eco
       }
+
+      const getAirportCode = (airport) => {
+        const len = airport.length
+        return airport.slice(len - 4, len - 1)
+      }
+
         return (
         <div key={key} className='flight-card-container'>
           <div className='flight-card-top'>
             <div className='flight-card-top-left'>
               <p className='flight-card-bold'>{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
-              <p className='flight-card-gray'>{flightDetails.airline}</p>
-              <p className='flight-card-green'>Excellent Flight (8.7/10)</p>
+              <p className='flight-card-gray flight-card-small'>{flightDetails.airline}</p>
+              <p className='flight-card-green flight-card-small'>Excellent Flight (8.7/10)</p>
             </div>
             <div className='flight-card-top-mid'>
               <p>{flightDetails.flightDuration}h (Nonstop) </p>
-              <p className='flight-card-gray'>{`${flightDetails.departAirport} - ${flightDetails.arrivalAiport}`}</p>
+              <p className='flight-card-gray'>{`${getAirportCode(flightDetails.departAirport)} - ${getAirportCode(flightDetails.arrivalAiport)}`}</p>
             </div>
             <div className='flight-card-top-right'>
               <div className='flight-card-top-right-info'>
-                <p>{`+ $${flightDetails.flightPrice}`}</p>
-                <p>Roundtrip</p>
-                <p>Free cancel within 24 hrs</p>
+                <p className='flight-card-bold'>{`+ $${flightDetails.flightPrice}`}</p>
+                <p className='flight-card-small flight-card-green'>Roundtrip</p>
+                <p className='flight-card-small flight-card-green'>Free cancel within 24 hrs</p>
                 {flightDetails.ecoFriendly && (
                   <div className='flight-card-eco'>
                     <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />
@@ -58,9 +64,9 @@ export default function Flights(props) {
               </button>
             </div>
           </div>
-          <p className='flight-card-blue'>Details & baggage fees</p>
+          <p className='flight-card-blue flight-card-small flight-card-bottom flight-card-baggage'>Details & baggage fees</p>
           <div className='flight-card-footer'>
-            <p className='flight-card-blue'>Rules and restrictions apply</p>
+            <p className='flight-card-blue flight-card-small flight-card-bottom'>Rules and restrictions apply</p>
           </div>
         </div>)
         }

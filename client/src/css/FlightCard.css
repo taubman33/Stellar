@@ -1,3 +1,9 @@
+:root {
+  --flight-card-green: #068721;
+  --eco-green: #14F394;
+  --flight-card-blue: #295EBF;
+}
+
 .flight-card-container {
   height: 200px;
   width: 850px;
@@ -5,6 +11,28 @@
   flex-flow: column;
   background-color: white;
   border: solid 1px var(--medium-grey);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.flight-card-gray {
+  color: var(--medium-grey);
+}
+
+.flight-card-green {
+  color: var(--flight-card-green);
+}
+
+.flight-card-blue {
+  color: var(--flight-card-blue);
+}
+
+.flight-card-eco {
+  color: var(--eco-green);
+}
+
+.flight-card-small {
+  font-size: 12px;
 }
 
 .flight-card-top {
@@ -12,6 +40,84 @@
   margin: 15px 0 0 25px;
 }
 
+.flight-card-top-left p {
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.flight-card-bold {
+  font-weight: bold;
+}
+
 .flight-card-top-right {
   display: flex;
+}
+
+.flight-card-top-mid {
+  position: relative;
+  left: 100px;
+  margin-top: 0;
+}
+
+.flight-card-top-mid p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.flight-card-top-right {
+  margin-left: auto;
+}
+
+.flight-card-top-right p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.flight-card-eco {
+  display: flex;
+  font-size: 14px;
+}
+
+.flight-card-eco img {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+}
+
+.flight-card-eco p {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.flight-card-select {
+  width: 110px;
+  margin-left: 20px;
+  margin-right: 15px;
+  height: 60px;
+  background-color: #F30053;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-family: 'Helvetica', sans-serif;
+  border: solid 1px #d9294e;
+  padding: 10px 20px;
+}
+
+.flight-card-bottom {
+  margin-left: 25px;
+}
+
+.flight-card-footer {
+  border-top: solid 1px var(--medium-grey);
+  height: 35px;
+  margin-top: auto;
+}
+
+.flight-card-footer p {
+  padding-bottom: 20px;
+}
+
+.flight-card-baggage {
+  margin-top: 130px;
+  position: absolute;
 }
