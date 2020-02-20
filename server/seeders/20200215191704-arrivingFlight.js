@@ -644,8 +644,6 @@ module.exports = {
           updatedAt: new Date()
         },
     
-    
-    
         //leaving San Francisco (SFO)
                      //to New York (JFK)  
         {
