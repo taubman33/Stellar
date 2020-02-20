@@ -33,7 +33,7 @@ export default function TripReview(props) {
           <div className='trip-review-flight-details'>
             <div className='trip-review-flight-details-left'>
               <p>{`${props.bookedFlights.arriving.departingTime} - ${props.bookedFlights.arriving.arrivingTime}`}</p>
-              <p className='trip-review-airline-name'>{props.bookedFlights.departing.airline}</p>
+              <p className='trip-review-airline-name'>{props.bookedFlights.arriving.airline}</p>
             </div>
             <div className='trip-review-flight-details-right'>
               <p>{`${props.bookedFlights.arriving.flightDuration}h (Nonstop)`}</p>
