@@ -30,7 +30,14 @@ class Main extends React.Component {
                 directFlight: null,
                 ecoFriendly: null
             },
-            departing: false,
+            flights: {
+                departing: [],
+                arriving: []
+            },
+            bookedFlights: {
+                departing: {},
+                arriving: {}
+            },
             showEcoPopup: false
         }
     }
@@ -68,10 +75,8 @@ class Main extends React.Component {
     }
 
     handleDeparting = () => {
-        this.setState({
-            departing: !this.state.departing
-        })
-        console.log('handle departing working')
+
+        console.log('handle departing')
     }
 
     render() {
