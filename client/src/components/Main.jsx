@@ -47,7 +47,8 @@ class Main extends React.Component {
                 departing: {},
                 arriving: {}
             },
-            showEcoPopup: false
+            showEcoPopup: false,
+            donation: false
         }
     }
 
@@ -86,13 +87,25 @@ class Main extends React.Component {
     }
 
     setFlightDetails = (flightDetails, flightDirection, history) => {
-        console.log(flightDetails)
         this.setState(
             {bookedFlights: {...this.state.bookedFlights, [flightDirection]: flightDetails}}
         )
         if(flightDirection === 'arriving') {
             history.push('/trip-review')
         }
+    }
+
+
+    finalDetails = (history) => {
+        history.push('/booking')
+    }
+
+    handleDonationInput = (event) => {
+        event.preventDefault()
+        this.setState({
+            donation: !this.state.donation
+        })
+
     }
 
     async componentDidMount() {
@@ -112,11 +125,9 @@ class Main extends React.Component {
                 <Nav />
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleEcoClick={this.handleEcoClick} />} />
                 <Route exact path="/flights" component={(navProps) => <Flights {...navProps} requestInfo={this.state} setFlightDetails={this.setFlightDetails}/>} />
-                <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary}/>} />
-                <Route exact path="/booking">
-                    <Book />
-                </Route>
-                <Route exact path="/confirmation">
+                <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} finalDetails={this.finalDetails}/>} />
+                <Route exact path="/booking" component={(navProps) => <Book {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} handleDonationInput={this.handleDonationInput} donation={this.state.donation}/>} />
+                <Route exact path="/confirmation" >
                     <Confirmation />
                 </Route>
                 <Route exact path="/users"> 
@@ -126,9 +137,6 @@ class Main extends React.Component {
                   <UserEdit/>
                   <UserCreate/>
                 </Route>
-
-         
-
                 {this.state.showEcoPopup ? <EcoPopup handleEcoClick={this.handleEcoClick}/> : <></>}
             </div>
         )
