@@ -1,0 +1,17 @@
+.flight-card-container {
+  height: 200px;
+  width: 850px;
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+  border: solid 1px var(--medium-grey);
+}
+
+.flight-card-top {
+  display: flex;
+  margin: 15px 0 0 25px;
+}
+
+.flight-card-top-right {
+  display: flex;
+}

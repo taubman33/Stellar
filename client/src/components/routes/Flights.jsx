@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../css/Flights.css'
+import '../../css/FlightCard.css'
 import { Formik, Form, Field } from 'formik'
 import moment from 'moment'
 
@@ -19,29 +20,48 @@ export default function Flights(props) {
         departAirport: flight.depart_airport,
         arrivalAiport: flight.arrival_airport,
         flightPrice: flight.price,
-        ecoFriendly: flight.eco 
+        ecoFriendly: flight.eco
       }
         return (
-        <div key={key}>        
-          <p>{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
-          <p>{flightDetails.airline}</p>
-          <p>Excellent Flight (8.7/10)</p>
-          <p>{flightDetails.flightDuration}h (Nonstop) </p>
-          <p>{`${flightDetails.departAirport} - ${flightDetails.arrivalAiport}`}</p>        
-          <p>{`+ $${flightDetails.flightPrice}`}</p>
-          <p>Roundtrip</p>
-          <p>Free cancel within 24 hrs</p>
-          {flightDetails.ecoFriendly && <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />}
-          {flightDetails.ecoFriendly && <p>Eco Flight</p>}
-          <button onClick={() => {
-            props.setFlightDetails(flightDetails, flightDirection, props.history)
-            if (flightDirection === 'departing') {
-              flightDirection = 'arriving'
-              forceUpdate()
-            }
-            }}>Select</button>
-          <p>Details & baggage fees</p>
-          <p>Rules and restrictions apply</p>
+        <div key={key} className='flight-card-container'>
+          <div className='flight-card-top'>
+            <div className='flight-card-top-left'>
+              <p className='flight-card-bold'>{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
+              <p className='flight-card-gray'>{flightDetails.airline}</p>
+              <p className='flight-card-green'>Excellent Flight (8.7/10)</p>
+            </div>
+            <div className='flight-card-top-mid'>
+              <p>{flightDetails.flightDuration}h (Nonstop) </p>
+              <p className='flight-card-gray'>{`${flightDetails.departAirport} - ${flightDetails.arrivalAiport}`}</p>
+            </div>
+            <div className='flight-card-top-right'>
+              <div className='flight-card-top-right-info'>
+                <p>{`+ $${flightDetails.flightPrice}`}</p>
+                <p>Roundtrip</p>
+                <p>Free cancel within 24 hrs</p>
+                {flightDetails.ecoFriendly && (
+                  <div className='flight-card-eco'>
+                    <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />
+                  <p>Eco Flight</p>
+                  </div>
+                  )
+                }
+              </div>
+              <button className='flight-card-select'onClick={() => {
+                props.setFlightDetails(flightDetails, flightDirection, props.history)
+                if (flightDirection === 'departing') {
+                  flightDirection = 'arriving'
+                  forceUpdate()
+                }
+                }}>
+                Select
+              </button>
+            </div>
+          </div>
+          <p className='flight-card-blue'>Details & baggage fees</p>
+          <div className='flight-card-footer'>
+            <p className='flight-card-blue'>Rules and restrictions apply</p>
+          </div>
         </div>)
         }
       )
@@ -110,38 +130,42 @@ export default function Flights(props) {
         </div>
         <p className='price-disclaimer'>The trip prices shown are per person and include Flight + Hotel, taxes & fees. Flights include e-tickets, but do not include baggage fees or other fees charged directly by the airline.</p>
       </div>
-      <div className="sort-filter-container">
-        <div className='sort-filter-toprow'>
-          <p className='sort-filter-biglabel'>Sort & Filter</p>
-          <p className='clear-filter'>Clear</p>
+      <div className='flight-bottom-section'>
+        <div className="sort-filter-container">
+          <div className='sort-filter-toprow'>
+            <p className='sort-filter-biglabel'>Sort & Filter</p>
+            <p className='clear-filter'>Clear</p>
+          </div>
+          <p className='sort-filter-checkbox'>Sort By</p>
+          <Formik>
+            <Form>
+              <Field as="select" name="filter" className='sort-filter-filter'>
+                <option value="lowest">Price (Lowest)</option>
+              </Field>
+              <p className='sort-filter-biglabel'>Stops</p>
+              <div className='sort-filter-checkbox'>
+                <Field type="checkbox" name="nonStop" />
+                <p>Non-Stop (52)</p>
+              </div>
+              <div className='sort-filter-checkbox'>
+                <Field type="checkbox" name="oneStop" />
+                <p>1 Stop (28)</p>
+              </div>
+              <p className='sort-filter-biglabel'>Airlines included</p>
+              <div className='sort-filter-checkbox'>
+                <Field type="checkbox" name="jetblue" />
+                <p>JetBlue Airways (12)</p>
+              </div>
+              <div className='sort-filter-checkbox'>
+                <Field type="checkbox" name="united" />
+                <p>United (15)</p>
+              </div>
+            </Form>
+          </Formik>
         </div>
-        <p className='sort-filter-checkbox'>Sort By</p>
-        <Formik>
-          <Form>
-            <Field as="select" name="filter" className='sort-filter-filter'>
-              <option value="lowest">Price (Lowest)</option>
-            </Field>
-            <p className='sort-filter-biglabel'>Stops</p>
-            <div className='sort-filter-checkbox'>
-              <Field type="checkbox" name="nonStop" />
-              <p>Non-Stop (52)</p>
-            </div>
-            <div className='sort-filter-checkbox'>
-              <Field type="checkbox" name="oneStop" />
-              <p>1 Stop (28)</p>
-            </div>
-            <p className='sort-filter-biglabel'>Airlines included</p>
-            <div className='sort-filter-checkbox'>
-              <Field type="checkbox" name="jetblue" />
-              <p>JetBlue Airways (12)</p>
-            </div>
-            <div className='sort-filter-checkbox'>
-              <Field type="checkbox" name="united" />
-              <p>United (15)</p>
-            </div>
-          </Form>
-        </Formik>
-        {makeFlightCards(flights, flightDirection)}
+        <div className='flight-cards-container'>
+          {makeFlightCards(flights, flightDirection)}
+        </div>
       </div>
     </div>
   )
