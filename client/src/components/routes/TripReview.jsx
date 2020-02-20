@@ -4,8 +4,6 @@ import moment from 'moment'
 import Receipt from '../shared/Receipt'
 
 export default function TripReview(props) {
-  console.log(props.bookedFlights)
-  console.log(props.itinerary)
   return (
     <div className='trip-review'>
       <div className='trip-review-header'>
@@ -16,7 +14,7 @@ export default function TripReview(props) {
         <div className='trip-review-main-top'>
           <img alt='airplane-circle' src={require('../../assets/airplane-circle.svg')} className='trip-review-airplane-icon' />
           <div className='trip-review-main-top-aside'>
-            <p className='trip-review-top-dates'>{`${moment(props.itinerary.departureDate).format('dddd, MMM [] D')} - ${moment(props.itinerary.returnDate).format('dddd, MMM [] D')} `}</p>
+            <p className='trip-review-top-dates'>{`${moment(props.itinerary.departureDate).format('ddd, MMM [] D')} - ${moment(props.itinerary.returnDate).format('ddd, MMM [] D')} `}</p>
             <p className='trip-review-top-details'>{`Roundtrip - 1 traveler`}</p>
           </div>
         </div>
