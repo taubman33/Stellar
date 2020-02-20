@@ -10,10 +10,13 @@ import EcoPopup from './shared/EcoPopup'
 import { Route } from 'react-router-dom'
 import moment from 'moment'
 import axios from 'axios'
-
 import User from './routesBackEnd/User'
 import Users from './routesBackEnd/Users'
 import UserCreate from './routesBackEnd/UserCreate'
+import UserEdit from './routesBackEnd/UserEdit'
+import Itinerary from '../components/routes/Itinerary'
+
+
 
 
 class Main extends React.Component {
@@ -46,7 +49,8 @@ class Main extends React.Component {
                 departing: {},
                 arriving: {}
             },
-            showEcoPopup: false
+            showEcoPopup: false,
+            donation: false
         }
     }
 
@@ -68,11 +72,11 @@ class Main extends React.Component {
     }
 
     handleEcoClick = event => {
-      event.preventDefault()
-      console.log('ecoClick', !this.state.showEcoPopup)
-      this.setState({
-        showEcoPopup: this.state.showEcoPopup ? false : true
-      })
+        event.preventDefault()
+        console.log('ecoClick', !this.state.showEcoPopup)
+        this.setState({
+            showEcoPopup: this.state.showEcoPopup ? false : true
+        })
     }
 
     handleDateChange = event => {
@@ -85,13 +89,29 @@ class Main extends React.Component {
     }
 
     setFlightDetails = (flightDetails, flightDirection, history) => {
-        console.log(flightDetails)
         this.setState(
-            {bookedFlights: {...this.state.bookedFlights, [flightDirection]: flightDetails}}
+            { bookedFlights: { ...this.state.bookedFlights, [flightDirection]: flightDetails } }
         )
-        if(flightDirection === 'arriving') {
+        if (flightDirection === 'arriving') {
             history.push('/trip-review')
         }
+    }
+
+
+
+    finalDetails = (history) => {
+        history.push('/booking')
+    }
+
+    redirectItinerary = (history) => { 
+        history.push('/itinerary')
+    }
+
+    handleDonationInput = (event) => {
+        event.preventDefault()
+        this.setState({
+            donation: !this.state.donation
+        })
     }
 
     async componentDidMount() {
@@ -110,11 +130,18 @@ class Main extends React.Component {
             <div className="main">
                 <Nav />
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleEcoClick={this.handleEcoClick} />} />
-                <Route exact path="/flights" component={(navProps) => <Flights {...navProps} requestInfo={this.state} setFlightDetails={this.setFlightDetails}/>} />
-                <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary}/>} />
-                <Route exact path="/booking">
-                    <Book />
+                <Route exact path="/flights" component={(navProps) => <Flights {...navProps} requestInfo={this.state} setFlightDetails={this.setFlightDetails} />} />
+                <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} finalDetails={this.finalDetails} />} />
+                <Route exact path="/booking" component={(navProps) => <Book {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} handleDonationInput={this.handleDonationInput} donation={this.state.donation} redirectItinerary={this.redirectItinerary} />} />
+                <Route exact path="/itinerary" component={(navProps) => <Itinerary {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} donation={this.state.donation} />} />
+                <Route exact path="/users">
+                    <HomeBackend />
+                    <User />
+                    <Users />
+                    <UserEdit />
+                    <UserCreate />
                 </Route>
+                {this.state.showEcoPopup ? <EcoPopup handleEcoClick={this.handleEcoClick} /> : <></>}
                 <Route exact path="/confirmation">
                     <Confirmation />
                 </Route>
@@ -129,6 +156,7 @@ class Main extends React.Component {
          
 
                 {this.state.showEcoPopup ? <EcoPopup handleEcoClick={this.handleEcoClick}/> : <></>}
+
             </div>
         )
     }

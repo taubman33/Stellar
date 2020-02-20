@@ -60,7 +60,7 @@ export default function TripReview(props) {
       </main>
       <aside className='trip-details-aside-container'>
         <Receipt tripDetails={props} />
-        <button type='submit' className='trip-review-submit'>
+        <button onClick={() => {props.finalDetails(props.history)}} type='submit' className='trip-review-submit'>
           Next: Final details
         </button>
       </aside>

@@ -3,7 +3,6 @@ import '../../css/Receipt.css'
 import moment from 'moment'
 
 export default function Receipt(props) {
-  console.log(props)
   return (
     <div className='receipt-container'>
       <div className='receipt-card receipt-flight-container'>
@@ -27,7 +26,7 @@ export default function Receipt(props) {
       <div className='receipt-card receipt-price-container'>
         <div className='receipt-price-item receipt-start-price-container'>
           <p>Starting Price:</p>
-          <p className='receipt-price-value'>{`$${props.tripDetails.bookedFlights.departing.flightPrice + props.tripDetails.bookedFlights.arriving.flightPrice}`}</p>
+          <p className='receipt-price-value'>{`$${(props.tripDetails.bookedFlights.departing.flightPrice + props.tripDetails.bookedFlights.arriving.flightPrice).toFixed(2)}`}</p>
         </div>
         <div className='receipt-price-item receipt-savings-price-container'>
           <p>Eco-Friendly Package savings:</p>
