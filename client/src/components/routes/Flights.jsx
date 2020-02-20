@@ -3,6 +3,24 @@ import '../../css/Flights.css'
 import { Formik, Form, Field } from 'formik'
 
 export default function Flights(props) {
+  console.log(props.requestInfo.itinerary.flyingFrom)
+
+  const flights = props.flights.arriving.arrivingFlight
+  // const arrival = flights.map(flight => (<p>{flight.airline}</p>))
+  const test = flights.filter(flight =>
+    flight.depart_airport === props.requestInfo.itinerary.flyingFrom && flight.arrival_airport === props.requestInfo.itinerary.flyingTo).map(flight => (
+      <div>
+        <p>{flight.airline}</p>
+        <p>{flight.price}</p>
+        <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>
+        <Formik onSubmit={props.handleDeparting}>
+          <Form>
+            <button type="submit">Select</button>
+          </Form>
+        </Formik>
+      </div>)
+    )
+
   return (
     <div className="flights">
       <div className='flights-header-bar'>
@@ -91,9 +109,10 @@ export default function Flights(props) {
             </div>
           </Form>
         </Formik>
+        {test}
+        {/* {arrival} */}
       </div>
       {false && (<div className="individual-flight">
-        <p>6:29pm - 9:34pm</p>
         <p>Excellent Flight (8.7/10)</p>
         <p>6h 5m (Nonstop)</p>
         <p>JFK - LAX</p>
@@ -102,11 +121,6 @@ export default function Flights(props) {
         <p>Free cancel within 24 hrs</p>
         <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />
         <p>Eco Flight</p>
-        <Formik onSubmit={props.handleDeparting}>
-          <Form>
-            <button type="submit">Select</button>
-          </Form>
-        </Formik>
         <p>Details & baggage fees</p>
         <p>Rules and restrictions apply</p>
 

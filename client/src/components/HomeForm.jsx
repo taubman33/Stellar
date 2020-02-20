@@ -7,7 +7,7 @@ function HomeForm(props) {
     <div className='home-form'>
       <Formik
         enableReinitialize
-       initialValues={{ adults: 1, children: 0, directFlights: false, departureDate: props.date.departure, returnDate: props.date.return}}
+       initialValues={{ adults: 1, children: 0, flyingFrom: 'JFK', flyingTo: 'LAX', directFlights: false, departureDate: props.date.departure, returnDate: props.date.return}}
        onSubmit={(vals) => {
          props.handleHomeSubmit(vals, props.history)}}
       >
@@ -16,13 +16,16 @@ function HomeForm(props) {
             <label className='home-label-above'>
               <p>Flying from</p>
               <Field as="select" name="flyingFrom">
-                <option value="New York, NY">New York, NY (NYC - All Airports)</option>
+                <option value="JFK">New York, NY (JFK)</option>
+                <option value="LAX">Los Angeles (LAX)</option>
+                <option value="SFO">San Francisco, CA (SFO)</option>
               </Field>
             </label>
             <label className='home-label-above'>
               <p>Flying to</p>
               <Field as="select" name="flyingTo">
-                <option value="Los Angeles, CA">Los Angeles, California (LAX)</option>
+              <option value="LAX">Los Angeles (LAX)</option>
+              <option value="SFO">San Francisco, CA (SFO)</option>
               </Field>
             </label>
           </div>
