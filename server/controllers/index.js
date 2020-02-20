@@ -28,7 +28,7 @@ const getUserById = async (req, res) => {
     }
   };
 
-//create user -> PMVP
+//create user
 const createUser = async (req, res) => {
     try {
       const user = await User.create(req.body);
@@ -123,6 +123,7 @@ const getDepartingFlightById = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+
 //get all Arriving flights
 const getAllArrivingFlights = async (req, res) => {
   try {
@@ -143,8 +144,6 @@ const getAllDepartingFlights = async (req, res) => {
     }
   };
 
-
-
 //delete an arriving flight
 const deleteArrivingFlights = async (req, res) => {
   try {
@@ -161,7 +160,6 @@ const deleteArrivingFlights = async (req, res) => {
   }
 };
 
-
 //delete a departing flight
 const deleteDepartingFlights = async (req, res) => {
   try {
@@ -177,7 +175,6 @@ const deleteDepartingFlights = async (req, res) => {
       return res.status(500).send(error.message);
   }
 };
-
 
 
 module.exports = {
