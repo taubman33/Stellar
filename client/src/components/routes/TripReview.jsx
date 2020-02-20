@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../css/TripReview.css'
+import moment from 'moment'
 import Receipt from '../shared/Receipt'
 
 export default function TripReview(props) {
-  console.log(props)
   return (
     <div className='trip-review'>
       <div className='trip-review-header'>
@@ -14,29 +14,29 @@ export default function TripReview(props) {
         <div className='trip-review-main-top'>
           <img alt='airplane-circle' src={require('../../assets/airplane-circle.svg')} className='trip-review-airplane-icon' />
           <div className='trip-review-main-top-aside'>
-            <p className='trip-review-top-dates'>{`Fri, Mar 20 - Sun, Mar 22`}</p>
+            <p className='trip-review-top-dates'>{`${moment(props.itinerary.departureDate).format('ddd, MMM [] D')} - ${moment(props.itinerary.returnDate).format('ddd, MMM [] D')} `}</p>
             <p className='trip-review-top-details'>{`Roundtrip - 1 traveler`}</p>
           </div>
         </div>
         <div className='trip-review-flights-container'>
           <div className='trip-review-flight-details'>
             <div className='trip-review-flight-details-left'>
-              <p>{`6:29pm - 9:34pm`}</p>
-              <p className='trip-review-airline-name'>JetBlue Airways</p>
+              <p>{`${props.bookedFlights.departing.departingTime} - ${props.bookedFlights.departing.arrivingTime}`}</p>
+              <p className='trip-review-airline-name'>{props.bookedFlights.departing.airline}</p>
             </div>
             <div className='trip-review-flight-details-right'>
-              <p>{`6h 5m (Nonstop)`}</p>
-              <p>{`JFK to LAX`}</p>
+              <p>{`${props.bookedFlights.departing.flightDuration}h (Nonstop)`}</p>
+              <p>{`${props.bookedFlights.departing.departAirport} to ${props.bookedFlights.departing.arrivalAiport}`}</p>
             </div>
           </div>
           <div className='trip-review-flight-details'>
             <div className='trip-review-flight-details-left'>
-              <p>{`12:30am - 9:08am`}</p>
-              <p className='trip-review-airline-name'>JetBlue Airways</p>
+              <p>{`${props.bookedFlights.arriving.departingTime} - ${props.bookedFlights.arriving.arrivingTime}`}</p>
+              <p className='trip-review-airline-name'>{props.bookedFlights.arriving.airline}</p>
             </div>
             <div className='trip-review-flight-details-right'>
-              <p>{`5h 38m (Nonstop)`}</p>
-              <p>{`LAX to JFK`}</p>
+              <p>{`${props.bookedFlights.arriving.flightDuration}h (Nonstop)`}</p>
+              <p>{`${props.bookedFlights.arriving.departAirport} to ${props.bookedFlights.arriving.arrivalAiport}`}</p>
             </div>
           </div>
           <p className='trip-review-flight-details'>Details & baggage fees</p>
