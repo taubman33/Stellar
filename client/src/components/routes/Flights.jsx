@@ -7,23 +7,21 @@ export default function Flights(props) {
   const [, forceUpdate] = React.useReducer(x => x + 1, 0)
 
   const makeFlightCards = (flights, flightDirection) => {
-    console.log(flightDirection)
     const flightList = flights[`${flightDirection}Flight`].filter(flight =>
-      flight[`${(flightDirection === 'departing') ? 'depart' : 'arrival'}_airport`] === props.requestInfo.itinerary.flyingFrom 
-      && flight[`${(flightDirection === 'departing') ? 'arrival' : 'depart'}_airport`] === props.requestInfo.itinerary.flyingTo 
+      flight[`${(flightDirection === 'departing') ? 'depart' : 'arrival'}_airport`].includes(props.requestInfo.itinerary.flyingFrom)
+      && flight[`${(flightDirection === 'departing') ? 'arrival' : 'depart'}_airport`].includes(props.requestInfo.itinerary.flyingTo)
       && ((props.requestInfo.itinerary.ecoFriendly) ? (props.requestInfo.itinerary.ecoFriendly === flight.eco) : true)).map((flight, key) => {
         const flightDetails = {
         departingTime: moment(flight.depart_time).format('h:mm a'),
         arrivingTime: moment(flight.arrival_time).format('h:mm a')
       }
-      console.log(flight)
         return (
-        <div key={key}>        
+        <div key={key}>
           <p name="time">{`${flightDetails.departingTime} - ${flightDetails.arrivingTime}`}</p>
           <p>{flight.airline}</p>
           <p>Excellent Flight (8.7/10)</p>
           <p>{moment(flight.arrival_time).diff(flight.depart_time,'hours')}h (Nonstop) </p>
-          <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>        
+          <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>
           <p>{`+ $${flight.price}`}</p>
           <p>Roundtrip</p>
           <p>Free cancel within 24 hrs</p>
