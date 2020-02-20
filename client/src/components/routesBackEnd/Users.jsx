@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Layout from '../shared/Layout'
-
+import { Link } from 'react-router-dom' 
 
 
 //setting up react -> using class and state because of how much going on here
@@ -28,22 +28,17 @@ class Users extends Component {
 
   //rendering user info
   render() {
-    const users = this.state.users.map(user => (
-      <div key={user.userId}>
+
+    const { users } = this.state
+
+    if (!users) {
+      return <p>Loading...</p>
+    }
+    const usersList = this.state.users.map(user => (
+      <div key={user.id}>
         <h2>
           {user.name}
-          <button
-            onClick={() => this.props.history.push(`/users/${user.userId}`)}
-          >
-            View Users
-          </button>
-          <button
-            onClick={() =>
-              this.props.history.push(`/users/${user.userId}/create-user`)
-            }
-          >
-            Create User
-          </button>
+          <Link to={`/users/${user.id}`}>View User</Link>
         </h2>
       </div>
     ))
@@ -51,7 +46,7 @@ class Users extends Component {
     return (
         <Layout>
         <h4>Passenger Manifest</h4>
-        <ul>{users}</ul>
+        <ul>{usersList}</ul>
         </Layout>
     )
   }
