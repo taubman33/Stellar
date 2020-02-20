@@ -10,7 +10,7 @@ export default function Receipt(props) {
         <img alt='eco-friendly' src={require('../../assets/noun-leaf.svg')} />
         <div className='receipt-flight-info-container'>
           <p className='receipt-card-title'>Roundtrip Flight</p>
-          <p className='receipt-card-subtitle'>JFK to LAX</p>
+          <p className='receipt-card-subtitle'>{`${props.tripDetails.itinerary.flyingFrom} - ${props.tripDetails.itinerary.flyingTo}`}</p>
           <p>{`${moment(props.tripDetails.itinerary.departureDate).format('ddd, MM/DD')} - ${moment(props.tripDetails.itinerary.returnDate).format('ddd, MM/DD')} `}</p>
           <p>1 ticket: 1 adult</p>
         </div>
