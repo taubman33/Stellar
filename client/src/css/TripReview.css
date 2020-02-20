@@ -3,6 +3,13 @@
   --trip-review-blue: #194EB9;
 }
 
+.trip-details-aside-container {
+  position: absolute;
+  top: 320px;
+  right: 60px;
+  width: 350px;
+}
+
 .trip-review {
   font-family: 'Helvetica', sans-serif;
   height: 100%;
@@ -118,4 +125,19 @@ p.trip-review-flight-details {
 .upgrade-ad {
   margin-left: 20px;
   margin-top: 20px;
+}
+
+.trip-review-submit {
+  display: inline;
+  width: 330px;
+  height: 65px;
+  margin-top: 60px;
+  background-color: #F30053;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-family: 'Helvetica', sans-serif;
+  box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #d9294e;
+  padding: 10px 20px;
 }

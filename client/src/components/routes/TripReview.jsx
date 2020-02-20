@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../css/TripReview.css'
 import moment from 'moment'
+import Receipt from '../shared/Receipt'
 
 export default function TripReview(props) {
   console.log(props.bookedFlights)
@@ -59,9 +60,12 @@ export default function TripReview(props) {
           </div>
         </div>
       </main>
-      <button type='submit' className='trip-review-submit'>
-        Next: Final details
-      </button>
+      <aside className='trip-details-aside-container'>
+        <Receipt tripDetails={props} />
+        <button type='submit' className='trip-review-submit'>
+          Next: Final details
+        </button>
+      </aside>
     </div>
   )
 }

@@ -1,0 +1,48 @@
+.receipt-card {
+  border-top: 2px solid var(--medium-grey);
+  height: 140px;
+  display: flex;
+}
+
+.receipt-card img {
+  margin-top: -60px;
+  margin-right: 10px;
+}
+
+.receipt-card div p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.receipt-card-title {
+  font-size: 20px;
+  color: var(--trip-review-blue);
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.receipt-card-subtitle {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.receipt-price-container {
+  flex-flow: column;
+}
+
+.receipt-price-item {
+  display: flex;
+  padding-top: 20px;
+}
+
+.receipt-price-value {
+  margin-left: auto;
+}
+
+.receipt-total-price-container {
+  border-top: 2px solid var(--medium-grey);
+}
+
+.receipt-total-label {
+  color: var(--trip-review-blue);
+}
