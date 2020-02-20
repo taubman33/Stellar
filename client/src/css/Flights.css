@@ -199,13 +199,21 @@
   font-size: 12px;
 }
 
+
+.flight-bottom-section {
+  display: flex;
+  margin-left: 110px;
+}
+
 .sort-filter-container {
-  position: absolute;
-  left: 110px;
   top: 655px;
   width: 250px;
   display: flex;
   flex-flow: column;
+}
+
+.flight-cards-container {
+  margin-left: 20px;
 }
 
 .sort-filter-toprow {
