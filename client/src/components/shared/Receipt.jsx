@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../css/Receipt.css'
 
 export default function Receipt(props) {
   return (
@@ -22,16 +23,16 @@ export default function Receipt(props) {
         </div>
       </div>
       <div className='receipt-card receipt-price-container'>
-        <div className='receipt-start-price-container'>
+        <div className='receipt-price-item receipt-start-price-container'>
           <p>Starting Price:</p>
           <p className='receipt-price-value'>$512.26</p>
         </div>
-        <div className='receipt-savings-price-container'>
+        <div className='receipt-price-item receipt-savings-price-container'>
           <p>Eco-Friendly Package savings:</p>
           <p className='receipt-price-value'>-$10.81</p>
         </div>
       </div>
-      <div className='receipt-total-price-container'>
+      <div className='receipt-price-item receipt-total-price-container'>
         <p className='receipt-total-label'>Total due today:</p>
         <p className='receipt-price-value'>$501.45</p>
       </div>

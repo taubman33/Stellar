@@ -58,7 +58,7 @@ export default function TripReview(props) {
           </div>
         </div>
       </main>
-      <aside>
+      <aside className='trip-details-aside-container'>
         <Receipt tripDetails={props} />
         <button type='submit' className='trip-review-submit'>
           Next: Final details
