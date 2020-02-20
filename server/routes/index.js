@@ -17,7 +17,7 @@ router.get('/users/:id', controllers.getUserById)
 router.post('/users', controllers.createUser)
 
 //route for update user
-router.put('/users', controllers.updateUser)
+router.put('/users/:id', controllers.updateUser)
 
 //route for delete user
 router.delete('/users/:id', controllers.deleteUser)

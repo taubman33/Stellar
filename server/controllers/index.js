@@ -1,4 +1,6 @@
 const { User, ArrivingFlight, DepartingFlight } = require('../models')
+const Sequelize = require('sequelize')
+const op = Sequelize.Op
 
 //get all users
 const getAllUsers = async (req, res) => {
@@ -43,7 +45,7 @@ const updateUser = async (req, res) => {
   try {
       const { id } = req.params;
       const { user } = req.body
-      const [updated] = await User.update(User, {
+      const updated = await User.update(User, {
           where: { id: id }
       });
       if (updated) {
@@ -64,7 +66,7 @@ const deleteUser = async (req, res) => {
           where: { id: id }
       });
       if (deleted) {
-          return res.status(200).send("User deleted");
+          return res.status(204).send("User deleted");
       }
       throw new Error("User not found");
   } catch (error) {
@@ -76,10 +78,19 @@ const deleteUser = async (req, res) => {
 const getArrivingFlightById = async (req, res) => {
   try {
     const { id } = req.params;
-    const arrivingFlight = await ArrivingFlight.findOne({
+    const user = await User.findOne({
       where: { id: id },
+      include: [
+        {
+          model: ArrivingFlight,
+          where: {
+            id: {[op.col]: 'User.arrivingFlightId'}
+          }
+        }
+      ]
     });
-    if (arrivingFlight) {
+    if (user) {
+      const arrivingFlight = user.ArrivingFlight
       return res.status(200).json({ arrivingFlight });
     }
     return res.status(404).send('Flight with the specified ID does not exist');
@@ -92,10 +103,19 @@ const getArrivingFlightById = async (req, res) => {
 const getDepartingFlightById = async (req, res) => {
   try {
     const { id } = req.params;
-    const departingFlight = await DepartingFlight.findOne({
+    const user = await User.findOne({
       where: { id: id },
+      include: [
+        {
+          model: DepartingFlight,
+          where: {
+            id: {[op.col]: 'User.departingFlightId'}
+          }
+        }
+      ]
     });
-    if (departingFlight) {
+    if (user) {
+      const departingFlight = user.DepartingFlight
       return res.status(200).json({ departingFlight });
     }
     return res.status(404).send('Flight with the specified ID does not exist');
@@ -103,7 +123,6 @@ const getDepartingFlightById = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
-
 //get all Arriving flights
 const getAllArrivingFlights = async (req, res) => {
   try {

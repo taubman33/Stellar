@@ -21,26 +21,26 @@ describe('User API', () => {
   it('should show all arrival flights', async () => {
     const res = await request(app).get('/api/arrivingFlights/');
     expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty('arrivalFlight');
+    expect(res.body).toHaveProperty('arrivingFlight');
   });
 
   //get arrival flight by id
     it('should show a users arrival flight', async () => {
-      const res = await request(app).get('api/users/:id/arrivingflight');
+      const res = await request(app).get('/api/users/2/arrivingflight');
       expect(res.statusCode).toEqual(200);
-      expect(res.body).toHaveProperty('arrivalFlight');
+      expect(res.body).toHaveProperty('arrivingFlight');
     });
   
      //get all departure flights
   it('should show all departing flights', async () => {
-    const res = await request(app).get('/api/departingFlights/');
+    const res = await request(app).get('/api/departingflights/');
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveProperty('departingFlight');
   });
 
   //get arrival departure by id
     it('should show a users departing flight', async () => {
-      const res = await request(app).get('api/users/:id/departmentflight');
+      const res = await request(app).get('/api/users/2/departingflight');
       expect(res.statusCode).toEqual(200);
       expect(res.body).toHaveProperty('departingFlight');
     });
