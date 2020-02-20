@@ -41,23 +41,22 @@ export default function Flights(props) {
         <p>Sort & Filter</p>
         <p>Clear</p>
         <p>Sort By</p>
-        <Formik>
-          <Form>
-            <Field as="select" name="filter">
-              <option value="lowest">Price (Lowest)</option>
-            </Field>
-            <p>Stops</p>
-            <Field type="checkbox" name="nonStop" />
-            <p>Non-Stop(52)</p>
-            <Field type="checkbox" name="oneStop" />
-            <p>1 Stop (28)</p>
-            <p>Airlines included</p>
-            <Field type="checkbox" name="jetblue" />
-            <p>JetBlue Airways (12)</p>
-            <Field type="checkbox" name="united" />
-            <p>United (15)</p>
-          </Form>
-        </Formik>
+
+        <select>
+          <option value="lowest">Price (Lowest)</option>
+        </select>
+        <p>Stops</p>
+        <input type="checkbox" name="nonStop" />
+        <p>Non-Stop(52)</p>
+        <input type="checkbox" name="oneStop" />
+        <p>1 Stop (28)</p>
+        <p>Airlines included</p>
+        <input type="checkbox" name="jetblue" />
+        <p>JetBlue Airways (12)</p>
+        <input type="checkbox" name="united" />
+        <p>United (15)</p>
+
+
       </div>
       <div className="individual-flight">
         <p>6:29pm - 9:34pm</p>
@@ -69,7 +68,11 @@ export default function Flights(props) {
         <p>Free cancel within 24 hrs</p>
         <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />
         <p>Eco Flight</p>
-        <button type="submit">Select</button>
+        <Formik onSubmit={props.handleDeparting}>
+          <Form>
+            <button type="submit">Select</button>
+          </Form>
+        </Formik>
         <p>Details & baggage fees</p>
         <p>Rules and restrictions apply</p>
 
