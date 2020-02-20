@@ -11,7 +11,7 @@ function Home(props) {
     <div className="home">
       <div className='home-container'>
         <div className="home-row">
-          <Link to="#" className='home-row-button home-selected'>
+          <Link to="#" className='home-row-button'>
             <img src={require('../../assets/airplane.svg')} alt='airplane-icon'/>
             <p>Flights</p>
           </Link>
@@ -19,7 +19,7 @@ function Home(props) {
             <img src={require('../../assets/hotel.svg')} alt='hotel-icon'/>
             <p>Hotels</p>
           </Link>
-          <Link to="#" className='home-row-button'>
+          <Link to="#" className='home-row-button home-selected'>
               <div>
                 <img src={require('../../assets/airplane.svg')} alt='airplane-icon'/>
                 <img src={require('../../assets/hotel.svg')} alt='hotel-icon'/>
@@ -41,13 +41,16 @@ function Home(props) {
         </div>
         <div className='home-package-type-sensitive'>
           <Link to='#' className='home-package-select home-selected'>
-            <p>Roundtrip</p>
+            <p>Flight + Hotel</p>
           </Link>
           <Link to='#' className='home-package-select'>
-            <p>One way</p>
+            <p>Flight + Hotel + Car</p>
           </Link>
           <Link to='#' className='home-package-select'>
-            <p>Multi-city</p>
+            <p>Flight + Car</p>
+          </Link>
+          <Link to='#' className='home-package-select'>
+            <p>Hotel + Car</p>
           </Link>
         </div>
         <HomeForm  history={props.history} date={props.date} handleHomeSubmit={props.handleHomeSubmit} handleDateChange={props.handleDateChange}

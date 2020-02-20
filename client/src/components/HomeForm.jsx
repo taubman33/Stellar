@@ -30,12 +30,23 @@ function HomeForm(props) {
             <label className='home-label-above' id='departure-date'>
               <p>Departing</p>
               <img src={require('../assets/calendar.svg')} alt='calendar-icon' className='calendar-icon' />
-              <input type="date" value={props.date.departure} onChange={props.handleDateChange} min={props.date.departure} name="departure" />
+              <input type="date" value={props.date.departure} onChange={props.handleDateChange} name="departure" />
             </label>
             <label className='home-label-above' id='arrival-date'>
               <p>Returning</p>
               <img src={require('../assets/calendar.svg')} alt='calendar-icon' className='calendar-icon' />
-              <input type="date" value={props.date.return} onChange={props.handleDateChange} min={props.date.return} name="return" />
+              <input type="date" value={props.date.return} onChange={props.handleDateChange} name="return" />
+            </label>
+            <label className='home-label-above home-dropdowns'>
+              <p>Rooms</p>
+              <Field as="select" name="rooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </Field>
             </label>
             <label className='home-label-above home-dropdowns'>
               <p>Adults</p>
