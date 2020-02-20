@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import apiUrl from '../../apiConfig'
 import Layout from '../shared/Layout'
 
 
-//setting up react style
+
+//setting up react -> using class and state because of how much going on here
 class Users extends Component {
   constructor(props) {
     super(props)
@@ -16,10 +16,10 @@ class Users extends Component {
   }
   
   
-  //response slug needs to be fixed
+  //response slug needs to be fixed when deployed***
   async componentDidMount() {
     try {
-      const response = await axios(`${apiUrl}/users`)
+      const response = await axios('http://localhost:3000/api/users')
       this.setState({ users: response.data.users })
     } catch (err) {
       console.error(err)
@@ -29,17 +29,17 @@ class Users extends Component {
   //rendering user info
   render() {
     const users = this.state.users.map(user => (
-      <div key={user.id}>
+      <div key={user.userId}>
         <h2>
           {user.name}
           <button
-            onClick={() => this.props.history.push(`/users/${user.id}`)}
+            onClick={() => this.props.history.push(`/users/${user.userId}`)}
           >
             View Users
           </button>
           <button
             onClick={() =>
-              this.props.history.push(`/users/${user.id}/create-user`)
+              this.props.history.push(`/users/${user.userId}/create-user`)
             }
           >
             Create User
@@ -49,10 +49,10 @@ class Users extends Component {
     ))
 
     return (
-      <Layout>
-        <h4>Users</h4>
+        <Layout>
+        <h4>Passenger Manifest</h4>
         <ul>{users}</ul>
-      </Layout>
+        </Layout>
     )
   }
 }

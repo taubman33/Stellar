@@ -3,7 +3,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import Layout from '../shared/Layout'
 
 
 class User extends Component {
@@ -20,7 +19,7 @@ class User extends Component {
   async componentDidMount() {
     try {
       const response = await axios(
-        `http://localhost:3000/api/users/${this.props.match.params.user_id}`
+        `http://localhost:3000/api/users/${this.props.match.params.userId}`
       )
       this.setState({ user: response.data.user })
     } catch (err) {
@@ -32,7 +31,7 @@ class User extends Component {
 
   destroy = () => {
     axios({
-      url: `http://localhost:3000/api/items/${this.props.match.params.item_id}`,
+      url: `http://localhost:3000/api/users/${this.props.match.params.userId}`,
       method: 'DELETE'
     })
       .then(() => this.setState({ deleted: true }))
@@ -65,13 +64,13 @@ class User extends Component {
         <button
           onClick={() =>
             this.props.history.push(
-              `/users/${this.props.match.params.user_id}/items/${user.id}/edit`
+              `/users/${this.props.match.params.userId}/items/${user.id}/edit`
             )
           }
         >
           Edit
         </button>
-        <Link to={`/users/${this.props.match.params.user_id}/items/`}>
+        <Link to={`/users/${this.props.match.params.userId}/items/`}>
           Back to all Users
         </Link>
       </div>

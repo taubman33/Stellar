@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import UserForm from '../shared/UserForm'
-import Layout from '../shared/Layout'
-import apiUrl from '../../apiConfig'
+
 
 class UserEdit extends Component {
     constructor(props) {
@@ -22,7 +21,7 @@ class UserEdit extends Component {
     async componentDidMount() {
         try {
             const response = await axios(
-                `${apiUrl}/users/${this.props.match.params.userId}`
+                `http://localhost:3000/api/users/${this.props.match.params.userId}`
             )
             this.setState({ user: response.data.user })
         } catch (error) {
@@ -40,7 +39,7 @@ class UserEdit extends Component {
         event.preventDefault()
 
         axios({
-            url: `${apiUrl}/user/${this.props.match.params.userId}`,
+            url: `http://localhost:3000/api/users/${this.props.match.params.userId}`,
             method: 'PUT',
             data: { title: this.state.user.title, link: this.state.user.link} 
         })
@@ -57,21 +56,21 @@ class UserEdit extends Component {
         if (updated) {
             return (
                 <Redirect
-                    to={`/users/${this.props.match.params.user_id}`}
+                    to={`/users/${this.props.match.params.userId}`}
                 />
             )
         }
         //return 
         return (
-            <Layout>
+            <div>
                 <h4>Edit User</h4>
                 <UserForm
                     user={user}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    cancelPath={`/users/${this.props.match.params.userId}`}
+                    // cancelPath={`/users/${this.props.match.params.userId}`}
                 />
-            </Layout>
+            </div>
         )
     }
 }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-
-import apiUrl from '../../apiConfig'
 import UserForm from '../shared/UserForm'
-import Layout from '../shared/Layout'
+
 
 
 //retyped out from the solution branch because I was having errors when I first tried it
@@ -31,7 +29,7 @@ class UserCreate extends Component {
 
     //axios call - POST method - create user
     axios({
-      url: `${apiUrl}/users/${this.props.match.params.user_id}`,
+      url: `http://localhost:3000/api/users/${this.props.match.params.user_id}`,
       method: 'POST',
       data: { title: this.state.title, link: this.state.link }
     })
@@ -50,14 +48,14 @@ class UserCreate extends Component {
 
     
     return (
-      <Layout>
+    
         <UserForm
           item={{ title, link }}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           cancelPath="/"
         />
-      </Layout>
+     
     )
   }
 }
