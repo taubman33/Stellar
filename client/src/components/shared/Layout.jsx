@@ -4,7 +4,7 @@ import React from 'react'
 const Layout = props => (
   <div>
   <div className = "header">
-    <h1>Users</h1>
+  <h4>Welcome to the secret Users section!</h4>
     </div>
 
     

@@ -68,7 +68,7 @@ class UserEdit extends Component {
                     user={user}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    // cancelPath={`/users/${this.props.match.params.userId}`}
+                    cancelPath={`/users`}
                 />
             </div>
         )

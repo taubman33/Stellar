@@ -5,14 +5,13 @@ import UserForm from '../shared/UserForm'
 
 
 
-//retyped out from the solution branch because I was having errors when I first tried it
+
 class UserCreate extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-    //   title: '',
-    //   link: '',
+      name: '',
       createdUser: null
     }
 
@@ -31,7 +30,7 @@ class UserCreate extends Component {
     axios({
       url: `http://localhost:3000/api/users/${this.props.match.params.user_id}`,
       method: 'POST',
-      data: { title: this.state.title, link: this.state.link }
+      data: { name: this.state.name }
     })
       .then(res => this.setState({ createdUser: res.data.item }))
       .catch(console.error)
@@ -39,7 +38,7 @@ class UserCreate extends Component {
 
   render() {
     const { handleChange, handleSubmit } = this
-    const { createdUser, title, link } = this.state
+    const { createdUser, name } = this.state
 
     if (createdUser) {
       return <Redirect to={`/users/${this.props.match.params.user_id}`} />
@@ -50,7 +49,7 @@ class UserCreate extends Component {
     return (
     
         <UserForm
-          item={{ title, link }}
+          item={{ name }}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           cancelPath="/"
