@@ -9,6 +9,7 @@ import Loading from './Loading'
 import EcoPopup from './shared/EcoPopup'
 import { Route } from 'react-router-dom'
 import moment from 'moment'
+import axios from 'axios'
 
 class Main extends React.Component {
     constructor(props) {
@@ -28,7 +29,9 @@ class Main extends React.Component {
                 departureDate: '',
                 returnDate: '',
                 directFlight: null,
-                ecoFriendly: null
+                ecoFriendly: false,
+                flyingFrom: null,
+                flyingTo: null,
             },
             flights: {
                 departing: [],
@@ -51,7 +54,9 @@ class Main extends React.Component {
                 departureDate: values.departureDate,
                 returnDate: values.returnDate,
                 directFlight: values.directFlights,
-                ecoFriendly: values.ecoFriendly
+                ecoFriendly: values.ecoFriendly,
+                flyingFrom: values.flyingFrom,
+                flyingTo: values.flyingTo
             }
         })
         history.push('/flights')
@@ -74,23 +79,35 @@ class Main extends React.Component {
         })
     }
 
-    handleDeparting = () => {
+    setFlightDetails = (flightDetails, flightDirection, history) => {
+        console.log(flightDetails)
+        this.setState(
+            {bookedFlights: {...this.state.bookedFlights, [flightDirection]: flightDetails}}
+        )
+        if(flightDirection === 'arriving') {
+            history.push('/trip-review')
+        }
+    }
 
-        console.log('handle departing')
+    async componentDidMount() {
+        const departing = await axios('http://localhost:3000/api/departingFlights/')
+        const arriving = await axios('http://localhost:3000/api/arrivingFlights/')
+        this.setState({
+            flights: {
+                departing: departing.data,
+                arriving: arriving.data
+            }
+        })
     }
 
     render() {
-      console.log('rendering main')
         return (
             <div className="main">
                 <Nav />
                 <Route exact path="/" component={(navProps) => <Home {...navProps} date={this.state.date} handleHomeSubmit={this.handleHomeSubmit} handleDateChange={this.handleDateChange} handleEcoClick={this.handleEcoClick} />} />
-                <Route exact path="/flights">
-                    <Flights requestInfo={this.state} handleDeparting={this.handleDeparting} departing={this.state.departing}/>
-                </Route>
-                <Route exact path="/trip-review">
-                    <TripReview />
-                </Route>
+                <Route exact path="/flights" component={(navProps) => <Flights {...navProps} requestInfo={this.state} setFlightDetails={this.setFlightDetails}/>} />
+                
+                <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} requestInfo={this.state}/>} />
                 <Route exact path="/booking">
                     <Book />
                 </Route>

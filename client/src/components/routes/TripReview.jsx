@@ -1,7 +1,8 @@
 import React from 'react'
 import '../../css/TripReview.css'
 
-export default function TripReview() {
+export default function TripReview(props) {
+  console.log(props)
   return (
     <div className='trip-review'>
       <div className='trip-review-header'>
