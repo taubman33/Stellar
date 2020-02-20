@@ -37,9 +37,9 @@ export default function TripReview() {
               <p>{`LAX to JFK`}</p>
             </div>
           </div>
-          <p>Details & baggage fees</p>
+          <p className='trip-review-flight-details'>Details & baggage fees</p>
         </div>
-        <p className='trip-review-change-flights'></p>
+        <div className='trip-review-change-flights'><p>Change Flights</p></div>
         <div className='trip-review-upgrade-container'>
           <p>Upgrade your flight</p>
           <div className='trip-review-upgrade-row'>
