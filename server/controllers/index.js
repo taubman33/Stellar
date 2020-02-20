@@ -72,7 +72,6 @@ const deleteUser = async (req, res) => {
   }
 };
 
-
 //get arriving flight by id
 const getArrivingFlightById = async (req, res) => {
   try {
@@ -89,7 +88,6 @@ const getArrivingFlightById = async (req, res) => {
   }
 };
 
-
 //get departing flight by id
 const getDepartingFlightById = async (req, res) => {
   try {
@@ -105,7 +103,6 @@ const getDepartingFlightById = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
-
 
 //get all Arriving flights
 const getAllArrivingFlights = async (req, res) => {
@@ -128,6 +125,42 @@ const getAllDepartingFlights = async (req, res) => {
   };
 
 
+
+//delete an arriving flight
+const deleteArrivingFlights = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const deleted = await ArrivingFlight.destroy({
+          where: { id: id }
+      });
+      if (deleted) {
+          return res.status(200).send("Arriving Flight deleted");
+      }
+      throw new Error("Flight not found");
+  } catch (error) {
+      return res.status(500).send(error.message);
+  }
+};
+
+
+//delete a departing flight
+const deleteDepartingFlights = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const deleted = await DepartingFlight.destroy({
+          where: { id: id }
+      });
+      if (deleted) {
+          return res.status(200).send("Departing Flight deleted");
+      }
+      throw new Error("Flight not found");
+  } catch (error) {
+      return res.status(500).send(error.message);
+  }
+};
+
+
+
 module.exports = {
 getAllUsers,
 getUserById,
@@ -137,6 +170,8 @@ deleteUser,
 getAllArrivingFlights,
 getAllDepartingFlights,
 getArrivingFlightById,
-getDepartingFlightById
+getDepartingFlightById,
+deleteArrivingFlights,
+deleteDepartingFlights
 
 }
