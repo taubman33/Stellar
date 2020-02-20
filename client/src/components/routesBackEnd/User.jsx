@@ -71,7 +71,7 @@ class User extends Component {
         <button
           onClick={() =>
             this.props.history.push(
-              `/users/${this.props.match.params.id}/users/${user.id}/edit`
+              `/users/${this.props.match.params.id}`
             )
           }
         >

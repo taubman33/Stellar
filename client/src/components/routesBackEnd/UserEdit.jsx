@@ -9,8 +9,9 @@ class UserEdit extends Component {
         super(props)
         this.state = {
             user: {   
-                title: '',
-                link: ''
+                hashed_password: '',
+                arrivingFlightId: '',
+                departingFlightId: ''
             },
             updated: false
         }

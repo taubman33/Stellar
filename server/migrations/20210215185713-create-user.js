@@ -23,7 +23,7 @@ module.exports = {
       },
       departingFlightId: {
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
+    
         references: {
           model: 'DepartingFlights',
           key: 'id',
@@ -32,7 +32,7 @@ module.exports = {
       },
       arrivingFlightId: { 
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
+  
         references: {
           model: 'ArrivingFlights',
           key: 'id',
