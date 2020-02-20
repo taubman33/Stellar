@@ -10,11 +10,10 @@ import EcoPopup from './shared/EcoPopup'
 import { Route } from 'react-router-dom'
 import moment from 'moment'
 import axios from 'axios'
-import HomeBackend from './routesBackEnd/HomeBackend'
+
 import User from './routesBackEnd/User'
 import Users from './routesBackEnd/Users'
 import UserCreate from './routesBackEnd/UserCreate'
-import UserEdit from './routesBackEnd/UserEdit'
 
 
 class Main extends React.Component {
@@ -119,14 +118,14 @@ class Main extends React.Component {
                 <Route exact path="/confirmation">
                     <Confirmation />
                 </Route>
-                <Route exact path="/users"> 
-                  <HomeBackend/>
-                  <User/>
+
+                <Route exact path="/users" > 
                   <Users/>
-                  <UserEdit/>
                   <UserCreate/>
                 </Route>
 
+                <Route exact path="/users/:id" component={(navProps) => <User {...navProps} />} />
+    
          
 
                 {this.state.showEcoPopup ? <EcoPopup handleEcoClick={this.handleEcoClick}/> : <></>}

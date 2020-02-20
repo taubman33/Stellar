@@ -29,11 +29,11 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
     User.belongsTo(models.DepartingFlight, {
       foreignKey: 'departingFlightId',
-      onDelete: 'CASCADE'
+  
     });
     User.belongsTo(models.ArrivingFlight, {
       foreignKey: 'arrivingFlightId',
-      onDelete: 'CASCADE'
+
     });
   };
   return User;

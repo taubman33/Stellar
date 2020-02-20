@@ -9,8 +9,9 @@ class UserEdit extends Component {
         super(props)
         this.state = {
             user: {   
-                title: '',
-                link: ''
+                name: '',
+                hashed_password: '',
+               
             },
             updated: false
         }
@@ -39,9 +40,14 @@ class UserEdit extends Component {
         event.preventDefault()
 
         axios({
-            url: `http://localhost:3000/api/users/${this.props.match.params.userId}`,
+            url: `http://localhost:3000/api/users/${this.props.match.params.id}`,
             method: 'PUT',
-            data: { title: this.state.user.title, link: this.state.user.link} 
+            data: {  
+                
+            name: 'Duke Ellington',
+            hashed_password: 'almonds'
+        
+               } 
         })
             .then(() => this.setState({ updated: true }))
             .catch(console.error)
@@ -56,7 +62,7 @@ class UserEdit extends Component {
         if (updated) {
             return (
                 <Redirect
-                    to={`/users/${this.props.match.params.userId}`}
+                    to={`/users/${this.props.match.params.id}`}
                 />
             )
         }
@@ -68,7 +74,7 @@ class UserEdit extends Component {
                     user={user}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    // cancelPath={`/users/${this.props.match.params.userId}`}
+                    cancelPath={`/users`}
                 />
             </div>
         )
