@@ -60,7 +60,7 @@ module.exports = {
     },
 
     {
-      name: 'Tommy Flannigan',
+      name: 'Elvin Jones',
       hashed_password: 'password',
       number_adults: 2,
       number_children: 4,

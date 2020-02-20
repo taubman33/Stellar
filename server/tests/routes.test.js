@@ -1,6 +1,10 @@
 const request = require('supertest');
 const app = require('../server.js');
 
+
+//routes test
+
+
 describe('User API', () => {
   //get all users
   it('should show all users', async () => {
@@ -44,7 +48,6 @@ describe('User API', () => {
       expect(res.statusCode).toEqual(200);
       expect(res.body).toHaveProperty('departingFlight');
     });
-  
 
     //updates a user
     it('should update an user', async () => {
@@ -61,7 +64,6 @@ describe('User API', () => {
       expect(res.statusCode).toEqual(200);
       expect(res.body).toHaveProperty('user');
     }),
-
     
     //deletes a user
     it('should delete a user', async () => {
