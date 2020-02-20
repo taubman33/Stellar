@@ -49,6 +49,22 @@ describe('User API', () => {
       expect(res.body).toHaveProperty('departingFlight');
     });
 
+
+    //creates a user
+    it('should create a new user', async () => {
+      const res = await request(app)
+        .post('/api/users')
+        .send({
+        name: '',
+        hashed_password: '',
+        arrivingFlightId: '',
+        departingFlightId: ''
+              });
+      expect(res.statusCode).toEqual(201);
+      expect(res.body).toHaveProperty('user');
+    }),
+
+    
     //updates a user
     it('should update an user', async () => {
       const res = await request(app)
