@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       rating: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       eco: {
         type: Sequelize.BOOLEAN
