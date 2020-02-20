@@ -80,11 +80,7 @@ class Main extends React.Component {
     }
 
     handleDeparting = (e) => {
-        this.setState({
-            bookedFlights: {
-                
-            }
-        })
+
         console.log('handle departing')
     }
 

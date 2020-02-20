@@ -1,23 +1,34 @@
 import React from 'react'
 import '../../css/Flights.css'
 import { Formik, Form, Field } from 'formik'
+import moment from 'moment'
 
 export default function Flights(props) {
   console.log(props.requestInfo.itinerary)
 
   const flights = props.flights.arriving.arrivingFlight
-  // const arrival = flights.map(flight => (<p>{flight.airline}</p>))
-  const test = flights.filter(flight =>
-    flight.depart_airport === props.requestInfo.itinerary.flyingFrom && flight.arrival_airport === props.requestInfo.itinerary.flyingTo && flight.eco === props.requestInfo.itinerary.ecoFriendly).map(flight => (
-      <div>
+  const flightList = flights.filter(flight =>
+    flight.depart_airport === props.requestInfo.itinerary.flyingFrom 
+    && flight.arrival_airport === props.requestInfo.itinerary.flyingTo 
+    && ((props.requestInfo.itinerary.ecoFriendly) ? (props.requestInfo.itinerary.ecoFriendly === flight.eco) : true)).map(flight => (
+      <div>        
+        <p>{`${moment(flight.depart_time).format('h:mm a')} - ${moment(flight.arrival_time).format('h:mm a')}`}</p>
         <p>{flight.airline}</p>
-        <p>{flight.price}</p>
-        <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>
+        <p>Excellent Flight (8.7/10)</p>
+        <p>{moment(flight.arrival_time).diff(flight.depart_time,'hours')}h (Nonstop) </p>
+        <p>{`${flight.depart_airport} - ${flight.arrival_airport}`}</p>        
+        <p>{`+ $${flight.price}`}</p>
+        <p>Roundtrip</p>
+        <p>Free cancel within 24 hrs</p>
+        {flight.eco && <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />}
+        <p>Eco Flight</p>
         <Formik onSubmit={props.handleDeparting}>
           <Form>
             <button type="submit">Select</button>
           </Form>
         </Formik>
+        <p>Details & baggage fees</p>
+        <p>Rules and restrictions apply</p>
       </div>)
     )
 
@@ -109,22 +120,8 @@ export default function Flights(props) {
             </div>
           </Form>
         </Formik>
-        {test}
-        {/* {arrival} */}
+        {flightList}
       </div>
-      {false && (<div className="individual-flight">
-        <p>Excellent Flight (8.7/10)</p>
-        <p>6h 5m (Nonstop)</p>
-        <p>JFK - LAX</p>
-        <p>+ $0.00</p>
-        <p>Roundtrip</p>
-        <p>Free cancel within 24 hrs</p>
-        <img src={require('../../assets/noun-leaf.svg')} alt='leaf-icon' className="leaf-icon" />
-        <p>Eco Flight</p>
-        <p>Details & baggage fees</p>
-        <p>Rules and restrictions apply</p>
-
-      </div>)}
     </div>
   )
 }

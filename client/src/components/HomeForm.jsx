@@ -7,7 +7,7 @@ function HomeForm(props) {
     <div className='home-form'>
       <Formik
         enableReinitialize
-        initialValues={{ adults: 1, children: 0, flyingFrom: 'JFK', flyingTo: 'LAX', directFlights: false, ecoFriendly: false, departureDate: props.date.departure, returnDate: props.date.return }}
+        initialValues={{ adults: 1, children: 0, flyingFrom: 'JFK', flyingTo: 'SFO', directFlights: false, ecoFriendly: false, departureDate: props.date.departure, returnDate: props.date.return }}
         onSubmit={(vals) => {
           props.handleHomeSubmit(vals, props.history)
         }}
