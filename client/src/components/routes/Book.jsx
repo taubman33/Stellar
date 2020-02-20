@@ -8,7 +8,8 @@ export default function Book(props) {
   const [, forceUpdate] = React.useReducer(x => x + 1, 0)
   return (
     <div>
-      Book
+      <div className="passenger-details">
+      </div>
       <aside className='trip-details-aside-container'>
         <Receipt tripDetails={props} />
         <div className="donation-container">
@@ -31,7 +32,7 @@ export default function Book(props) {
           <label>
             <input type="checkbox" name="no-checkbox" onClick={props.handleDonationInput} checked={!props.donation}/>
             No. Just keep my total to {`$${totalSum}`}</label>
-            <button type="submit">Complete Booking</button>
+            <button type="submit" onClick={ () => {props.redirectItinerary(props.history)}}>Complete Booking</button>
         </div>
       </aside>
     </div>
