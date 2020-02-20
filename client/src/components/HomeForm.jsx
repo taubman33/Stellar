@@ -7,9 +7,10 @@ function HomeForm(props) {
     <div className='home-form'>
       <Formik
         enableReinitialize
-       initialValues={{ adults: 1, children: 0, flyingFrom: 'JFK', flyingTo: 'LAX', directFlights: false, departureDate: props.date.departure, returnDate: props.date.return}}
-       onSubmit={(vals) => {
-         props.handleHomeSubmit(vals, props.history)}}
+        initialValues={{ adults: 1, children: 0, flyingFrom: 'JFK', flyingTo: 'LAX', directFlights: false, ecoFriendly: false, departureDate: props.date.departure, returnDate: props.date.return }}
+        onSubmit={(vals) => {
+          props.handleHomeSubmit(vals, props.history)
+        }}
       >
         <Form>
           <div className='home-flying'>
@@ -17,15 +18,22 @@ function HomeForm(props) {
               <p>Flying from</p>
               <Field as="select" name="flyingFrom">
                 <option value="JFK">New York, NY (JFK)</option>
+                <option value="LGA">Queens, New York (LGA)</option>
                 <option value="LAX">Los Angeles (LAX)</option>
                 <option value="SFO">San Francisco, CA (SFO)</option>
+                <option value="DFW">Dallas/Fort Worth, TX (DFW)</option>
+                <option value="ORD">Chicago, IL (ORD)</option>
               </Field>
             </label>
             <label className='home-label-above'>
               <p>Flying to</p>
               <Field as="select" name="flyingTo">
-              <option value="LAX">Los Angeles (LAX)</option>
-              <option value="SFO">San Francisco, CA (SFO)</option>
+                <option value="JFK">New York, NY (JFK)</option>
+                <option value="LGA">Queens, New York (LGA)</option>
+                <option value="LAX">Los Angeles (LAX)</option>
+                <option value="SFO">San Francisco, CA (SFO)</option>
+                <option value="DFW">Dallas/Fort Worth, TX (DFW)</option>
+                <option value="ORD">Chicago, IL (ORD)</option>
               </Field>
             </label>
           </div>
@@ -76,16 +84,16 @@ function HomeForm(props) {
             </label>
           </div>
           <div className='home-checkbox-row'>
-              <Field type="checkbox" name="directFlights" />
-              <p>Direct flights only</p>
-              <Field type="checkbox" name="ecoFriendly" />
-              <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)
+            <Field type="checkbox" name="directFlights" />
+            <p>Direct flights only</p>
+            <Field type="checkbox" name="ecoFriendly" />
+            <p><span className='font-bold'>Eco-Friendly Option</span> (Save $ by selecting this option)
                 <img alt='question-icon'
-                  src={require('../assets/question-circle.png')}
-                  className='home-question-icon'
-                  onClick={props.handleEcoClick}
-                />
-              </p>
+                src={require('../assets/question-circle.png')}
+                className='home-question-icon'
+                onClick={props.handleEcoClick}
+              />
+            </p>
           </div>
           <label className='home-preferred-class'>
             <p>Preferred Class</p>

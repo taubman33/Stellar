@@ -3,12 +3,12 @@ import '../../css/Flights.css'
 import { Formik, Form, Field } from 'formik'
 
 export default function Flights(props) {
-  console.log(props.requestInfo.itinerary.flyingFrom)
+  console.log(props.requestInfo.itinerary)
 
   const flights = props.flights.arriving.arrivingFlight
   // const arrival = flights.map(flight => (<p>{flight.airline}</p>))
   const test = flights.filter(flight =>
-    flight.depart_airport === props.requestInfo.itinerary.flyingFrom && flight.arrival_airport === props.requestInfo.itinerary.flyingTo).map(flight => (
+    flight.depart_airport === props.requestInfo.itinerary.flyingFrom && flight.arrival_airport === props.requestInfo.itinerary.flyingTo && flight.eco === props.requestInfo.itinerary.ecoFriendly).map(flight => (
       <div>
         <p>{flight.airline}</p>
         <p>{flight.price}</p>

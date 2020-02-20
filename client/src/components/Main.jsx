@@ -29,7 +29,7 @@ class Main extends React.Component {
                 departureDate: '',
                 returnDate: '',
                 directFlight: null,
-                ecoFriendly: null,
+                ecoFriendly: false,
                 flyingFrom: null,
                 flyingTo: null,
             },
