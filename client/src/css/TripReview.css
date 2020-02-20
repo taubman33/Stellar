@@ -98,3 +98,24 @@ p.trip-review-flight-details {
   padding-top: 12px;
   font-size: 20px;
 }
+
+.trip-review-upgrade-container {
+  display: flex;
+  flex-flow: column;
+  margin-left: 50px;
+}
+
+.trip-review-upgrade-title {
+  margin: 20px 0 0 20px;
+  font-size: 20px;
+}
+
+.trip-review-upgrade-row {
+  display: flex;
+  flex-flow: row;
+}
+
+.upgrade-ad {
+  margin-left: 20px;
+  margin-top: 20px;
+}

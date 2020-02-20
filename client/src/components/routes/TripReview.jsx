@@ -41,7 +41,7 @@ export default function TripReview() {
         </div>
         <div className='trip-review-change-flights'><p>Change Flights</p></div>
         <div className='trip-review-upgrade-container'>
-          <p>Upgrade your flight</p>
+          <p className='trip-review-upgrade-title'>Upgrade your flight</p>
           <div className='trip-review-upgrade-row'>
             <img alt='upgrade-ad-pic' src={require('../../assets/upgrade-pic.png')} />
             <div className='upgrade-ad'>
