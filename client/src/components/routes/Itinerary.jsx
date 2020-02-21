@@ -50,9 +50,10 @@ export default function Itinerary(props) {
       <div className="itinerary-rules">
         <p>The following restrictions apply:
           <ul>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, <br/>
+             cupiditate voluptatem ipsa laudantium nisi a. 
+              Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur <br/> adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, <br/> sed quos obcaecati. Voluptates.</li>
+          
           </ul>
         </p>
       </div>
