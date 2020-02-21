@@ -18,7 +18,7 @@ export default function Receipt(props) {
         <img alt='eco-friendly' src={require('../../assets/noun-leaf.svg')} />
         <div className='receipt-hotel-info-container'>
           <p className='receipt-card-title'>City of Stars Hotel</p>
-          <p className='receipt-card-subtitle'>Downtown Los Angeles</p>
+          <p className='receipt-card-subtitle'>{`San Francisco`}</p>
           <p>{`${moment(props.tripDetails.itinerary.departureDate).format('ddd, MM/DD')} - ${moment(props.tripDetails.itinerary.returnDate).format('ddd, MM/DD')} `}</p>
           <p>1 room: 2 nights</p>
         </div>

@@ -8,10 +8,15 @@ class UserCreate extends Component {
     super(props)
 
     this.state = {
-      user:{
+      user: {
         name: '',
-        hashed_password: ''
+    hashed_password: '',
+    number_adults: 1,
+    number_children: null,
+    departingFlightId: null,
+    arrivingFlightId: null
       },
+      updated: false,
 
       createdUser: null
     }
@@ -47,7 +52,7 @@ class UserCreate extends Component {
     return (
 
         <UserForm
-          name={{ user }}
+          user={{ user }}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           cancelPath="/"
