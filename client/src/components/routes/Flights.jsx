@@ -83,9 +83,9 @@ export default function Flights(props) {
     <div className="flights">
       <div className='flights-header-bar'>
         <span></span>
-        <p>{`New York (NYC) to Los Angeles (LAX)`}</p>
-        <p>{`Fri, Mar 20 - Sun, Mar 22`}</p>
-        <p>{`1 Traveller`}</p>
+        <p>{`${props.requestInfo.itinerary.flyingFrom} to ${props.requestInfo.itinerary.flyingTo}`}</p>
+        <p>{`${moment(props.requestInfo.itinerary.departureDate).format('ddd, MMM D')} - ${moment(props.requestInfo.itinerary.returnDate).format('ddd, MMM D')}`}</p>
+        <p>{`${props.requestInfo.passengers.adults + props.requestInfo.passengers.children} Travellers`}</p>
       </div>
       <div className="choose-container">
         <img src={require('../../assets/checkbox.svg')} alt='checkbox-circle' className="checkbox-circle" />
@@ -130,8 +130,8 @@ export default function Flights(props) {
       </div>
       <div className='flight-mid-bar'>
         <div className='flight-mid-bar-select'>
-          <p className='select-flight-title'>Select your departure to Los Angeles</p>
-          <p className='select-flight-title-date'>Fri, Mar 20</p>
+          <p className='select-flight-title'>{`Select your ${flightDirection} flight to ${(flightDirection === 'departing') ? props.requestInfo.itinerary.flyingTo : props.requestInfo.itinerary.flyingFrom}`}</p>
+          <p className='select-flight-title-date'>{`${(flightDirection === 'departing') ? moment(props.requestInfo.itinerary.departureDate).format('ddd, MMM D') : moment(props.requestInfo.itinerary.returnDate).format('ddd, MMM D')}`}</p>
           <p className='change-flight-container'>Change <a href='/' className='change-flight'>departure</a> or <a href='/' className='change-flight'>return</a> flight</p>
         </div>
         <p className='price-disclaimer'>The trip prices shown are per person and include Flight + Hotel, taxes & fees. Flights include e-tickets, but do not include baggage fees or other fees charged directly by the airline.</p>
