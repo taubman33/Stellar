@@ -134,12 +134,6 @@ class Main extends React.Component {
                 <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} finalDetails={this.finalDetails} />} />
                 <Route exact path="/booking" component={(navProps) => <Book {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} handleDonationInput={this.handleDonationInput} donation={this.state.donation} redirectItinerary={this.redirectItinerary} />} />
                 <Route exact path="/itinerary" component={(navProps) => <Itinerary {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} donation={this.state.donation} user={this.state.user} />} />
-                <Route exact path="/users">
-                    <User />
-                    <Users />
-                    <UserEdit />
-                    <UserCreate />
-                </Route>
                 {this.state.showEcoPopup ? <EcoPopup handleEcoClick={this.handleEcoClick} /> : <></>}
 
 

@@ -58,10 +58,13 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
       const { id } = req.params;
-      const { user } = req.body
-      const updated = await User.update(User, {
+      const user = req.body
+      const updated = await User.update(user, {
           where: { id: id }
       });
+      console.log(updated)
+      console.log(user)
+      console.log(id)
       if (updated) {
           const updatedUser = await User.findOne({ where: { id: id } });
           return res.status(200).json({ user: updatedUser });

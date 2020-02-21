@@ -6,19 +6,19 @@ import { Link } from 'react-router-dom'
 
 const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => (
   <form onSubmit={handleSubmit}>
-    <br/>    
-    <h2> Create a New User</h2>
+    <br/>
+    <h2>Create / edit User</h2>
     <label>Name</label>
     <input
       placeholder="new user"
-      value={user}
+      value={user.name}
       name="name"
       onChange={handleChange}
     />
      <label>Password</label>
     <input
       placeholder="Password"
-      value={user}
+      value={user.hashed_password}
       name="hashed_password"
       onChange={handleChange}
     />
@@ -28,7 +28,7 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => (
    <label>Number of Adult Passengers</label>
     <input
       placeholder="number of adults"
-      value={user}
+      value={user.number_adults}
       name="number_adults"
       onChange={handleChange}
     />
@@ -36,7 +36,7 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => (
     <label>Number of Children Passengers</label>
     <input
       placeholder="number of children"
-      value={user}
+      value={user.number_children}
       name="number_children"
       onChange={handleChange}
     />
@@ -45,7 +45,7 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => (
     <label>Arrival Flight ID</label>
     <input
       placeholder="flight ID"
-      value={user}
+      value={user.ArrivingFlightId}
       name="ArrivingFlightId"
       onChange={handleChange}
     />
@@ -53,7 +53,7 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => (
     <label>Departure Flight ID</label>
     <input
       placeholder="flight ID"
-      value={user}
+      value={user.DepartingFlightId}
       name="DepartingFlightId"
       onChange={handleChange}
     />
@@ -65,10 +65,10 @@ const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => (
       <button>Cancel</button>
     </Link>
 
-   
+
   </form>
 
- 
+
 )
 
 export default UserForm
