@@ -3,19 +3,19 @@
     "password": "insecure",
     "database": "stellar_development",
     "dialect": "postgres"
-
+  
   },
   "test": {
     "password": "insecure",
     "database": "stellar_test",
     "dialect": "postgres"
-
+ 
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
     "dialectOptions": {
     "ssl": true
-    }
+    } 
   }
 }
