@@ -4,7 +4,7 @@ import Chance from 'chance'
 const chance = new Chance()
 
 export default function Itinerary(props) {
-  console.log(props.user)
+  console.log(props)
   const confirmationCode = chance.string({ length: 6, casing: 'upper', alpha: true, numeric: true })
   const { departureDate } = props.itinerary
   const { name } = props.user.user
@@ -17,26 +17,36 @@ export default function Itinerary(props) {
   const arrivingAirline = props.bookedFlights.arriving.airline
   const arrivingDuration = props.bookedFlights.arriving.flightDuration
   const arrivingFlightTime = `${props.bookedFlights.arriving.departingTime} - ${props.bookedFlights.departing.arrivingTime}`
+  let totalPrice = ((props.bookedFlights.departing.flightPrice + props.bookedFlights.arriving.flightPrice) * 0.95).toFixed(2)
+
+  if (props.donation) {
+    totalPrice = Math.ceil(totalPrice)
+  } 
 
   return (
     <div className="itinerary-container">
-      <p>Your Flight Confirmation for {moment(departureDate).format('dddd, MMMM Do, YYYY')}</p>
-      <p>Confirmation Code: #{confirmationCode}</p>
-      <p>Passengers: {name}</p>
-      <p>Ticket Number: {ticketNumber}</p>
+      <p>Your Flight Confirmation for {moment(departureDate).format('dddd, MMMM Do, YYYY')} <br />
+        Confirmation Code: #{confirmationCode} <br />
+        Passengers: {name} <br />
+        Ticket Number: {ticketNumber} <br /> </p>
+
+
       <div className="itinerary-flight-container">
-        <p>{departingFlightTime}</p>
-        <p>Operated by {departingAirline} </p>
-        <p>{departingDuration}hrs</p>
-        <p>Depart: {departingFrom}</p>
-        <p>Arrive: {arrivingTo}</p>
+        <p>{departingFlightTime} <br />
+          Operated by {departingAirline} <br />
+          Flight Duration: {departingDuration}hrs <br />
+          Depart: {departingFrom} <br />
+          Arrive: {arrivingTo} <br /></p>
       </div>
       <div className="itinerary-flight-container">
-        <p>{arrivingFlightTime}</p>
-        <p>Operated by {arrivingAirline} </p>
-        <p>{arrivingDuration}hrs</p>
-        <p>Depart: {arrivingTo}</p>
-        <p>Arrive: {departingFrom}</p>
+        <p>{arrivingFlightTime} <br />
+          Operated by {arrivingAirline} <br />
+          Flight Duration: {arrivingDuration}hrs <br />
+          Depart: {arrivingTo} <br />
+          Arrive: {departingFrom}</p>
+      </div>
+      <div>
+        <p>Total Price: ${totalPrice}</p>
       </div>
       <div className="itinerary-rules">
         <ul>
