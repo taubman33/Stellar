@@ -135,7 +135,7 @@ class Main extends React.Component {
                 <Route exact path="/booking" component={(navProps) => <Book {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} handleDonationInput={this.handleDonationInput} donation={this.state.donation} redirectItinerary={this.redirectItinerary} />} />
                 <Route exact path="/itinerary" component={(navProps) => <Itinerary {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} donation={this.state.donation} />} />
                 <Route exact path="/users">
-                    <HomeBackend />
+                    {/* <HomeBackend /> */}
                     <User />
                     <Users />
                     <UserEdit />
