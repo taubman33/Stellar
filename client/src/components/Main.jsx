@@ -103,7 +103,7 @@ class Main extends React.Component {
         history.push('/booking')
     }
 
-    redirectItinerary = (history) => { 
+    redirectItinerary = (history) => {
         history.push('/itinerary')
     }
 
@@ -135,7 +135,6 @@ class Main extends React.Component {
                 <Route exact path="/booking" component={(navProps) => <Book {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} handleDonationInput={this.handleDonationInput} donation={this.state.donation} redirectItinerary={this.redirectItinerary} />} />
                 <Route exact path="/itinerary" component={(navProps) => <Itinerary {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} donation={this.state.donation} />} />
                 <Route exact path="/users">
-                    {/* <HomeBackend /> */}
                     <User />
                     <Users />
                     <UserEdit />
@@ -146,14 +145,14 @@ class Main extends React.Component {
                     <Confirmation />
                 </Route>
 
-                <Route exact path="/users" > 
+                <Route exact path="/users" >
                   <Users/>
                   <UserCreate/>
                 </Route>
 
                 <Route exact path="/users/:id" component={(navProps) => <User {...navProps} />} />
-    
-         
+
+
 
                 {this.state.showEcoPopup ? <EcoPopup handleEcoClick={this.handleEcoClick}/> : <></>}
 
