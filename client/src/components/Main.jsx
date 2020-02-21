@@ -74,7 +74,6 @@ class Main extends React.Component {
 
     handleEcoClick = event => {
         event.preventDefault()
-        console.log('ecoClick', !this.state.showEcoPopup)
         this.setState({
             showEcoPopup: this.state.showEcoPopup ? false : true
         })

@@ -21,13 +21,12 @@ class UserCreate extends Component {
  //handlechange for create user bar
   handleChange = event => {
     this.setState({ user: {...this.state.user, [event.target.name]: event.target.value }})
-    console.log(event.target.name, event.target.value )
   }
 
   //prevent default for user create submissions 
   handleSubmit = event => {
     event.preventDefault()
-    console.log(this.state.user)
+
     //axios call - POST method - create user
     axios({
       url: `http://localhost:3000/api/users/`,
@@ -41,7 +40,6 @@ class UserCreate extends Component {
   render() {
     const { handleChange, handleSubmit } = this
     const { createdUser, name } = this.state
-    console.log(createdUser)
     if (createdUser) {
       return <Redirect to={`/users`} />
     }

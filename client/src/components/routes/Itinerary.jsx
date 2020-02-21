@@ -4,7 +4,6 @@ import Chance from 'chance'
 const chance = new Chance()
 
 export default function Itinerary(props) {
-  console.log(props)
   const confirmationCode = chance.string({ length: 6, casing: 'upper', alpha: true, numeric: true })
   const { departureDate } = props.itinerary
   const { name } = props.user.user

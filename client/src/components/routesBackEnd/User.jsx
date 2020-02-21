@@ -24,7 +24,7 @@ class User extends Component {
       const response = await axios(
         `http://localhost:3000/api/users/${this.props.match.params.id}`
       )
-      console.log(response)
+
       this.setState({ user: response.data.user })
     } catch (err) {
       console.error(err)
@@ -45,8 +45,7 @@ class User extends Component {
   //our render screen for when something is being deleted or loading
   render() {
     const { user, deleted } = this.state
-    console.log(this.props)
-    console.log(user)
+
 
     if (!user) {
       return <p>Loading...</p>
