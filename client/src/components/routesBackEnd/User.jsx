@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
+import UserEdit from './UserEdit'
 
 
 
@@ -65,17 +66,9 @@ class User extends Component {
         <h3>Hashed Password : {user.hashed_password}</h3>
         <h3>Departing Flight ID# : {user.departingFlightId}</h3>
         <h3>Arriving Flight ID#: {user.arrivingFlightId}</h3>
-        
+
         <button onClick={this.destroy}>Delete User</button>
-        <button
-          onClick={() =>
-            this.props.history.push(
-              `/users/${this.props.match.params.id}`
-            )
-          }
-        >
-          Edit
-        </button>
+        <UserEdit match={this.props.match}/>
         <Link to={`/users`}>
           Back to all Users
         </Link>

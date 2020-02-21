@@ -12,7 +12,7 @@ class UserCreate extends Component {
         name: '',
         hashed_password: ''
       },
-      
+
       createdUser: null
     }
 
@@ -23,7 +23,7 @@ class UserCreate extends Component {
     this.setState({ user: {...this.state.user, [event.target.name]: event.target.value }})
   }
 
-  //prevent default for user create submissions 
+  //prevent default for user create submissions
   handleSubmit = event => {
     event.preventDefault()
 
@@ -39,21 +39,21 @@ class UserCreate extends Component {
 
   render() {
     const { handleChange, handleSubmit } = this
-    const { createdUser, name } = this.state
+    const { createdUser, user } = this.state
     if (createdUser) {
       return <Redirect to={`/users`} />
     }
-  
+
     return (
-    
+
         <UserForm
-          name={{ name }}
+          name={{ user }}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           cancelPath="/"
         />
     )
-    
+
   }
 }
 

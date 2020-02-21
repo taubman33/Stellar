@@ -8,10 +8,13 @@ class UserEdit extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            user: {   
-                name: '',
-                hashed_password: '',
-               
+            user: {
+              name: '',
+          hashed_password: '',
+          number_adults: 1,
+          number_children: null,
+          departingFlightId: null,
+          arrivingFlightId: null
             },
             updated: false
         }
@@ -22,7 +25,7 @@ class UserEdit extends Component {
     async componentDidMount() {
         try {
             const response = await axios(
-                `http://localhost:3000/api/users/${this.props.match.params.userId}`
+                `http://localhost:3000/api/users/${this.props.match.params.id}`
             )
             this.setState({ user: response.data.user })
         } catch (error) {
@@ -42,12 +45,7 @@ class UserEdit extends Component {
         axios({
             url: `http://localhost:3000/api/users/${this.props.match.params.id}`,
             method: 'PUT',
-            data: {  
-                
-            name: 'Duke Ellington',
-            hashed_password: 'almonds'
-        
-               } 
+            data: this.state.user
         })
             .then(() => this.setState({ updated: true }))
             .catch(console.error)
@@ -66,7 +64,7 @@ class UserEdit extends Component {
                 />
             )
         }
-        //return 
+        //return
         return (
             <div>
                 <h4>Edit User</h4>
