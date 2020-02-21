@@ -50,7 +50,8 @@ class Main extends React.Component {
                 arriving: {}
             },
             showEcoPopup: false,
-            donation: false
+            donation: false,
+            user: {}
         }
     }
 
@@ -117,11 +118,13 @@ class Main extends React.Component {
     async componentDidMount() {
         const departing = await axios('http://localhost:3000/api/departingFlights/')
         const arriving = await axios('http://localhost:3000/api/arrivingFlights/')
+        const user = await axios('http://localhost:3000/api/users/5')
         this.setState({
             flights: {
                 departing: departing.data,
                 arriving: arriving.data
-            }
+            },
+            user: user.data
         })
     }
 
@@ -133,7 +136,7 @@ class Main extends React.Component {
                 <Route exact path="/flights" component={(navProps) => <Flights {...navProps} requestInfo={this.state} setFlightDetails={this.setFlightDetails} />} />
                 <Route exact path="/trip-review" component={(navProps) => <TripReview {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} finalDetails={this.finalDetails} />} />
                 <Route exact path="/booking" component={(navProps) => <Book {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} handleDonationInput={this.handleDonationInput} donation={this.state.donation} redirectItinerary={this.redirectItinerary} />} />
-                <Route exact path="/itinerary" component={(navProps) => <Itinerary {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} donation={this.state.donation} />} />
+                <Route exact path="/itinerary" component={(navProps) => <Itinerary {...navProps} bookedFlights={this.state.bookedFlights} itinerary={this.state.itinerary} donation={this.state.donation} user={this.state.user} />} />
                 <Route exact path="/users">
                     <User />
                     <Users />
