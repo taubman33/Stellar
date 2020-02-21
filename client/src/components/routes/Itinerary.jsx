@@ -20,7 +20,7 @@ export default function Itinerary(props) {
 
   if (props.donation) {
     totalPrice = Math.ceil(totalPrice)
-  } 
+  }
 
   return (
     <div className="itinerary-container">
@@ -48,12 +48,13 @@ export default function Itinerary(props) {
         <p>Total Price: ${totalPrice}</p>
       </div>
       <div className="itinerary-rules">
-        <ul>
-          <p>The following restrictions apply:</p>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
-        </ul>
+        <p>The following restrictions apply:
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, possimus. Laboriosam nam adipisci molestias sapiente cum aut, cupiditate voluptatem ipsa laudantium nisi a. Magni temporibus officiis commodi, quia cupiditate perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit excepturi unde voluptas fuga? Eveniet, maiores eos laborum possimus facilis earum doloremque, nobis libero deserunt velit, sed quos obcaecati. Voluptates.</li>
+          </ul>
+        </p>
       </div>
     </div>
   )
