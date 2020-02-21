@@ -1,0 +1,97 @@
+.book-container {
+  background-color: #E3E3E3;
+  font-family: 'Helvetica', sans-serif;
+  border: solid 1px var(--medium-grey);
+  height: 910px;
+  overflow: auto;
+  max-height: 910px;
+}
+
+.book-main {
+  margin-left: 60px;
+  max-height: 910px;
+}
+
+.book-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.book-cancellation {
+  display: flex;
+}
+
+.book-cancellation-text {
+  margin-left: 20px;
+  color: var(--flight-card-green);
+}
+
+.book-details-title {
+  border: 1px solid #aaa;
+  padding: 20px;
+  padding-left: 20px;
+  background-color: white;
+  font-size: 20px;
+  width: 900px;
+}
+
+.passenger-details {
+  width: 940px;
+  background-color: white;
+  border: 1px solid #aaa;
+  height: 645px;
+}
+
+.book-donation-vertical-align {
+  margin-left: 30px;
+}
+
+.book-donation-text {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.donation-row {
+  display: flex;
+}
+
+.donation-icon-container {
+  background-color: white;
+  border: 1px solid #aaa;
+  width: 110px;
+  height: 80px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.donation-icon-container img {
+  max-width: 90%;
+  max-height: 80%;
+  display: block;
+  margin: auto;
+}
+
+.selection-check {
+  position: absolute;
+  max-width: 18px;
+  max-height: 18px;
+  top: 643px;
+  left: 75px;
+}
+
+.book-submit {
+  width: 250px;
+  margin-left: 40px;
+  margin-top: 30px;
+  height: 60px;
+  background-color: #F30053;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-family: 'Helvetica', sans-serif;
+  border: solid 1px #d9294e;
+  padding: 5px 20px;
+}

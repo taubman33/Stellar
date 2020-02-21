@@ -34,7 +34,11 @@ describe('User API', () => {
       expect(res.statusCode).toEqual(200);
       expect(res.body).toHaveProperty('arrivingFlight');
     });
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> integration
      //get all departure flights
   it('should show all departing flights', async () => {
     const res = await request(app).get('/api/departingflights/');
@@ -64,7 +68,11 @@ describe('User API', () => {
       expect(res.body).toHaveProperty('user');
     }),
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> integration
     //updates a user
     it('should update an user', async () => {
       const res = await request(app)
@@ -80,7 +88,11 @@ describe('User API', () => {
       expect(res.statusCode).toEqual(200);
       expect(res.body).toHaveProperty('user');
     }),
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> integration
     //deletes a user
     it('should delete a user', async () => {
       const res = await request(app)

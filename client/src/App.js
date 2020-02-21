@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+=======
+import React from 'react'
+import { withRouter } from 'react-router-dom'
+import Main from './components/Main'
+import './css/App.css'
+
+>>>>>>> integration
 
 function App() {
   return (
