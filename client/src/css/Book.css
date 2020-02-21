@@ -2,7 +2,7 @@
   background-color: #E3E3E3;
   font-family: 'Helvetica', sans-serif;
   border: solid 1px var(--medium-grey);
-  height: 100vh;
+  height: 910px;
   overflow: auto;
 }
 
@@ -37,7 +37,7 @@
   width: 940px;
   background-color: white;
   border: 1px solid #aaa;
-  height: 802px;
+  height: 645px;
 }
 
 .book-donation-vertical-align {
@@ -46,7 +46,7 @@
 
 .book-donation-text {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .donation-row {
