@@ -42,7 +42,7 @@ class User extends Component {
       .catch(console.error)
   }
 
-  //our render screen for when something is being deleted or loading
+
   render() {
     const { user, deleted } = this.state
     console.log(this.props)
@@ -60,6 +60,9 @@ class User extends Component {
       )
     }
 
+
+
+  //what is returned
     return (
       <div>
         <h2> {user.name}</h2>

@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom'
 //setting up react -> using class and state because of how much going on here
 class Users extends Component {
   constructor(props) {
-    super(props)
-
-    //state 
+    super(props) 
     this.state = {
       users: []
     }

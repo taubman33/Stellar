@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import UserForm from '../shared/UserForm'
+import Layout from '../shared/UserForm'
 
 
 class UserEdit extends Component {
@@ -9,12 +10,17 @@ class UserEdit extends Component {
         super(props)
         this.state = {
             user: {   
+                
                 name: '',
                 hashed_password: '',
+                number_adults: '',
+                number_children: '',
+                arrivingFlightId: '',
+                departingFlightId: ''
                
             },
             updated: false
-        }
+        };
     }
 
 
@@ -23,7 +29,8 @@ class UserEdit extends Component {
         try {
             const response = await axios(
                 `http://localhost:3000/api/users/${this.props.match.params.userId}`
-            )
+            );
+            console.log("res", response.data.user)
             this.setState({ user: response.data.user })
         } catch (error) {
             console.error(error)
@@ -42,12 +49,7 @@ class UserEdit extends Component {
         axios({
             url: `http://localhost:3000/api/users/${this.props.match.params.id}`,
             method: 'PUT',
-            data: {  
-                
-            name: 'Duke Ellington',
-            hashed_password: 'almonds'
-        
-               } 
+            data: { user: this.state.user } 
         })
             .then(() => this.setState({ updated: true }))
             .catch(console.error)
@@ -68,7 +70,7 @@ class UserEdit extends Component {
         }
         //return 
         return (
-            <div>
+            <Layout>
                 <h4>Edit User</h4>
                 <UserForm
                     user={user}
@@ -76,7 +78,7 @@ class UserEdit extends Component {
                     handleSubmit={handleSubmit}
                     cancelPath={`/users`}
                 />
-            </div>
+            </Layout>
         )
     }
 }

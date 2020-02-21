@@ -10,7 +10,11 @@ class UserCreate extends Component {
     this.state = {
       user:{
         name: '',
-        hashed_password: ''
+        hashed_password: '',
+        number_adults: '',
+        number_children: '',
+        arrivingFlightId: '',
+        departingFlightId: ''
       },
       
       createdUser: null

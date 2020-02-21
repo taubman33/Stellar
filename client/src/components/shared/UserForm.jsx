@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const UserForm = ({ user, handleSubmit, handleChange, cancelPath }) => (
   <form onSubmit={handleSubmit}>
     <br/>    
-    <h2> Create a New User</h2>
+
     <label>Name</label>
     <input
       placeholder="new user"
