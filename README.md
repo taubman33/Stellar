@@ -8,10 +8,10 @@ Stellar is a travel booking website specializing in eco-friendly travel arrangem
 **Team Members**
 - Akila Saraty (UX Designer)
 - Emily Carlson (UX Designer)
+- Susan Choi (UX Designer)
 - Errol Highberg (Frontend Engineer)
 - Jeremy Taubman (Backend Engineer)
 - Jose Maldonaldo (Frontend Engineer)
-- Susan Choi (UX Designer)
 ​
 ## Wireframes
 ​
@@ -27,10 +27,10 @@ Stellar is a travel booking website specializing in eco-friendly travel arrangem
 - User can book flights between locations
 - Eco-friendly itinerary filtering
 - Donation box on booking confirmation
+- Hotel / Airline rating
 ​
 ## Post-MVP
 ​
-- Hotel / Airline rating
 - Hotel booking
 - Mobile support
 - Passenger details
@@ -143,17 +143,17 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 | Component | Priority | Estimated Time | Time Invested | 
 | --- | :---: | :---: | :---: |
 | Prep work - wireframes/ERD/comp hierarchy | H | 9hrs | 9hrs |
-| Setting up back end data | H | 7hrs| 7hrs |
-| CRUD back end functionality | H | 10hrs | 10hrs | 
-| Setting up React components | H | 12hrs | 3hrs |
-| React Functionality (Links/Forms) | H | 10-12hrs | 10hrs | 
-| Adding all button functionality | H | 10-12hrs |  |
-| ‘Green / Eco ’ Button functions | H | 5hrs| 2hrs |
-| Math functions | H | 5-7hrs | |
-| Meeting with UX to discuss progress/problems | H | 40m/day | 20m |
+| Setting up back end data | H | 7hrs | 10hrs |
+| CRUD back end functionality | H | 10hrs | 20hrs | 
+| Setting up React components | H | 12hrs | 12hrs |
+| React Functionality (Links/Forms) | H | 10-12hrs | 15hrs | 
+| Adding all button functionality | H | 10-12hrs | 10hrs |
+| ‘Green / Eco ’ Button functions | H | 5hrs | 3hrs |
+| Math functions | H | 5-7hrs | 2hrs |
+| Meeting with UX to discuss progress/problems | H | 40m/day | 1hr |
 | Post MVP functions (Hotels, Cars, Activities) | L | 10hrs | |
-| Style - Matching UX design | H | 18hrs | 9hrs |
-| Total | H | 100 hrs| |
+| Style - Matching UX design | H | 18hrs | 30hrs |
+| Total | H | 100 hrs| 122hrs |
 ​
 ​
 ## Additional Libraries
@@ -164,40 +164,40 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 - morgan - Logging HTTP requests
 - sequelize - Database setup and management
 - pg - JS interface with postgreSQL
-- faker - Generate example data
 - formik - Less verbose React forms
 - jest - Testing framework
 - supertest - Testing framework
+- chance - Random string generation
 ​
 ​
 ## Expected Issues
 Disagreement over which features are important / implementable in a reasonable time.
 ​
 ## Issues and Resolutions
-One of our core features (the "Green Option" button) was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place. Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table. To avoid having Many flights to Many users, made duplicate ArrivingFlights and DepartingFlights so that we have 2 many-to-one associations. Eco-friendly popup clears form, remains unresolved.
+One of our core features (the "Green Option" button) was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place.
+Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table.
+To avoid having Many flights to Many users, made duplicate ArrivingFlights and DepartingFlights so that we have 2 many-to-one associations.
+Eco-friendly popup clears form, remains unresolved.
 ​
 ## Code Snippet
 ​
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 ​
-Backend -> The User associations is not particularly impressive, but we got it to work rather than using a number of Join tables and Many-Many relations
+Backend -> User associations is not particularly impressive, but we got it to work using duplicate tables rather than using a number of Join tables and Many-Many relations.
 ```
   User.associate = function(models) {
     User.belongsTo(models.DepartingFlight, {
-      foreignKey: 'departingFlightId',
-      onDelete: 'CASCADE'
+      foreignKey: 'departingFlightId'
     });
     User.belongsTo(models.ArrivingFlight, {
-      foreignKey: 'arrivingFlightId',
-      onDelete: 'CASCADE'
+      foreignKey: 'arrivingFlightId'
     });
   };
   return User;
 };
-
 ```
 ​
 ## Change Log
 ​
-Moved itinerary information to the User table, and eliminated the Itinerary and ItineraryFlight tables. Moved mobile support to post-MVP
+Moved itinerary information to the User table, and eliminated the Itinerary and ItineraryFlight tables.
+Moved mobile support to post-MVP.
 
