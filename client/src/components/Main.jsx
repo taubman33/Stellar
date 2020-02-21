@@ -11,7 +11,6 @@ import axios from 'axios'
 import User from './routesBackEnd/User'
 import Users from './routesBackEnd/Users'
 import UserCreate from './routesBackEnd/UserCreate'
-import UserEdit from './routesBackEnd/UserEdit'
 import Itinerary from '../components/routes/Itinerary'
 
 
@@ -113,9 +112,9 @@ class Main extends React.Component {
     }
 
     async componentDidMount() {
-        const departing = await axios('http://localhost:3000/api/departingFlights/')
-        const arriving = await axios('http://localhost:3000/api/arrivingFlights/')
-        const user = await axios('http://localhost:3000/api/users/5')
+        const departing = await axios('https://stellar-travel.herokuapp.com/api/departingFlights/')
+        const arriving = await axios('https://stellar-travel.herokuapp.com/api/arrivingFlights/')
+        const user = await axios('https://stellar-travel.herokuapp.com/api/users/5')
         this.setState({
             flights: {
                 departing: departing.data,

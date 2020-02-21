@@ -25,7 +25,7 @@ class UserEdit extends Component {
     async componentDidMount() {
         try {
             const response = await axios(
-                `http://localhost:3000/api/users/${this.props.match.params.id}`
+                `https://stellar-travel.herokuapp.com/api/users/${this.props.match.params.id}`
             )
             this.setState({ user: response.data.user })
         } catch (error) {
@@ -43,7 +43,7 @@ class UserEdit extends Component {
         event.preventDefault()
 
         axios({
-            url: `http://localhost:3000/api/users/${this.props.match.params.id}`,
+            url: `https://stellar-travel.herokuapp.com/api/users/${this.props.match.params.id}`,
             method: 'PUT',
             data: this.state.user
         })

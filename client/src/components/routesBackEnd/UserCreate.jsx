@@ -34,7 +34,7 @@ class UserCreate extends Component {
 
     //axios call - POST method - create user
     axios({
-      url: `http://localhost:3000/api/users/`,
+      url: `https://stellar-travel.herokuapp.com/api/users/`,
       method: 'POST',
       data: this.state.user
     })

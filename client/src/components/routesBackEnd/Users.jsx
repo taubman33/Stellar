@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Layout from '../shared/Layout'
-import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom'
 
 
 //setting up react -> using class and state because of how much going on here
@@ -9,17 +9,17 @@ class Users extends Component {
   constructor(props) {
     super(props)
 
-    //state 
+    //state
     this.state = {
       users: []
     }
   }
-  
-  
+
+
   //response slug needs to be fixed when deployed***
   async componentDidMount() {
     try {
-      const response = await axios('http://localhost:3000/api/users')
+      const response = await axios('https://stellar-travel.herokuapp.com/api/users')
       this.setState({ users: response.data.users })
     } catch (err) {
       console.error(err)

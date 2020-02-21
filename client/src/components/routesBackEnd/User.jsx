@@ -23,7 +23,7 @@ class User extends Component {
   async componentDidMount() {
     try {
       const response = await axios(
-        `http://localhost:3000/api/users/${this.props.match.params.id}`
+        `https://stellar-travel.herokuapp.com/api/users/${this.props.match.params.id}`
       )
 
       this.setState({ user: response.data.user })
@@ -36,7 +36,7 @@ class User extends Component {
 
   destroy = () => {
     axios({
-      url: `http://localhost:3000/api/users/${this.props.match.params.id}`,
+      url: `https://stellar-travel.herokuapp.com/api/users/${this.props.match.params.id}`,
       method: 'DELETE'
     })
       .then(() => this.setState({ deleted: true }))
