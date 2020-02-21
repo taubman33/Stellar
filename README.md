@@ -175,9 +175,13 @@ Disagreement over which features are important / implementable in a reasonable t
 ​
 ## Issues and Resolutions
 One of our core features (the "Green Option" button) was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place.
+
 Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table.
+
 To avoid having Many flights to Many users, made duplicate ArrivingFlights and DepartingFlights so that we have 2 many-to-one associations.
 Eco-friendly popup clears form, remains unresolved.
+
+We needed the flights component to re-render after a user selects their first flight, this could've been avoided by creating a new component for returning flights, however it gave us the chance to learn something new. Thanks to this [Stack Overflow Post](https://stackoverflow.com/questions/53215285/how-can-i-force-component-to-re-render-with-hooks-in-react/58360674#58360674) we were able to force the component to rerender that portion of the page.
 ​
 ## Code Snippet
 ​
