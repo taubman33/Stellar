@@ -4,9 +4,7 @@ import '../../css/Book.css'
 
 export default function Book(props) {
   const roundedSum = (Math.ceil((props.bookedFlights.departing.flightPrice + props.bookedFlights.arriving.flightPrice) * 0.95))
-  console.log(roundedSum)
   const totalSum = ((props.bookedFlights.departing.flightPrice + props.bookedFlights.arriving.flightPrice) * 0.95).toFixed(2)
-  console.log(props)
   const [, forceUpdate] = React.useReducer(x => x + 1, 0)
   return (
     <div className='book-container'>
