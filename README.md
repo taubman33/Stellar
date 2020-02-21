@@ -8,10 +8,10 @@ Stellar is a travel booking website specializing in eco-friendly travel arrangem
 **Team Members**
 - Akila Saraty (UX Designer)
 - Emily Carlson (UX Designer)
+- Susan Choi (UX Designer)
 - Errol Highberg (Frontend Engineer)
 - Jeremy Taubman (Backend Engineer)
 - Jose Maldonaldo (Frontend Engineer)
-- Susan Choi (UX Designer)
 ​
 ## Wireframes
 ​
@@ -27,16 +27,19 @@ Stellar is a travel booking website specializing in eco-friendly travel arrangem
 - User can book flights between locations
 - Eco-friendly itinerary filtering
 - Donation box on booking confirmation
+- Hotel / Airline rating
 ​
 ## Post-MVP
 ​
-- Hotel / Airline rating
+- Hotel booking
+- Mobile support
 - Passenger details
 - User signup
 - User authentication
 - Input Validation
-- Hotel booking
 - Additional flight options (more baggage, etc.)
+- Many itineraries per user
+- Eco popup should not clear form
 ​
 ​
 ## ERD Diagram
@@ -56,48 +59,62 @@ PMVP Items in parentheses
 	- Create route to signup a new user
   
   
-- GET `/api/users/:user_id/itineraries`
-  - Show a user's itineraries
-- GET `/api/users/:user_id/itineraries/:id`
-  - Show a single itinerary, including flight (and hotel) info
-- POST `/api/users/:user_id/itineraries`
-  - Create a new itinerary
-- PUT `/api/users/:user_id/itineraries/:id`
-  - Change user itinerary info
-- DELETE `/api/users/:user_id/itineraries/:id`
-  - Cancel user itinerary
+- GET `/api/users/:user_id/arrivingflight`
+  - Show a user's arriving flight
+  
+- GET `/api/users/:user_id/departingflight`
+
+  - Show a user's departing flight
+  
+- POST `/api/users`
+  - Create a new user
+  
+- PUT `/api/users/:user_id`
+  - Change user info
+  
+- DELETE `/api/users/:user_id`
+  - Delete user
 ​
   
-- GET `/api/users/:user_id/itineraries/:id/flights`
-  - Shows info for flights in a single itinerary
-- (GET `/api/users/:user_id/itineraries/:id/hotels`)
-  - (Shows info for hotel bookings in a single itinerary)
 ​
 ​
 Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 ​
   ```
-    {
-      "name": "Erinn",
-      "id": "3",
-      itineraries: [
-        {id: 45,
-         leaveDate: '2020-02-22',
-         returnDate: '2020-02-25',
-         totalCost: 332.25,
-         flights: [
-          {id: 322,
-           flightNumber: 26DC43,
-           leaveTime: '2020-02-22 12:22:30',
-           ...
-          }
-          ...
-         ]
-        }
-        ...
-      ]
+  {
+    "user": {
+        "id": 4,
+        "name": "Thelonious Monk",
+        "hashed_password": "password",
+        "number_adults": 1,
+        "number_children": 1,
+        "departingFlightId": 3,
+        "arrivingFlightId": 2,
+        "createdAt": "2020-02-19T18:41:28.563Z",
+        "updatedAt": "2020-02-19T18:41:28.563Z"
     }
+   }
+
+
   ```
+  ```
+     {
+    "departingFlight": {
+        "id": 2,
+        "airline": "American",
+        "depart_airport": "JFK",
+        "arrival_airport": "SFO",
+        "price": 470.22,
+        "flight_number": "66646",
+        "depart_time": "2020-02-19T18:41:28.515Z",
+        "arrival_time": "2020-02-19T22:41:28.515Z",
+        "rating": 5,
+        "eco": true,
+        "createdAt": "2020-02-19T18:41:28.515Z",
+        "updatedAt": "2020-02-19T18:41:28.515Z"
+    } }
+  
+   ```
 ​
 ​
 ## React Component Hierarchy
@@ -105,6 +122,7 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 ​
 ## Components
 ​
+
 | Component | Description | 
 | --- | :--- |
 | App | This component will render the Main and Loading component. |
@@ -124,18 +142,18 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 ## Timeframes
 | Component | Priority | Estimated Time | Time Invested | 
 | --- | :---: | :---: | :---: |
-| Prep work - wireframes/ERD/comp hierarchy | H | 9hrs| 9hrs |
-| Setting up back end data | H | 7hrs| |
-| CRUD back end functionality | H | 10hrs| | 
-| Setting up React components | H | 12hrs| |
-| React Functionality (Links) | H | 10-12hrs| | 
-| Adding all button functionality | H | 10-12hrs| |
-| ‘Green / Eco ’ Button functions | H | 5hrs| |
-| Math functions | H | 5-7hrs| |
-| Meeting with UX to discuss progress/problems | H | 40m/day| |
+| Prep work - wireframes/ERD/comp hierarchy | H | 9hrs | 9hrs |
+| Setting up back end data | H | 7hrs | 10hrs |
+| CRUD back end functionality | H | 10hrs | 20hrs | 
+| Setting up React components | H | 12hrs | 12hrs |
+| React Functionality (Links/Forms) | H | 10-12hrs | 15hrs | 
+| Adding all button functionality | H | 10-12hrs | 10hrs |
+| ‘Green / Eco ’ Button functions | H | 5hrs | 3hrs |
+| Math functions | H | 5-7hrs | 2hrs |
+| Meeting with UX to discuss progress/problems | H | 40m/day | 1hr |
 | Post MVP functions (Hotels, Cars, Activities) | L | 10hrs | |
-| Style - Matching UX design | H | 18hrs| |
-| Total | H | 100 hrs| |
+| Style - Matching UX design | H | 18hrs | 30hrs |
+| Total | H | 100 hrs| 122hrs |
 ​
 ​
 ## Additional Libraries
@@ -146,26 +164,44 @@ Sample JSON from GET `/api/users/:user_id/itineraries/:id`
 - morgan - Logging HTTP requests
 - sequelize - Database setup and management
 - pg - JS interface with postgreSQL
-- faker - Generate example data
 - formik - Less verbose React forms
+- jest - Testing framework
+- supertest - Testing framework
+- chance - Random string generation
 ​
 ​
 ## Expected Issues
 Disagreement over which features are important / implementable in a reasonable time.
 ​
 ## Issues and Resolutions
-One of our core features was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place.
+One of our core features (the "Green Option" button) was in an out-of-the-way location; we consulted with our design team, and with their advice we left it in place.
+
+Many-to-many associations in Sequelize, even with a join table, proved to be very complicated and finicky; so we limited each user to a single itinerary, and combined the itinerary information into the User table.
+
+To avoid having Many flights to Many users, made duplicate ArrivingFlights and DepartingFlights so that we have 2 many-to-one associations.
+Eco-friendly popup clears form, remains unresolved.
+
+We needed the flights component to re-render after a user selects their first flight, this could've been avoided by creating a new component for returning flights, however it gave us the chance to learn something new. Thanks to this [Stack Overflow Post](https://stackoverflow.com/questions/53215285/how-can-i-force-component-to-re-render-with-hooks-in-react/58360674#58360674) we were able to force the component to rerender that portion of the page.
 ​
 ## Code Snippet
 ​
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 ​
+Backend -> User associations is not particularly impressive, but we got it to work using duplicate tables rather than using a number of Join tables and Many-Many relations.
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+  User.associate = function(models) {
+    User.belongsTo(models.DepartingFlight, {
+      foreignKey: 'departingFlightId'
+    });
+    User.belongsTo(models.ArrivingFlight, {
+      foreignKey: 'arrivingFlightId'
+    });
+  };
+  return User;
+};
 ```
 ​
 ## Change Log
 ​
-Update as neccessary with any changes or directional adjustments made throughout the project week
+Moved itinerary information to the User table, and eliminated the Itinerary and ItineraryFlight tables.
+Moved mobile support to post-MVP.
+

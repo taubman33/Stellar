@@ -1,0 +1,112 @@
+:root {
+  --nav-bg-color: #00253F;
+  --rewards-bg-color: #A30097;
+  --link-text-color: #00A2FF;
+}
+
+.nav {
+  background-color: var(--nav-bg-color);
+  height: 125px;
+  display: inline-block;
+  width: 1436px;
+  border: 2px solid gray;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.nav-link {
+  color: var(--link-text-color);
+  text-decoration: none;
+}
+
+.nav-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nav-top-left {
+  grid-columns: 1;
+  margin: 33px 5px 17px 100px;
+}
+
+.nav-top-left * {
+  display: inline-block;
+}
+
+.nav-logo {
+  margin: 0 0 0 60px;
+}
+
+.nav-link.join-rewards {
+  color: white;
+  margin: 0 0 0 50px;
+  padding: 6px;
+  background-color: var(--rewards-bg-color);
+  border-radius: 8px;
+  vertical-align: 90%;
+}
+
+.nav-user {
+  grid-columns: 2;
+  margin: 10px 60px auto auto;
+  font-size: 15px;
+}
+
+.nav-user * {
+  margin: 0 20px;
+}
+
+.list-property {
+  border: 1px solid var(--link-text-color);
+  padding: 4px 6px;
+}
+
+.nav-main {
+  margin: 0 100px 0 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-main * {
+  margin: 0 20px;
+}
+
+.hamburger-box {
+  display: none;
+}
+
+/* written for 410 X 900 screen */
+@media (max-width: 500px) {
+  .join-rewards.nav-link {
+    display: none;
+  }
+  .nav-main, .nav-user {
+    display: none;
+  }
+
+  .big-logo {
+    font-size: 48px;
+    margin-top: -10px;
+    margin-left: 20px;
+  }
+
+  .nav {
+    height: 60px;
+    border: none;
+    border-bottom: 2px solid #419BF9;
+  }
+
+  .hamburger-box {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    margin-top: 14px;
+    margin-right: 15px;
+  }
+
+  .hamburger-rect {
+    background-color: #1950BD;
+    padding: 2.5px;
+    width: 27px;
+    margin: 3px 0;
+  }
+}
