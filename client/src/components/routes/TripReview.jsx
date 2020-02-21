@@ -7,7 +7,7 @@ export default function TripReview(props) {
   return (
     <div className='trip-review'>
       <div className='trip-review-header'>
-        <p className='trip-review-header-title'>{`Your trip to ${'Los Angeles'}`}</p>
+        <p className='trip-review-header-title'>{`Your trip to San Francisco`}</p>
         <p className='trip-review-header-guarantee'><img alt='green-check' src={require('../../assets/check.svg')} />Price Guarantee</p>
       </div>
       <main className='trip-review-main'>

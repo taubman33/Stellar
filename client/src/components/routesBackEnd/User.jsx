@@ -55,7 +55,7 @@ class User extends Component {
     if (deleted) {
       return (
         <Redirect
-          to={{ pathname: '/', state: { msg: 'User succesfully deleted!' } }}
+          to={{ pathname: '/users', state: { msg: 'User succesfully deleted!' } }}
         />
       )
     }
