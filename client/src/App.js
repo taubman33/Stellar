@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import Main from './components/Main'
@@ -12,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
